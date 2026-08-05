@@ -1,0 +1,1314 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jonh Carvalho">
+      
+      
+      
+        <link rel="prev" href="../AC04/">
+      
+      
+        <link rel="next" href="../AC06/">
+      
+      
+      <link rel="icon" href="../../assets/ibmec_icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>AC5 - CG_26.1_8001</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estudo-dirigido-05" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CG_26.1_8001" class="md-header__button md-logo" aria-label="CG_26.1_8001" data-md-component="logo">
+      
+  <img src="../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CG_26.1_8001
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AC5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="#193257" data-md-color-accent="#FAB90A"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="all" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jonh-carvalho/CG_26.1_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Disciplina/aulas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Disciplina
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Avaliações
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Disciplina/bibliografia/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Bibliografia
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CG_26.1_8001" class="md-nav__button md-logo" aria-label="CG_26.1_8001" data-md-component="logo">
+      
+  <img src="../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    CG_26.1_8001
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jonh-carvalho/CG_26.1_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Disciplina
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Disciplina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Disciplina/aulas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Disciplina/ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Avaliações
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Avaliações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AC
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            AC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AC01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AC02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AC03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AC04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AC5
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC5
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atividade-iluminacao-textura-e-realismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividade: Iluminação, Textura e Realismo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade: Iluminação, Textura e Realismo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrucoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instruções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-criacao-do-abajur-guiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Criação do Abajur (guiado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configuracao-da-iluminacao-modelo-phong-guiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuração da Iluminação — Modelo Phong (guiado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-materiais-e-texturas-guiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Materiais e Texturas (guiado)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Materiais e Texturas (guiado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mesa-madeira-escura-pbr-com-textura-de-imagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Mesa — Madeira Escura (PBR com textura de imagem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-livro-material-fosco-procedural" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Livro — Material Fosco Procedural
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-copo-vidro-fosco" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Copo — Vidro Fosco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-lapis-cor-solida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Lápis — Cor Sólida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-abajur-plastico-com-emissao-leve" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Abajur — Plástico com Emissão Leve
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configuracoes-de-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configurações de Render
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-renders-finais" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Renders Finais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entregaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregáveis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-de-avaliacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critérios de Avaliação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desafio Avançado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observações
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AC06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Disciplina/bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="estudo-dirigido-05"><strong>Estudo Dirigido 05</strong><a class="headerlink" href="#estudo-dirigido-05" title="Permanent link">&para;</a></h1>
+<h2 id="atividade-iluminacao-textura-e-realismo"><strong>Atividade: Iluminação, Textura e Realismo</strong><a class="headerlink" href="#atividade-iluminacao-textura-e-realismo" title="Permanent link">&para;</a></h2>
+<p><strong>Versão da ferramenta</strong>: Blender <strong>4.5 LTS</strong></p>
+<h3 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h3>
+<p>Na AC04 você construiu a cena-base da mesa de estudo, configurou câmera e explorou as matrizes MVP. Nesta AC05 o foco muda: você vai <strong>dar vida</strong> à cena adicionando o abajur, configurando a iluminação noturna com os três componentes do modelo Phong, aplicando materiais realistas e texturas PBR a cada objeto, e finalizando com um render de qualidade.</p>
+<p>A cena desenvolvida aqui será a base da AC06 (animação e/ou jogo interativo).</p>
+<h3 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Arquivo <code>AC04_NomeSobrenome.blend</code> concluído (mesa, livro, copo, lápis e câmera configurados).</li>
+<li>Salve uma cópia com o nome <code>AC05_NomeSobrenome.blend</code> antes de iniciar.</li>
+<li>Mantenha as coleções criadas na AC04 (<code>Mesa_e_Objetos</code>, <code>Camera</code>, <code>Luzes</code>).</li>
+</ul>
+<h3 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h3>
+<p>Expandir a cena-base da AC04 com iluminação noturna realista (modelo Phong/Principled BSDF), materiais e texturas PBR aplicados a todos os objetos, e produzir renders demonstrando os efeitos de luz, sombra e reflexão.</p>
+<hr />
+<h3 id="instrucoes">Instruções<a class="headerlink" href="#instrucoes" title="Permanent link">&para;</a></h3>
+<h4 id="1-criacao-do-abajur-guiado">1. Criação do Abajur (guiado)<a class="headerlink" href="#1-criacao-do-abajur-guiado" title="Permanent link">&para;</a></h4>
+<p>Adicione os objetos à coleção <code>Mesa_e_Objetos</code> e renomeie-os imediatamente.</p>
+<ul>
+<li><strong>Base do abajur</strong>:</li>
+<li><code>Shift + A → Mesh → Cylinder</code></li>
+<li>Renomeie para <code>Abajur_Base</code>.</li>
+<li>Escale para um cilindro pequeno e baixo (ex.: <code>S</code>, <code>0.3</code>, depois <code>S</code>, <code>Z</code>, <code>0.2</code>).</li>
+<li>Posicione na ponta da mesa (<code>G</code>, <code>X</code> ou <code>G</code>, <code>Y</code>).</li>
+<li><strong>Haste</strong>:</li>
+<li><code>Shift + A → Mesh → Cylinder</code></li>
+<li>Renomeie para <code>Abajur_Haste</code>.</li>
+<li>Reduza o raio e aumente a altura (ex.: <code>S</code>, <code>0.05</code> e <code>S</code>, <code>Z</code>, <code>1.5</code>).</li>
+<li>Centralize sobre a base e eleve (<code>G</code>, <code>Z</code>).</li>
+<li><strong>Cúpula</strong>:</li>
+<li><code>Shift + A → Mesh → UV Sphere</code></li>
+<li>Renomeie para <code>Abajur_Cupula</code>.</li>
+<li>Entre em Edit Mode (<code>Tab</code>), selecione os vértices da metade inferior e apague-os, deixando uma meia-esfera.</li>
+<li>Posicione no topo da haste; escale para encaixar (ex.: <code>S</code>, <code>0.6</code>).</li>
+<li><strong>Luz interna (Point Light)</strong>:</li>
+<li><code>Shift + A → Light → Point</code></li>
+<li>Renomeie para <code>Luz_Abajur</code>.</li>
+<li>Mova para dentro da cúpula (<code>G</code>, <code>Z</code>).</li>
+<li>Mova para a coleção <code>Luzes</code>.</li>
+</ul>
+<hr />
+<h4 id="2-configuracao-da-iluminacao-modelo-phong-guiado">2. Configuração da Iluminação — Modelo Phong (guiado)<a class="headerlink" href="#2-configuracao-da-iluminacao-modelo-phong-guiado" title="Permanent link">&para;</a></h4>
+<p>O modelo de Phong decompõe a iluminação em três componentes. Configure cada um conforme descrito abaixo.</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Configuração no Blender</th>
+<th>Efeito esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ambiente</strong></td>
+<td><code>World → Surface → Background</code>: cor azul escuro (<code>#0A0A1A</code>), intensidade 0,05</td>
+<td>Iluminação noturna de fundo, sem sombras</td>
+</tr>
+<tr>
+<td><strong>Difusa</strong></td>
+<td><code>Luz_Abajur → Power</code>: 30–60 W; cor branca quente (<code>#FFF5E0</code>)</td>
+<td>Ilumina suavemente os objetos ao redor</td>
+</tr>
+<tr>
+<td><strong>Especular</strong></td>
+<td>Ajustar <code>Roughness</code> nos materiais dos objetos (valores baixos = mais brilhante)</td>
+<td>Reflexos de luz na mesa e no copo</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Verifique as <strong>sombras</strong> no painel de propriedades da luz (<code>Properties → Light → Shadow</code>); no <strong>EEVEE Next</strong> (Blender 4.5), as sombras já estão ativas por padrão para luzes <em>Point</em>. Ajuste o <code>Clip Start</code> e a resolução do shadow map se necessário.</li>
+<li>Use <code>Viewport Shading → Rendered</code> (<code>Z → Rendered</code>) para visualizar em tempo real.</li>
+<li>Registre no relatório os valores finais de cada componente.</li>
+</ul>
+<hr />
+<h4 id="3-materiais-e-texturas-guiado">3. Materiais e Texturas (guiado)<a class="headerlink" href="#3-materiais-e-texturas-guiado" title="Permanent link">&para;</a></h4>
+<p>Abra o <strong>Shader Editor</strong> (<code>Shift + F3</code> ou painel inferior). Aplique um material <strong>Principled BSDF</strong> a cada objeto.</p>
+<h5 id="31-mesa-madeira-escura-pbr-com-textura-de-imagem">3.1 Mesa — Madeira Escura (PBR com textura de imagem)<a class="headerlink" href="#31-mesa-madeira-escura-pbr-com-textura-de-imagem" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Baixe um conjunto de texturas PBR de madeira escura em <a href="https://polyhaven.com">Poly Haven</a> (arquivos: <code>albedo.jpg</code>, <code>normal.jpg</code>, <code>roughness.jpg</code>).</li>
+<li>Selecione a <code>Mesa</code> e acesse o Shader Editor.</li>
+<li>Adicione nós: <code>Image Texture</code> (Albedo) → <code>Base Color</code> do Principled BSDF.</li>
+<li>Adicione <code>Image Texture</code> (Roughness) → <code>Roughness</code> do Principled BSDF.</li>
+<li>Adicione <code>Image Texture</code> (Normal) → <code>Normal Map</code> → <code>Normal</code> do Principled BSDF.</li>
+<li>Aplique <code>Smart UV Project</code> na mesa: Edit Mode → <code>U → Smart UV Project</code>.</li>
+<li>Ajuste <code>Metallic</code> para <code>0.0</code> e <strong><code>Specular IOR Level</code></strong> para <code>0.3</code> (o antigo <code>Specular</code> foi renomeado no Principled BSDF do Blender 4.0+).</li>
+</ol>
+<h5 id="32-livro-material-fosco-procedural">3.2 Livro — Material Fosco Procedural<a class="headerlink" href="#32-livro-material-fosco-procedural" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Crie um novo material para o <code>Livro</code>.</li>
+<li>No Shader Editor, adicione um nó <code>Noise Texture</code> e conecte-o a <code>Color Ramp</code> (tons de bege e amarelo claro).</li>
+<li>Conecte a saída do <code>Color Ramp</code> ao <code>Base Color</code> do Principled BSDF.</li>
+<li>Ajuste <code>Roughness</code> para <code>0.9</code> e <code>Metallic</code> para <code>0.0</code>.</li>
+</ol>
+<h5 id="33-copo-vidro-fosco">3.3 Copo — Vidro Fosco<a class="headerlink" href="#33-copo-vidro-fosco" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Crie um novo material para o <code>Copo</code>.</li>
+<li>No Principled BSDF:</li>
+<li><code>Base Color</code>: branco (<code>#FFFFFF</code>).</li>
+<li><strong><code>Transmission Weight</code></strong>: <code>1.0</code> (transmissão total de luz; renomeado de <em>Transmission</em> no Blender 4.0+).</li>
+<li><code>Roughness</code>: <code>0.15</code> (levemente fosco).</li>
+<li><code>IOR</code>: <code>1.45</code> (vidro comum).</li>
+<li>Para renderização correta do vidro em <strong>EEVEE Next</strong> (Blender 4.5):</li>
+<li>Acesse <code>Render Properties → Raytracing</code> e <strong>ative</strong> a opção.</li>
+<li>Habilite <strong><code>Raytraced Transmissions</code></strong> — substitui o antigo método de Alpha Hashed e produz refração realista.</li>
+<li>Com Raytracing ativo, <strong>não é necessário</strong> alterar <code>Blend Mode</code> em <code>Material Properties → Settings</code>.</li>
+</ol>
+<h5 id="34-lapis-cor-solida">3.4 Lápis — Cor Sólida<a class="headerlink" href="#34-lapis-cor-solida" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Crie um material para o <code>Lapis</code>.</li>
+<li><code>Base Color</code>: vermelho (<code>#CC2200</code>) ou azul (<code>#0033AA</code>).</li>
+<li><code>Roughness</code>: <code>0.5</code>, <code>Metallic</code>: <code>0.0</code>.</li>
+</ol>
+<h5 id="35-abajur-plastico-com-emissao-leve">3.5 Abajur — Plástico com Emissão Leve<a class="headerlink" href="#35-abajur-plastico-com-emissao-leve" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Crie um material para <code>Abajur_Cupula</code>.</li>
+<li><code>Base Color</code>: bege claro (<code>#F5E6C0</code>).</li>
+<li>No Blender 4.x o Principled BSDF possui inputs de emissão integrados — <strong>não</strong> é necessário um <code>Mix Shader</code> separado:</li>
+<li><strong><code>Emission Color</code></strong>: amarelo quente (<code>#FFD580</code>).</li>
+<li><strong><code>Emission Strength</code></strong>: <code>0.1</code> — simula o plástico levemente aquecido pela lâmpada.</li>
+</ol>
+<hr />
+<h4 id="4-configuracoes-de-render">4. Configurações de Render<a class="headerlink" href="#4-configuracoes-de-render" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Engine</strong>: <strong>EEVEE Next</strong> — engine padrão do Blender 4.5 (recomendado para iniciantes; Cycles como desafio avançado).</li>
+<li>Acesse <code>Render Properties</code>:</li>
+<li><strong>EEVEE Next</strong>: configure as seguintes opções:<ul>
+<li><code>Ambient Occlusion</code> — ative para oclusão ambiente.</li>
+<li><code>Bloom</code> — disponível em Blender 4.2+; ative com intensidade baixa para o brilho da lâmpada.</li>
+<li><code>Raytracing</code> — ative e habilite <strong><code>Raytraced Reflections</code></strong> (substitui o antigo <em>Screen Space Reflections</em>) e <strong><code>Raytraced Transmissions</code></strong> (para o vidro do copo).</li>
+</ul>
+</li>
+<li><strong>Cycles</strong> (opcional): defina <code>Samples</code> entre 128 e 256 e ative <code>Denoise</code>.</li>
+<li>Resolução sugerida: <strong>1920 × 1080</strong>.</li>
+<li>Suavize a aparência dos objetos curvos: selecione o objeto → clique direito → <code>Shade Smooth</code>. Para controle automático por ângulo (Blender 4.1+), adicione o modificador <strong><code>Smooth by Angle</code></strong> — a antiga opção <code>Auto Smooth</code> do painel de propriedades foi substituída por este modificador.</li>
+</ul>
+<hr />
+<h4 id="5-renders-finais">5. Renders Finais<a class="headerlink" href="#5-renders-finais" title="Permanent link">&para;</a></h4>
+<p>Produza <strong>duas imagens renderizadas</strong> usando a câmera configurada na AC04:</p>
+<ol>
+<li><strong>Perspectiva com iluminação</strong> — cena noturna completa com o abajur aceso.</li>
+<li><strong>Perspectiva sem luz ambiente</strong> — desative o World Shader para evidenciar apenas a contribuição da <code>Luz_Abajur</code>.</li>
+</ol>
+<p>Para renderizar: <code>Render → Render Image</code> (<code>F12</code>) e salve com <code>Image → Save As</code>.</p>
+<hr />
+<h3 id="entregaveis">Entregáveis<a class="headerlink" href="#entregaveis" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Arquivo <code>AC05_NomeSobrenome.blend</code> com abajur, luzes e materiais configurados.</li>
+<li>Duas imagens renderizadas (salvas em <code>.png</code> ou <code>.jpg</code>).</li>
+<li>Relatório (1–2 páginas) contendo:</li>
+<li>Descrição dos três componentes de iluminação configurados (tabela com valores).</li>
+<li>Justificativa dos materiais escolhidos para cada objeto.</li>
+<li>Comparação visual entre as duas imagens renderizadas.</li>
+<li>(Opcional) Reflexão sobre diferenças entre EEVEE e Cycles.</li>
+</ol>
+<hr />
+<h3 id="criterios-de-avaliacao">Critérios de Avaliação<a class="headerlink" href="#criterios-de-avaliacao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Pontos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abajur criado e luz Point configurada corretamente</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td>Três componentes Phong documentados e configurados</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td>Materiais aplicados a todos os objetos (PBR + procedural + vidro)</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td>UV Unwrapping e textura de imagem na mesa</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td>Renders com qualidade e relatório completo</td>
+<td>2,0</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>10,0</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="desafio-avancado">Desafio Avançado<a class="headerlink" href="#desafio-avancado" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Substitua o Engine por <strong>Cycles</strong> e compare a qualidade das sombras e reflexões com EEVEE.</li>
+<li>Aplique uma textura procedural de <strong>metal escovado</strong> à superfície da mesa usando os nós <code>Anisotropic BSDF</code> ou <code>Brushed Metal</code> do Principled BSDF (<code>Metallic</code> alto, <code>Roughness</code> baixo com anisotropia).</li>
+<li>Experimente iluminação <strong>HDRI</strong> no World Shader (imagens disponíveis em <a href="https://polyhaven.com/hdris">Poly Haven — HDRIs</a>) como substituto da luz ambiente.</li>
+</ul>
+<h3 id="observacoes">Observações<a class="headerlink" href="#observacoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O arquivo <code>.blend</code> da AC04 <strong>não deve ser modificado</strong>; trabalhe sempre na cópia <code>AC05_NomeSobrenome.blend</code>.</li>
+<li>A cena desenvolvida nesta atividade será reutilizada na AC06 (animação e/ou jogo interativo).</li>
+<li>Em caso de dúvida sobre nós do Shader Editor, consulte o material da Aula 12 disponível no repositório da disciplina.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright ©️ 2026, Jonh Carvalho
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
