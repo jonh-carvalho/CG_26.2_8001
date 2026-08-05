@@ -741,105 +741,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#objetivos-de-aprendizagem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivos de aprendizagem
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramentas-obrigatorias" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ferramentas obrigatórias
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enunciado-da-pratica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enunciado da prática
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requisitos-tecnicos-minimos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requisitos técnicos mínimos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passo-a-passo-sugerido" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo a passo sugerido
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#script-base-exemplo-inicial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Script base (exemplo inicial)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entregaveis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entregáveis
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bonus-ate-10" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bônus (até +1,0)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observacoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observações
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#questoes-teoricas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Questões Teóricas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#criterios-de-avaliacao-100-pontos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Critérios de avaliação (10,0 pontos)
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -977,73 +878,64 @@
 <h1 id="estudo-dirigido-03"><strong>Estudo Dirigido 03</strong><a class="headerlink" href="#estudo-dirigido-03" title="Permanent link">&para;</a></h1>
 <h2 id="atividade-transformacoes-geometricas-2d-e-3d-no-blender-45-lts"><strong>Atividade: Transformações Geométricas 2D e 3D no Blender 4.5 LTS</strong><a class="headerlink" href="#atividade-transformacoes-geometricas-2d-e-3d-no-blender-45-lts" title="Permanent link">&para;</a></h2>
 <h3 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h3>
-<p>Nesta AC, você vai construir uma cena simples no Blender 4.5 LTS para praticar transformações geométricas em nível introdutório. A atividade combina manipulação manual (interface) e automação básica com Python.</p>
-<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem<a class="headerlink" href="#objetivos-de-aprendizagem" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Aplicar transformações 2D em objetos planos (translação, rotação e escala).</li>
-<li>Aplicar transformações 3D em sólidos (translação, rotação e escala em eixos distintos).</li>
-<li>Distinguir transformações em <strong>espaço local</strong> e <strong>espaço global</strong>.</li>
-<li>Criar uma animação curta com keyframes de transformações.</li>
-<li>Escrever um script Python simples para criar objetos e aplicar transformações.</li>
-</ul>
-<h2 id="ferramentas-obrigatorias">Ferramentas obrigatórias<a class="headerlink" href="#ferramentas-obrigatorias" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Blender <strong>4.5 LTS</strong>.</li>
-<li>Janela <strong>Scripting</strong> do Blender (Python integrado).</li>
-</ul>
-<h2 id="enunciado-da-pratica">Enunciado da prática<a class="headerlink" href="#enunciado-da-pratica" title="Permanent link">&para;</a></h2>
-<p>Você deve montar uma mini-cena chamada <strong>"Parque Geométrico"</strong> contendo:</p>
-<ol>
-<li>
-<p><strong>Elementos 2D (plano XY):</strong></p>
-<ul>
-<li>1 quadrado (Plane).</li>
-<li>1 triângulo (pode ser um Plane editado para 3 vértices).</li>
-<li>1 círculo (Mesh Circle).</li>
-</ul>
-</li>
-<li>
-<p><strong>Elementos 3D:</strong></p>
-<ul>
-<li>1 cubo.</li>
-<li>1 cilindro.</li>
-<li>1 esfera UV.</li>
-</ul>
-</li>
-<li>
-<p><strong>Animação curta (3 a 6 segundos):</strong></p>
-<ul>
-<li>Um objeto 2D deve transladar e rotacionar.</li>
-<li>Um objeto 3D deve escalar e rotacionar em eixos diferentes.</li>
-</ul>
-</li>
-<li>
-<p><strong>Automação com Python (obrigatória):</strong></p>
-<ul>
-<li>Criar ao menos 2 objetos por script.</li>
-<li>Aplicar pelo menos 3 transformações via script (ex.: location, rotation_euler, scale).</li>
-</ul>
-</li>
-</ol>
-<h2 id="requisitos-tecnicos-minimos">Requisitos técnicos mínimos<a class="headerlink" href="#requisitos-tecnicos-minimos" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Cena organizada com nomes coerentes de objetos (ex.: <code>obj2d_quadrado</code>, <code>obj3d_cubo</code>).</li>
-<li>Uso de pelo menos um caso de rotação em graus convertidos para radianos no Python.</li>
-<li>Aplicação de ao menos uma transformação em cada eixo principal (X, Y, Z) ao longo da atividade.</li>
-<li>Inserção de keyframes pelo menos nos frames inicial e final para dois objetos.</li>
-</ul>
-<h2 id="passo-a-passo-sugerido">Passo a passo sugerido<a class="headerlink" href="#passo-a-passo-sugerido" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Criar uma coleção chamada <code>AC03_transformacoes</code>.</li>
-<li>Inserir os objetos 2D e posicioná-los no plano XY.</li>
-<li>Inserir os objetos 3D e posicioná-los acima ou ao lado dos 2D.</li>
-<li>Aplicar transformações manuais com <code>G</code> (move), <code>R</code> (rotate) e <code>S</code> (scale).</li>
-<li>Definir timeline (ex.: frame 1 a 120 em 24 fps).</li>
-<li>Criar keyframes de transformações para 1 objeto 2D e 1 objeto 3D.</li>
-<li>Abrir a aba Scripting e executar um script para criar/transformar objetos.</li>
-<li>Ajustar câmera e gerar um render estático da cena final.</li>
-</ol>
-<h2 id="script-base-exemplo-inicial">Script base (exemplo inicial)<a class="headerlink" href="#script-base-exemplo-inicial" title="Permanent link">&para;</a></h2>
+<!--
+Nesta AC, você vai construir uma cena simples no Blender 4.5 LTS para praticar transformações geométricas em nível introdutório. A atividade combina manipulação manual (interface) e automação básica com Python.
+
+## Objetivos de aprendizagem
+
+- Aplicar transformações 2D em objetos planos (translação, rotação e escala).
+- Aplicar transformações 3D em sólidos (translação, rotação e escala em eixos distintos).
+- Distinguir transformações em **espaço local** e **espaço global**.
+- Criar uma animação curta com keyframes de transformações.
+- Escrever um script Python simples para criar objetos e aplicar transformações.
+
+## Ferramentas obrigatórias
+
+- Blender **4.5 LTS**.
+- Janela **Scripting** do Blender (Python integrado).
+
+## Enunciado da prática
+
+Você deve montar uma mini-cena chamada **"Parque Geométrico"** contendo:
+
+1. **Elementos 2D (plano XY):**
+    - 1 quadrado (Plane).
+    - 1 triângulo (pode ser um Plane editado para 3 vértices).
+    - 1 círculo (Mesh Circle).
+
+2. **Elementos 3D:**
+    - 1 cubo.
+    - 1 cilindro.
+    - 1 esfera UV.
+
+3. **Animação curta (3 a 6 segundos):**
+    - Um objeto 2D deve transladar e rotacionar.
+    - Um objeto 3D deve escalar e rotacionar em eixos diferentes.
+
+4. **Automação com Python (obrigatória):**
+    - Criar ao menos 2 objetos por script.
+    - Aplicar pelo menos 3 transformações via script (ex.: location, rotation_euler, scale).
+
+## Requisitos técnicos mínimos
+
+- Cena organizada com nomes coerentes de objetos (ex.: `obj2d_quadrado`, `obj3d_cubo`).
+- Uso de pelo menos um caso de rotação em graus convertidos para radianos no Python.
+- Aplicação de ao menos uma transformação em cada eixo principal (X, Y, Z) ao longo da atividade.
+- Inserção de keyframes pelo menos nos frames inicial e final para dois objetos.
+
+## Passo a passo sugerido
+
+1. Criar uma coleção chamada `AC03_transformacoes`.
+2. Inserir os objetos 2D e posicioná-los no plano XY.
+3. Inserir os objetos 3D e posicioná-los acima ou ao lado dos 2D.
+4. Aplicar transformações manuais com `G` (move), `R` (rotate) e `S` (scale).
+5. Definir timeline (ex.: frame 1 a 120 em 24 fps).
+6. Criar keyframes de transformações para 1 objeto 2D e 1 objeto 3D.
+7. Abrir a aba Scripting e executar um script para criar/transformar objetos.
+8. Ajustar câmera e gerar um render estático da cena final.
+
+## Script base (exemplo inicial)
+
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">bpy</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -1061,44 +953,47 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">plano</span><span class="o">.</span><span class="n">rotation_euler</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">plano</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </span></code></pre></div>
-<p>Você pode usar este script como ponto de partida, mas deve adaptá-lo para a sua cena.</p>
-<h2 id="entregaveis">Entregáveis<a class="headerlink" href="#entregaveis" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Arquivo Blender: <code>AC03_NomeSobrenome.blend</code>.</li>
-<li>Script Python: <code>AC03_NomeSobrenome.py</code> (pode ser também em <code>.txt</code> exportado do editor de texto do Blender).</li>
-<li>Uma imagem renderizada da cena final: <code>AC03_NomeSobrenome.png</code>.</li>
-<li>Um texto curto (5 a 10 linhas) explicando:<ul>
-<li>Quais transformações 2D e 3D você aplicou.</li>
-<li>Qual parte foi feita manualmente e qual parte por Python.</li>
-</ul>
-</li>
-</ol>
-<h2 id="bonus-ate-10">Bônus (até +1,0)<a class="headerlink" href="#bonus-ate-10" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Uso de hierarquia (parent/child) para mostrar transformação composta.</li>
-<li>Pequena variação temporal adicional na animação (ex.: easing ou etapa intermediária).</li>
-</ul>
-<h2 id="observacoes">Observações<a class="headerlink" href="#observacoes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Atividade introdutória: o foco é compreender o processo, não complexidade visual.</li>
-<li>Em caso de dúvida, comente o código e justifique decisões no texto de entrega.</li>
-</ul>
-<h2 id="questoes-teoricas">Questões Teóricas<a class="headerlink" href="#questoes-teoricas" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Explique a diferença entre translação, rotação e escala em computação gráfica.</li>
-<li>Qual é a diferença entre transformar um objeto no espaço local e no espaço global?</li>
-<li>Em uma cena 3D, por que rotações em eixos diferentes podem gerar resultados visuais distintos?</li>
-<li>No Blender, por que usar <code>math.radians()</code> ao definir <code>rotation_euler</code> por script?</li>
-<li>Dê um exemplo prático de quando vale mais a pena usar Python em vez de transformar manualmente pela interface.</li>
-</ol>
-<h2 id="criterios-de-avaliacao-100-pontos">Critérios de avaliação (10,0 pontos)<a class="headerlink" href="#criterios-de-avaliacao-100-pontos" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Modelagem básica da cena (2,0):</strong> presença e organização dos objetos 2D e 3D.</li>
-<li><strong>Transformações 2D (2,0):</strong> aplicação correta de translação, rotação e escala em objetos planos.</li>
-<li><strong>Transformações 3D (2,0):</strong> aplicação correta de translação, rotação e escala em sólidos.</li>
-<li><strong>Python introdutório (2,0):</strong> script funcional criando e transformando objetos.</li>
-<li><strong>Animação e apresentação (2,0):</strong> keyframes, legibilidade da cena e qualidade da entrega.</li>
-</ul>
+
+Você pode usar este script como ponto de partida, mas deve adaptá-lo para a sua cena.
+
+## Entregáveis
+
+1. Arquivo Blender: `AC03_NomeSobrenome.blend`.
+2. Script Python: `AC03_NomeSobrenome.py` (pode ser também em `.txt` exportado do editor de texto do Blender).
+3. Uma imagem renderizada da cena final: `AC03_NomeSobrenome.png`.
+4. Um texto curto (5 a 10 linhas) explicando:
+    - Quais transformações 2D e 3D você aplicou.
+    - Qual parte foi feita manualmente e qual parte por Python.
+
+
+## Bônus (até +1,0)
+
+- Uso de hierarquia (parent/child) para mostrar transformação composta.
+- Pequena variação temporal adicional na animação (ex.: easing ou etapa intermediária).
+
+## Observações
+
+- Atividade introdutória: o foco é compreender o processo, não complexidade visual.
+- Em caso de dúvida, comente o código e justifique decisões no texto de entrega.
+
+
+## Questões Teóricas
+
+1. Explique a diferença entre translação, rotação e escala em computação gráfica.
+2. Qual é a diferença entre transformar um objeto no espaço local e no espaço global?
+3. Em uma cena 3D, por que rotações em eixos diferentes podem gerar resultados visuais distintos?
+4. No Blender, por que usar `math.radians()` ao definir `rotation_euler` por script?
+5. Dê um exemplo prático de quando vale mais a pena usar Python em vez de transformar manualmente pela interface.
+
+## Critérios de avaliação (10,0 pontos)
+
+- **Modelagem básica da cena (2,0):** presença e organização dos objetos 2D e 3D.
+- **Transformações 2D (2,0):** aplicação correta de translação, rotação e escala em objetos planos.
+- **Transformações 3D (2,0):** aplicação correta de translação, rotação e escala em sólidos.
+- **Python introdutório (2,0):** script funcional criando e transformando objetos.
+- **Animação e apresentação (2,0):** keyframes, legibilidade da cena e qualidade da entrega.
+
+-->
 
 
 

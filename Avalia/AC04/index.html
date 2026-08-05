@@ -759,60 +759,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#pre-requisitos-blender-45-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pré-requisitos (Blender 4.5 LTS)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#objetivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instrucoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instruções
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#entregaveis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entregáveis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#criterios-de-avaliacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Critérios de Avaliação
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#observacoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observações
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -933,141 +879,129 @@
 <h2 id="atividade-preparacao-de-cena-3d-projecao-cameras-e-matrizes"><strong>Atividade: Preparação de Cena 3D (Projeção, Câmeras e Matrizes)</strong><a class="headerlink" href="#atividade-preparacao-de-cena-3d-projecao-cameras-e-matrizes" title="Permanent link">&para;</a></h2>
 <p><strong>Versão da ferramenta</strong>: Blender <strong>4.5 LTS</strong></p>
 <h3 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h3>
-<p>Na próxima atividade (AC05), você vai montar uma cena noturna de estudo com iluminação e animação.
-Antes disso, nesta AC04, o foco será organizar os principais fundamentos geométricos e de visualização de uma cena 3D:</p>
-<ul>
-<li>sistema de coordenadas;</li>
-<li>transformações geométricas;</li>
-<li>câmera e enquadramento;</li>
-<li>projeção geométrica;</li>
-<li>uso conceitual da pipeline <strong>Model -&gt; View -&gt; Projection (MVP)</strong>.</li>
-</ul>
-<p>O objetivo é preparar a estrutura da cena para que, na AC05, você concentre seus esforços em materiais, luz e animação.</p>
-<h3 id="pre-requisitos-blender-45-lts">Pré-requisitos (Blender 4.5 LTS)<a class="headerlink" href="#pre-requisitos-blender-45-lts" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Abra o Blender 4.5 LTS em uma cena nova (<strong>File -&gt; New -&gt; General</strong>).</li>
-<li>Salve o arquivo como <code>AC04_NomeSobrenome.blend</code>.</li>
-<li>Trabalhe em <strong>Layout</strong> e ative os overlays do viewport.</li>
-<li>Use unidades padrão do Blender (1 unidade = 1 metro, aproximação didática).</li>
-</ul>
-<h3 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h3>
-<p>Construir uma cena-base 3D da mesa de estudo com objetos principais, configurar câmera e projeção, e documentar como cada transformação pode ser interpretada pelas matrizes <strong>Model</strong>, <strong>View</strong> e <strong>Projection</strong>.</p>
-<h3 id="instrucoes">Instruções<a class="headerlink" href="#instrucoes" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>Configuração Inicial da Cena (guiado)</strong></p>
-<ul>
-<li>Na cena padrão, mantenha a câmera e a luz iniciais apenas por enquanto.</li>
-<li>Apague o cubo padrão (se necessário): selecione o cubo e pressione <code>X</code>.</li>
-<li>Crie coleções no Outliner para organizar o projeto:</li>
-<li><code>Mesa_e_Objetos</code></li>
-<li><code>Camera</code></li>
-<li><code>Luzes</code> (será mais usada na AC05)</li>
-<li>Renomeie os objetos sempre após criar (ex.: <code>Mesa</code>, <code>Livro</code>, <code>Copo</code>, <code>Lapis</code>).</li>
-</ul>
-</li>
-<li>
-<p><strong>Modelagem Básica da Cena (guiado)</strong></p>
-<ul>
-<li><strong>Mesa</strong>:</li>
-<li><code>Shift + A -&gt; Mesh -&gt; Plane</code></li>
-<li>Renomeie para <code>Mesa</code>.</li>
-<li>Escale no eixo X e Y para obter proporção aproximada de 10x5 (ex.: <code>S</code>, <code>X</code>, <code>5</code> e depois <code>S</code>, <code>Y</code>, <code>2.5</code>).</li>
-<li><strong>Livro</strong>:</li>
-<li><code>Shift + A -&gt; Mesh -&gt; Cube</code></li>
-<li>Renomeie para <code>Livro</code>.</li>
-<li>Aplique escala para deixá-lo achatado (ex.: <code>S</code>, <code>Z</code>, <code>0.1</code>) e ajuste tamanho em X/Y.</li>
-<li>Posicione sobre a mesa (<code>G</code>, <code>Z</code>) e levemente deslocado do centro (<code>G</code>, <code>X</code> / <code>G</code>, <code>Y</code>).</li>
-<li><strong>Copo/Caneca</strong>:</li>
-<li><code>Shift + A -&gt; Mesh -&gt; Cylinder</code></li>
-<li>Renomeie para <code>Copo</code>.</li>
-<li>Ajuste escala para ficar mais alto e fino (ex.: <code>S</code>, <code>Z</code>, <code>1.5</code> e <code>S</code>, <code>0.35</code>).</li>
-<li>Posicione ao lado do livro.</li>
-<li><strong>Lápis</strong>:</li>
-<li><code>Shift + A -&gt; Mesh -&gt; Cylinder</code></li>
-<li>Renomeie para <code>Lapis</code>.</li>
-<li>Reduza raio e aumente comprimento (ex.: <code>S</code>, <code>0.12</code> e <code>S</code>, <code>Z</code>, <code>2.2</code>).</li>
-<li>Rotacione para ficar deitado sobre o livro (ex.: <code>R</code>, <code>Y</code>, <code>90</code>) e ajuste diagonalmente (rotação em <code>Z</code>).</li>
-<li>Ative <strong>Shade Smooth</strong> apenas se necessário para visualização preliminar.</li>
-</ul>
-</li>
-<li>
-<p><strong>Transformações Geométricas e Matriz Model</strong></p>
-<ul>
-<li>Para cada objeto, aplique pelo menos:</li>
-<li>uma translação;</li>
-<li>uma rotação;</li>
-<li>uma escala.</li>
-<li>Registre no relatório os valores finais de <code>Location</code>, <code>Rotation</code> e <code>Scale</code> no painel <code>Item</code> (<code>N</code>).</li>
-<li>Registre no relatório quais transformações foram aplicadas e explique que essas operações compõem a <strong>matriz Model</strong> de cada objeto (transformação do espaço local para o espaço do mundo).</li>
-</ul>
-</li>
-<li>
-<p><strong>Configuração da Câmera e Matriz View (guiado)</strong></p>
-<ul>
-<li>Selecione a câmera e renomeie para <code>Camera_Principal</code>.</li>
-<li>Posicione a câmera em vista levemente superior da mesa (sugestão inicial: eixo Z positivo e deslocamento em Y).</li>
-<li>Use <code>Numpad 0</code> para visualizar pela câmera.</li>
-<li>Ative o painel lateral (<code>N</code>) e ajuste <code>Lens</code> (sugestão: entre 35 mm e 50 mm) para enquadrar melhor.</li>
-<li>Ajuste enquadramento para manter livro e região futura do abajur visíveis.</li>
-<li>Explique no relatório que a <strong>matriz View</strong> representa a transformação do mundo para o referencial da câmera.</li>
-</ul>
-</li>
-<li>
-<p><strong>Projeção Geométrica e Matriz Projection (guiado)</strong></p>
-<ul>
-<li>Produza duas versões da cena:</li>
-<li><strong>projeção perspectiva</strong> (Camera -&gt; Type: Perspective);</li>
-<li><strong>projeção ortográfica</strong> (Camera -&gt; Type: Orthographic).</li>
-<li>Na ortográfica, ajuste <code>Orthographic Scale</code> até enquadrar área semelhante à versão perspectiva.</li>
-<li>Compare visualmente as duas projeções, destacando diferenças de profundidade e percepção de escala.</li>
-<li>Explique que a <strong>matriz Projection</strong> converte a visualização da câmera para o espaço de projeção (com ou sem efeito de perspectiva).</li>
-</ul>
-</li>
-<li>
-<p><strong>Composição MVP (Visão Conceitual)</strong></p>
-<ul>
-<li>Escolha um objeto da cena (ex.: livro) e descreva, de forma textual, o caminho conceitual:</li>
-<li>coordenadas locais do objeto;</li>
-<li>aplicação da matriz Model;</li>
-<li>transformação pela matriz View;</li>
-<li>projeção final pela matriz Projection.</li>
-<li>Não é necessário calcular matrizes numericamente, mas a sequência conceitual deve estar correta.</li>
-</ul>
-</li>
-</ol>
-<h3 id="entregaveis">Entregáveis<a class="headerlink" href="#entregaveis" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Arquivo da cena 3D (<code>.blend</code>) contendo objetos e câmera configurados no Blender 4.5 LTS.</li>
-<li>Duas imagens renderizadas da mesma cena:<ul>
-<li>uma em perspectiva;</li>
-<li>uma em ortográfica.</li>
-</ul>
-</li>
-<li>Relatório curto (1 a 2 páginas) contendo:<ul>
-<li>descrição das transformações aplicadas (Model);</li>
-<li>descrição da configuração da câmera (View);</li>
-<li>comparação entre projeções (Projection);</li>
-<li>explicação conceitual da composição MVP em um objeto.</li>
-</ul>
-</li>
-</ol>
-<h3 id="criterios-de-avaliacao">Critérios de Avaliação<a class="headerlink" href="#criterios-de-avaliacao" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Configuração inicial e organização da cena (2,0 pts)</strong>: coleções, nomes e estrutura do arquivo.</li>
-<li><strong>Modelagem básica guiada (2,0 pts)</strong>: criação correta de mesa, livro, copo e lápis.</li>
-<li><strong>Transformações e matriz Model (2,0 pts)</strong>: uso correto de translação, rotação e escala.</li>
-<li><strong>Câmera e matriz View (2,0 pts)</strong>: posicionamento e justificativa do enquadramento.</li>
-<li><strong>Projeção geométrica e matriz Projection (1,5 pts)</strong>: comparação clara entre perspectiva e ortográfica.</li>
-<li><strong>Explicação conceitual MVP (0,5 pts)</strong>: sequência correta e uso adequado dos conceitos.</li>
-</ul>
-<h3 id="observacoes">Observações<a class="headerlink" href="#observacoes" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Esta atividade não exige iluminação realista completa.</li>
-<li>Foque na base geométrica e de visualização da cena.</li>
-<li>A cena desenvolvida aqui será reaproveitada e expandida na AC05.</li>
-<li>Em caso de dúvidas de interface, considere os nomes de menus e painéis do Blender 4.5 LTS.</li>
-</ul>
+<!--
+Na próxima atividade (AC05), você vai montar uma cena noturna de estudo com iluminação e animação.
+Antes disso, nesta AC04, o foco será organizar os principais fundamentos geométricos e de visualização de uma cena 3D:
+
+- sistema de coordenadas;
+- transformações geométricas;
+- câmera e enquadramento;
+- projeção geométrica;
+- uso conceitual da pipeline **Model -> View -> Projection (MVP)**.
+
+O objetivo é preparar a estrutura da cena para que, na AC05, você concentre seus esforços em materiais, luz e animação.
+
+### Pré-requisitos (Blender 4.5 LTS)
+
+- Abra o Blender 4.5 LTS em uma cena nova (**File -> New -> General**).
+- Salve o arquivo como `AC04_NomeSobrenome.blend`.
+- Trabalhe em **Layout** e ative os overlays do viewport.
+- Use unidades padrão do Blender (1 unidade = 1 metro, aproximação didática).
+
+### Objetivo
+
+Construir uma cena-base 3D da mesa de estudo com objetos principais, configurar câmera e projeção, e documentar como cada transformação pode ser interpretada pelas matrizes **Model**, **View** e **Projection**.
+
+### Instruções
+
+1. **Configuração Inicial da Cena (guiado)**
+
+    - Na cena padrão, mantenha a câmera e a luz iniciais apenas por enquanto.
+    - Apague o cubo padrão (se necessário): selecione o cubo e pressione `X`.
+    - Crie coleções no Outliner para organizar o projeto:
+      - `Mesa_e_Objetos`
+      - `Camera`
+      - `Luzes` (será mais usada na AC05)
+    - Renomeie os objetos sempre após criar (ex.: `Mesa`, `Livro`, `Copo`, `Lapis`).
+
+2. **Modelagem Básica da Cena (guiado)**
+
+    - **Mesa**:
+      - `Shift + A -> Mesh -> Plane`
+      - Renomeie para `Mesa`.
+      - Escale no eixo X e Y para obter proporção aproximada de 10x5 (ex.: `S`, `X`, `5` e depois `S`, `Y`, `2.5`).
+    - **Livro**:
+      - `Shift + A -> Mesh -> Cube`
+      - Renomeie para `Livro`.
+      - Aplique escala para deixá-lo achatado (ex.: `S`, `Z`, `0.1`) e ajuste tamanho em X/Y.
+      - Posicione sobre a mesa (`G`, `Z`) e levemente deslocado do centro (`G`, `X` / `G`, `Y`).
+    - **Copo/Caneca**:
+      - `Shift + A -> Mesh -> Cylinder`
+      - Renomeie para `Copo`.
+      - Ajuste escala para ficar mais alto e fino (ex.: `S`, `Z`, `1.5` e `S`, `0.35`).
+      - Posicione ao lado do livro.
+    - **Lápis**:
+      - `Shift + A -> Mesh -> Cylinder`
+      - Renomeie para `Lapis`.
+      - Reduza raio e aumente comprimento (ex.: `S`, `0.12` e `S`, `Z`, `2.2`).
+      - Rotacione para ficar deitado sobre o livro (ex.: `R`, `Y`, `90`) e ajuste diagonalmente (rotação em `Z`).
+    - Ative **Shade Smooth** apenas se necessário para visualização preliminar.
+
+3. **Transformações Geométricas e Matriz Model**
+
+    - Para cada objeto, aplique pelo menos:
+      - uma translação;
+      - uma rotação;
+      - uma escala.
+    - Registre no relatório os valores finais de `Location`, `Rotation` e `Scale` no painel `Item` (`N`).
+    - Registre no relatório quais transformações foram aplicadas e explique que essas operações compõem a **matriz Model** de cada objeto (transformação do espaço local para o espaço do mundo).
+
+4. **Configuração da Câmera e Matriz View (guiado)**
+
+    - Selecione a câmera e renomeie para `Camera_Principal`.
+    - Posicione a câmera em vista levemente superior da mesa (sugestão inicial: eixo Z positivo e deslocamento em Y).
+    - Use `Numpad 0` para visualizar pela câmera.
+    - Ative o painel lateral (`N`) e ajuste `Lens` (sugestão: entre 35 mm e 50 mm) para enquadrar melhor.
+    - Ajuste enquadramento para manter livro e região futura do abajur visíveis.
+    - Explique no relatório que a **matriz View** representa a transformação do mundo para o referencial da câmera.
+
+5. **Projeção Geométrica e Matriz Projection (guiado)**
+
+    - Produza duas versões da cena:
+      - **projeção perspectiva** (Camera -> Type: Perspective);
+      - **projeção ortográfica** (Camera -> Type: Orthographic).
+    - Na ortográfica, ajuste `Orthographic Scale` até enquadrar área semelhante à versão perspectiva.
+    - Compare visualmente as duas projeções, destacando diferenças de profundidade e percepção de escala.
+    - Explique que a **matriz Projection** converte a visualização da câmera para o espaço de projeção (com ou sem efeito de perspectiva).
+
+6. **Composição MVP (Visão Conceitual)**
+
+    - Escolha um objeto da cena (ex.: livro) e descreva, de forma textual, o caminho conceitual:
+      - coordenadas locais do objeto;
+      - aplicação da matriz Model;
+      - transformação pela matriz View;
+      - projeção final pela matriz Projection.
+    - Não é necessário calcular matrizes numericamente, mas a sequência conceitual deve estar correta.
+
+### Entregáveis
+
+1. Arquivo da cena 3D (`.blend`) contendo objetos e câmera configurados no Blender 4.5 LTS.
+2. Duas imagens renderizadas da mesma cena:
+    - uma em perspectiva;
+    - uma em ortográfica.
+3. Relatório curto (1 a 2 páginas) contendo:
+    - descrição das transformações aplicadas (Model);
+    - descrição da configuração da câmera (View);
+    - comparação entre projeções (Projection);
+    - explicação conceitual da composição MVP em um objeto.
+
+### Critérios de Avaliação
+
+- **Configuração inicial e organização da cena (2,0 pts)**: coleções, nomes e estrutura do arquivo.
+- **Modelagem básica guiada (2,0 pts)**: criação correta de mesa, livro, copo e lápis.
+- **Transformações e matriz Model (2,0 pts)**: uso correto de translação, rotação e escala.
+- **Câmera e matriz View (2,0 pts)**: posicionamento e justificativa do enquadramento.
+- **Projeção geométrica e matriz Projection (1,5 pts)**: comparação clara entre perspectiva e ortográfica.
+- **Explicação conceitual MVP (0,5 pts)**: sequência correta e uso adequado dos conceitos.
+
+### Observações
+
+- Esta atividade não exige iluminação realista completa.
+- Foque na base geométrica e de visualização da cena.
+- A cena desenvolvida aqui será reaproveitada e expandida na AC05.
+- Em caso de dúvidas de interface, considere os nomes de menus e painéis do Blender 4.5 LTS.
+
+-->
 
 
 
