@@ -21,6 +21,8 @@
 
 ## **Objetivo**
 
+<!--
+
 Criar uma cena interna (interior) cinematográfica que demonstre domínio avançado de iluminação, materiais PBR e animação de câmera. A cena deve destacar objetos com diferentes propriedades materiais através de um sistema de iluminação profissional e movimento de câmera que valorize a composição e narrativa visual.
 
 ## **Introdução**
@@ -283,3 +285,4 @@ A cena interna deve incluir:
 
 **Lembre-se**: Os materiais devem ser visualmente distintos e demonstrar propriedades PBR adequadas. A iluminação e câmera devem valorizar cada material de forma clara.
 
+-->

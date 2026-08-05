@@ -2,6 +2,7 @@
 
 ## Objetivo 
 
+<!--
 Desenvolver uma cena onde serão utilizados os conceitos: vetorial, matricial, transformações geométricas, projeção geométrica, curvas, superfícies e modelagem geométrica.
 
 ### Cenário
@@ -31,3 +32,4 @@ A cena consiste de dois terrenos separados por um lago, uma ponte faz a ligaçã
 - **Organização e Limpeza da Cena**: A cena está organizada, sem objetos desnecessários ou sobrepostos.
 - **Originalidade e Criatividade**: Soluções criativas e personalização dos elementos da cena.
 - **Entrega e Documentação**: Arquivos entregues corretamente e documentação clara sobre o processo de criação.
+-->

@@ -4,9 +4,10 @@
 
 Organize em pastas para cada AC e adicione o professor como colaborador no repositório.
 
-AC 01 - 03/09/2025
+AC 01 - xx/08/2026
 
-AC 02 - 24/09/2025
+AC 02 - xx/09/2026
 
-AC 03 - 19/11/2025
+AC 03 - xx/10/2026
 
+AC 04 - xx/11/2026

@@ -18,6 +18,7 @@
 
 ## **Objetivo**
 
+<!--
 Evoluir a cena desenvolvida na AP1, aplicando modelos de iluminação, texturas, materiais e animação para criar um ambiente visualmente realista, dinâmico e interativo.
 
 ## **Introdução**
@@ -192,3 +193,4 @@ Partindo da cena desenvolvida na AP1, você deverá:
 8. **Use o Graph Editor**: Ajuste as curvas de interpolação para movimentos mais naturais
 9. **Teste a animação**: Reproduza frequentemente para verificar se o movimento está fluido
 10. **Renderize em baixa qualidade primeiro**: Teste a animação em baixa resolução antes do render final
+-->
