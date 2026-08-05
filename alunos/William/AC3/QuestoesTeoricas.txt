@@ -1,0 +1,14 @@
+1. Explique a diferença entre translação, rotação e escala em computação gráfica.
+Translação é o deslocamento do objeto no espaço, ou seja, alterar as coordenadas dele (X, Y, Z) para movê-lo de um ponto a outro. Rotação é girar o objeto em torno de um eixo de referência (seja o próprio centro geométrico dele ou um pivô). Escala é alterar as proporções e o tamanho do objeto, achatando ou esticando ele ao longo de um ou mais eixos.
+
+2. Qual é a diferença entre transformar um objeto no espaço local e no espaço global?
+O espaço global é absoluto e fixo para a cena inteira (no Blender, o eixo Z global aponta sempre para cima, não importa o que aconteça). O espaço local é relativo à orientação atual do próprio objeto. Por exemplo: se eu deitar um cilindro de lado, o eixo Z global continua apontando para o céu, mas o eixo Z local do cilindro agora está apontando para o lado, acompanhando a orientação da malha dele. Transformar no local usa o próprio objeto como bússola.
+
+3. Em uma cena 3D, por que rotações em eixos diferentes podem gerar resultados visuais distintos?
+Porque a matemática das rotações (como no sistema de Euler) é sequencial, e a ordem dos fatores altera totalmente o produto final. Rotacionar um objeto primeiro no eixo X e depois no Y deixa ele em uma posição final completamente diferente de rotacionar primeiro no Y e depois no X. Isso acontece porque a primeira rotação altera a orientação dos eixos locais, que servirão de base para a segunda rotação.
+
+4. No Blender, por que usar math.radians() ao definir rotation_euler por script?
+A interface gráfica do Blender exibe a rotação em graus apenas por ser mais amigável e legível para nós. No entanto, por baixo dos panos, o motor do Blender e a API do Python realizam todos os cálculos trigonométricos nativamente em radianos. Usamos o math.radians() no script para converter o valor que pensamos (como 45 ou 90 graus) para o valor matemático que o interpretador exige para funcionar corretamente.
+
+5. Dê um exemplo prático de quando vale mais a pena usar Python em vez de transformar manualmente pela interface.
+O Python brilha quando precisamos fazer algo procedural, repetitivo ou consumir dados externos. Por exemplo: criar uma escada em espiral com 200 degraus, onde cada degrau precisa ter uma pequena variação matemática precisa na translação e na rotação. Fazer isso na mão copiando e girando daria muito trabalho e margem para erro. Com um script, um simples loop for cria, posiciona e rotaciona tudo em um milissegundo. Outro cenário prático é ler um arquivo de dados (como um JSON com coordenadas) para automatizar o posicionamento de centenas de objetos de uma só vez.

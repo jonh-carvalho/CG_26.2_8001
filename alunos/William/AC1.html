@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 01 - Computação Visual</title>
+    
+    <!-- Tailwind CSS para um design moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bibliotecas Externas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <!-- Síntese 3D -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> <!-- Base Visão Computacional -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script> <!-- Modelo Visão Computacional -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Visualização de Dados -->
+
+    <style>
+        /* Estilos adicionais para sobreposição na Visão Computacional */
+        .bounding-box {
+            position: absolute;
+            border: 3px solid #10b981; /* Verde esmeralda */
+            background-color: rgba(16, 185, 129, 0.2);
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .box-label {
+            position: absolute;
+            background-color: #10b981;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            top: -24px;
+            left: -3px;
+            border-radius: 4px 4px 0 0;
+            white-space: nowrap;
+        }
+        /* Loader suave */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Cabeçalho -->
+    <header class="bg-indigo-700 text-white py-12 px-4 shadow-md">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-4xl font-extrabold mb-2">Avaliação Continuada 01</h1>
+            <h2 class="text-2xl font-light text-indigo-200 mb-6">Fundamentos da Computação Visual</h2>
+            <div class="bg-indigo-800 p-4 rounded-lg inline-block">
+                <p><strong>Objetivo:</strong> Demonstrar as diferenças e principais características das áreas: Síntese de Imagens, Processamento de Imagens, Visão Computacional e Visualização Computacional.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-5xl mx-auto py-10 px-4 space-y-12">
+
+        <!-- 1. Síntese de Imagens -->
+        <section class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mr-3">Modelo ➔ Imagem</span>
+                    <h3 class="text-2xl font-bold text-gray-900">1. Síntese de Imagens (Computação Gráfica)</h3>
+                </div>
+                <p class="mb-4 text-gray-600">
+                    <strong>Conceito:</strong> A partir de descrições matemáticas, geométricas ou de dados abstratos, o computador gera (sintetiza) uma imagem do zero. Envolve o cálculo de perspetiva, iluminação, sombras e rasterização.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Aplicação Demonstrada:</h4>
+                        <p class="text-sm text-gray-600 mb-4">Renderização de uma geometria complexa (Torus Knot) num espaço tridimensional. O código define os vértices matematicamente e a biblioteca Three.js encarrega-se de projetar estes dados num ecrã 2D, aplicando um material básico com estrutura de arame (wireframe).</p>
+                    </div>
+                    <!-- Contentor para o Three.js -->
+                    <div id="three-container" class="w-full h-64 bg-gray-900 rounded-lg shadow-inner flex justify-center items-center overflow-hidden cursor-crosshair">
+                        <!-- O Canvas será injetado aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Processamento de Imagens -->
+        <section class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mr-3">Imagem ➔ Imagem</span>
+                    <h3 class="text-2xl font-bold text-gray-900">2. Processamento de Imagens</h3>
+                </div>
+                <p class="mb-4 text-gray-600">
+                    <strong>Conceito:</strong> Recebe uma imagem como entrada e aplica transformações matemáticas aos seus píxeis para gerar uma nova imagem como saída. O objetivo é melhorar a qualidade visual, realçar características (como bordas) ou alterar o esquema de cores, sem interpretar semanticamente o conteúdo.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Aplicação Demonstrada:</h4>
+                        <p class="text-sm text-gray-600 mb-4">Manipulação direta da matriz de píxeis de uma imagem gerada no Canvas HTML5. O código lê os valores RGB de cada píxel, aplica uma fórmula matemática e devolve a imagem reescrita.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <button onclick="gerarImagemOriginal()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded transition font-medium text-sm">Original</button>
+                            <button onclick="aplicarFiltroCinza()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded transition font-medium text-sm">Filtro Cinza (Média)</button>
+                            <button onclick="aplicarFiltroInverter()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition font-medium text-sm">Filtro Negativo</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-center bg-gray-100 p-4 rounded-lg shadow-inner">
+                        <canvas id="proc-canvas" width="300" height="200" class="border border-gray-300 shadow-sm bg-white rounded"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Visão Computacional -->
+        <section class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mr-3">Imagem ➔ Informação</span>
+                    <h3 class="text-2xl font-bold text-gray-900">3. Visão Computacional (Artificial)</h3>
+                </div>
+                <p class="mb-4 text-gray-600">
+                    <strong>Conceito:</strong> Procura extrair dados, significado ou decisões a partir de imagens. Ao contrário do processamento, aqui o computador "entende" o que está a ver através de algoritmos de inteligência artificial e reconhecimento de padrões.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Aplicação Demonstrada:</h4>
+                        <p class="text-sm text-gray-600 mb-4">Detecção de múltiplos objetos numa imagem utilizando o modelo pré-treinado <strong>COCO-SSD</strong> executado via TensorFlow.js. Agora você pode fazer o upload da sua própria imagem e solicitar a identificação manualmente.</p>
+                        
+                        <!-- Novos Controles de Interação -->
+                        <div class="flex flex-col sm:flex-row gap-3 mt-4">
+                            <label class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded transition font-medium text-sm cursor-pointer text-center flex items-center justify-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                Upload de Imagem
+                                <input type="file" id="image-upload" accept="image/*" class="hidden">
+                            </label>
+                            
+                            <button id="btn-detect" disabled class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded transition font-medium text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                Identificar Objetos
+                            </button>
+                        </div>
+
+                        <div id="ai-status" class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-blue-800 text-sm flex items-center">
+                            <div class="loader mr-3" style="border-top-color: #3b82f6;"></div>
+                            A carregar o modelo de Inteligência Artificial...
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center bg-gray-100 p-4 rounded-lg shadow-inner relative overflow-hidden">
+                        <!-- Contentor relativo para posicionar as caixas -->
+                        <div id="vision-container" class="relative inline-block">
+                            <img id="img-vision" src="https://i.guim.co.uk/img/media/327aa3f0c3b8e40ab03b4ae80319064e401c6fbc/377_133_3542_2834/master/3542.jpg?width=1900&dpr=1&s=none&crop=none" crossorigin="anonymous" class="max-w-full rounded shadow-sm" style="max-height: 400px; object-fit: contain;" alt="Imagem para Visão Computacional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Visualização Computacional -->
+        <section class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 mb-10">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center mb-4">
+                    <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mr-3">Dados ➔ Gráfico</span>
+                    <h3 class="text-2xl font-bold text-gray-900">4. Visualização Computacional</h3>
+                </div>
+                <p class="mb-4 text-gray-600">
+                    <strong>Conceito:</strong> Transforma grandes volumes de dados complexos, abstratos ou numéricos em representações visuais interativas (gráficos, mapas de calor, dashboards). Facilita a compreensão e a tomada de decisão por parte de utilizadores humanos, aproveitando a capacidade visual do nosso cérebro.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Aplicação Demonstrada:</h4>
+                        <p class="text-sm text-gray-600 mb-4">Criação de um <em>Gráfico Polar de Área (Polar Area Chart)</em> utilizando a biblioteca Chart.js. Os dados de entrada são um ficheiro JSON abstrato (por exemplo, pontos de performance de um sistema em diferentes categorias). A biblioteca encarrega-se de mapear estes números exatos em áreas proporcionais e cores.</p>
+                        <p class="text-sm text-gray-500 italic">Passe o mouse sobre as áreas do gráfico para interagir com os dados brutos subjacentes.</p>
+                    </div>
+                    
+                    <div class="flex justify-center bg-gray-50 p-4 rounded-lg shadow-inner">
+                        <div class="w-full max-w-sm">
+                            <canvas id="chart-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm mt-10">
+        <p>Desenvolvido por William Fagundes</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS LÓGICOS PARA CADA SEÇÃO DA PÁGINA  -->
+    <!-- ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initSinteseImagens();
+            gerarImagemOriginal(); // Inicia o Processamento de Imagens
+            initVisaoComputacional();
+            initVisualizacaoComputacional();
+        });
+
+        // ----------------------------------------------------
+        // 1. SÍNTESE DE IMAGENS (Three.js)
+        // ----------------------------------------------------
+        function initSinteseImagens() {
+            const container = document.getElementById('three-container');
+            const scene = new THREE.Scene();
+            
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+            camera.position.z = 30;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.TorusKnotGeometry(6, 1.5, 100, 16);
+            const material = new THREE.MeshBasicMaterial({ 
+                color: 0x4f46e5, 
+                wireframe: true,
+                wireframeLinewidth: 2
+            });
+            const torusKnot = new THREE.Mesh(geometry, material);
+            scene.add(torusKnot);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                torusKnot.rotation.x += 0.01;
+                torusKnot.rotation.y += 0.005;
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                if(container.clientWidth > 0) {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // 2. PROCESSAMENTO DE IMAGENS (Canvas API)
+        // ----------------------------------------------------
+        const procCanvas = document.getElementById('proc-canvas');
+        const procCtx = procCanvas.getContext('2d');
+
+        function gerarImagemOriginal() {
+            let gradient = procCtx.createLinearGradient(0, 0, 300, 200);
+            gradient.addColorStop(0, "#ff7eb3");
+            gradient.addColorStop(1, "#ff758c");
+            procCtx.fillStyle = gradient;
+            procCtx.fillRect(0, 0, 300, 200);
+
+            procCtx.fillStyle = "#ffe259";
+            procCtx.beginPath(); procCtx.arc(150, 100, 50, 0, Math.PI * 2); procCtx.fill();
+            
+            procCtx.fillStyle = "#00c6ff";
+            procCtx.fillRect(40, 40, 60, 60);
+
+            procCtx.fillStyle = "#0072ff";
+            procCtx.fillRect(200, 120, 70, 40);
+        }
+
+        function aplicarFiltroCinza() {
+            gerarImagemOriginal(); 
+            let imgData = procCtx.getImageData(0, 0, procCanvas.width, procCanvas.height);
+            let px = imgData.data;
+            for (let i = 0; i < px.length; i += 4) {
+                let luminancia = 0.299 * px[i] + 0.587 * px[i+1] + 0.114 * px[i+2]; 
+                px[i] = luminancia;     
+                px[i+1] = luminancia;   
+                px[i+2] = luminancia;   
+            }
+            procCtx.putImageData(imgData, 0, 0);
+        }
+
+        function aplicarFiltroInverter() {
+            gerarImagemOriginal();
+            let imgData = procCtx.getImageData(0, 0, procCanvas.width, procCanvas.height);
+            let px = imgData.data;
+            for (let i = 0; i < px.length; i += 4) {
+                px[i] = 255 - px[i];         
+                px[i+1] = 255 - px[i+1];     
+                px[i+2] = 255 - px[i+2];     
+            }
+            procCtx.putImageData(imgData, 0, 0);
+        }
+
+        // ----------------------------------------------------
+        // 3. VISÃO COMPUTACIONAL (TensorFlow.js + COCO-SSD)
+        // ----------------------------------------------------
+        let cocoModel = null; // Variável global para armazenar o modelo
+
+        async function initVisaoComputacional() {
+            const imgEl = document.getElementById('img-vision');
+            const container = document.getElementById('vision-container');
+            const statusDiv = document.getElementById('ai-status');
+            const btnDetect = document.getElementById('btn-detect');
+            const fileInput = document.getElementById('image-upload');
+
+            // Função auxiliar para remover caixas antigas
+            function clearBoundingBoxes() {
+                const boxes = container.querySelectorAll('.bounding-box');
+                boxes.forEach(box => box.remove());
+            }
+
+            // 1. Carregar o modelo assim que a página abre (em background)
+            try {
+                cocoModel = await cocoSsd.load();
+                statusDiv.innerHTML = '<strong>Modelo pronto!</strong> Faça upload de uma imagem ou clique em Identificar.';
+                statusDiv.className = "mt-4 p-3 bg-green-50 border border-green-200 rounded text-green-800 text-sm";
+                
+                // Ativar o botão de identificação
+                btnDetect.disabled = false;
+                btnDetect.classList.remove('opacity-50', 'cursor-not-allowed');
+            } catch (err) {
+                statusDiv.innerHTML = "Ocorreu um erro ao carregar o modelo de IA.";
+                statusDiv.className = "mt-4 p-3 bg-red-50 border border-red-200 rounded text-red-800 text-sm";
+                console.error(err);
+            }
+
+            // 2. Evento: Quando o utilizador escolhe uma nova imagem
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        imgEl.src = event.target.result; // Troca a imagem
+                        clearBoundingBoxes();            // Limpa os resultados antigos
+                        
+                        statusDiv.innerHTML = 'Nova imagem carregada. Clique em "Identificar Objetos".';
+                        statusDiv.className = "mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-blue-800 text-sm";
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // 3. Evento: Quando o utilizador clica em "Identificar Objetos"
+            btnDetect.addEventListener('click', async () => {
+                if (!cocoModel) return;
+
+                clearBoundingBoxes(); // Limpa resultados da análise anterior
+                
+                statusDiv.innerHTML = '<div class="loader mr-3" style="border-top-color: #10b981;"></div> A analisar a imagem...';
+                statusDiv.className = "mt-4 p-3 bg-green-50 border border-green-200 rounded text-green-800 text-sm flex items-center";
+                btnDetect.disabled = true; // Previne múltiplos cliques enquanto carrega
+
+                try {
+                    // A IA analisa a imagem atual exibida
+                    const predictions = await cocoModel.detect(imgEl);
+                    
+                    statusDiv.innerHTML = `<strong>Sucesso:</strong> A Visão Computacional extraiu ${predictions.length} objeto(s) da imagem.`;
+                    
+                    // Desenha o output de informação (Bounding Boxes)
+                    predictions.forEach(pred => {
+                        const [x, y, width, height] = pred.bbox;
+                        
+                        const box = document.createElement('div');
+                        box.className = 'bounding-box';
+                        box.style.left = `${x}px`;
+                        box.style.top = `${y}px`;
+                        box.style.width = `${width}px`;
+                        box.style.height = `${height}px`;
+
+                        const label = document.createElement('div');
+                        label.className = 'box-label';
+                        
+                        // Tradução expandida das classes do COCO-SSD
+                        const classPT = pred.class === 'monkey' ? 'Macaco' : 
+                                        pred.class === 'person' ? 'Pessoa' : 
+                                        pred.class === 'dog' ? 'Cão' : 
+                                        pred.class === 'cat' ? 'Gato' : 
+                                        pred.class === 'car' ? 'Carro' : 
+                                        pred.class === 'cell phone' ? 'Telemóvel' : 
+                                        pred.class === 'laptop' ? 'Portátil' : pred.class;
+                        
+                        label.innerText = `${classPT} (${Math.round(pred.score * 100)}%)`;
+                        
+                        box.appendChild(label);
+                        container.appendChild(box);
+                    });
+                } catch (err) {
+                    statusDiv.innerHTML = "Ocorreu um erro durante a deteção visual.";
+                    statusDiv.className = "mt-4 p-3 bg-red-50 border border-red-200 rounded text-red-800 text-sm";
+                    console.error(err);
+                } finally {
+                    btnDetect.disabled = false; // Reativa o botão
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // 4. VISUALIZAÇÃO COMPUTACIONAL (Chart.js)
+        // ----------------------------------------------------
+        function initVisualizacaoComputacional() {
+            const ctx = document.getElementById('chart-canvas').getContext('2d');
+            
+            const rawData = {
+                metricas: ['Processamento', 'Memória', 'Rede', 'Armazenamento', 'Eficiência'],
+                valores_servidor_a: [85, 90, 70, 60, 80]
+            };
+
+            new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: rawData.metricas,
+                    datasets: [{
+                        label: 'Performance do Sistema',
+                        data: rawData.valores_servidor_a,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+1. Translação altera a posição (move), rotação altera a orientação (gira) e escala altera o tamanho (estica/encolhe).
+
+2. O espaço Global é o referencial absoluto e fixo da cena (o mundo). O espaço Local é o referencial relativo do próprio objeto (onde é o teto ou a frente dele, mesmo que esteja de ponta-cabeça).
+
+3. A ordem em que você aplica as rotações altera o resultado final, pois a matemática por trás delas é calculada em sequência (X, depois Y, depois Z).
+
+4. A interface do Blender usa graus apenas para facilitar a nossa leitura. Nos bastidores, a linguagem Python e o motor 3D exigem que os ângulos sejam calculados em radianos.
+
+5. Usar scripts em Python vale a pena para automação de tarefas repetitivas (exemplo: gerar uma escada com centenas de degraus via código) e processamento em lote (exemplo: corrigir a escala de 500 objetos de uma só vez).

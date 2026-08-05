@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformações Geométricas - Estudo Dirigido 02</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        canvas { background-color: #f8fafc; cursor: crosshair; }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex overflow-hidden">
+
+    <!-- Sidebar com os Exercícios -->
+    <aside class="w-80 bg-white border-r border-gray-200 flex flex-col h-full overflow-y-auto shadow-lg z-10">
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="text-xl font-bold text-gray-800">Transformações 2D</h1>
+            <p class="text-sm text-gray-500 mt-1">Estudo Dirigido 02</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2" id="menu">
+            <!-- Botões gerados via JS -->
+        </nav>
+    </aside>
+
+    <!-- Área Principal -->
+    <main class="flex-1 flex flex-col h-full overflow-y-auto bg-gray-50 relative">
+        <header class="p-6 bg-white shadow-sm flex-shrink-0 z-0">
+            <h2 id="ex-title" class="text-2xl font-semibold text-gray-800">Selecione um Exercício</h2>
+            <p id="ex-desc" class="text-gray-600 mt-2 text-sm max-w-3xl">A descrição da atividade aparecerá aqui.</p>
+        </header>
+
+        <div class="flex-1 p-6 flex flex-col lg:flex-row gap-6 items-start">
+            <!-- Canvas Container -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex-shrink-0">
+                <canvas id="graph" width="500" height="500" class="rounded border border-gray-300"></canvas>
+            </div>
+
+            <!-- Painel de Resultados -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex-1 w-full min-w-[300px]">
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    Respostas e Coordenadas
+                </h3>
+                <div id="ex-results" class="prose prose-sm text-gray-700">
+                    Clique em um exercício ao lado para visualizar os resultados e a plotagem.
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-100">
+                    <h4 class="text-sm font-semibold text-gray-500 mb-3">Legenda do Gráfico</h4>
+                    <div class="flex items-center gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 bg-blue-500 rounded-sm"></span> Original
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 bg-red-500 rounded-sm" style="background: repeating-linear-gradient(45deg, #ef4444, #ef4444 4px, #fca5a5 4px, #fca5a5 8px);"></span> Transformado
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Configurações do Canvas e Coordenadas
+        const canvas = document.getElementById('graph');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+        const scale = 25; // Pixels por unidade
+        const originX = width / 2;
+        const originY = height / 2; // Origem no centro
+
+        // Funções de Conversão Matemática -> Canvas
+        function toCanvas(x, y) {
+            return {
+                cx: originX + x * scale,
+                cy: originY - y * scale // Eixo Y inverte no canvas
+            };
+        }
+
+        // Funções de Transformação (Matemática Pura)
+        const Transforms = {
+            translate: (p, dx, dy) => ({ x: p.x + dx, y: p.y + dy }),
+            scaleUniform: (p, f) => ({ x: p.x * f, y: p.y * f }),
+            scaleNonUniform: (p, sx, sy) => ({ x: p.x * sx, y: p.y * sy }),
+            rotate: (p, angleDeg) => {
+                const rad = angleDeg * (Math.PI / 180);
+                // Arredondando para evitar erros de ponto flutuante (ex: 0.0000000000001)
+                const x = p.x * Math.cos(rad) - p.y * Math.sin(rad);
+                const y = p.x * Math.sin(rad) + p.y * Math.cos(rad);
+                return { x: Math.round(x * 100) / 100, y: Math.round(y * 100) / 100 };
+            },
+            reflectX: (p) => ({ x: p.x, y: -p.y }),
+            reflectY: (p) => ({ x: -p.x, y: p.y }),
+            shearX: (p, k) => ({ x: p.x + k * p.y, y: p.y })
+        };
+
+        // Renderização Básica
+        function clearCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            drawGrid();
+        }
+
+        function drawGrid() {
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.lineWidth = 1;
+            ctx.font = '10px Arial';
+            ctx.fillStyle = '#94a3b8';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Linhas verticais e números do Eixo X
+            for (let x = -20; x <= 20; x++) {
+                const cx = originX + x * scale;
+                if (cx >= 0 && cx <= width) {
+                    ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, height); ctx.stroke();
+                    if (x !== 0 && x % 2 === 0) ctx.fillText(x, cx, originY + 12);
+                }
+            }
+
+            // Linhas horizontais e números do Eixo Y
+            for (let y = -20; y <= 20; y++) {
+                const cy = originY - y * scale;
+                if (cy >= 0 && cy <= height) {
+                    ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(width, cy); ctx.stroke();
+                    if (y !== 0 && y % 2 === 0) ctx.fillText(y, originX - 12, cy);
+                }
+            }
+
+            // Eixos Principais
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(0, originY); ctx.lineTo(width, originY); ctx.stroke(); // X
+            ctx.beginPath(); ctx.moveTo(originX, 0); ctx.lineTo(originX, height); ctx.stroke(); // Y
+        }
+
+        function drawShape(points, isTransformed = false, isPoint = false) {
+            ctx.strokeStyle = isTransformed ? '#ef4444' : '#3b82f6'; // Vermelho tracejado / Azul sólido
+            ctx.fillStyle = isTransformed ? 'rgba(239, 68, 68, 0.2)' : 'rgba(59, 130, 246, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash(isTransformed ? [5, 5] : []);
+
+            if (isPoint) {
+                points.forEach(p => {
+                    const c = toCanvas(p.x, p.y);
+                    ctx.beginPath();
+                    ctx.arc(c.cx, c.cy, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.fillStyle = isTransformed ? '#ef4444' : '#1d4ed8';
+                    ctx.font = 'bold 12px Arial';
+                    ctx.fillText(`(${p.x}, ${p.y})`, c.cx + 20, c.cy - 10);
+                });
+            } else {
+                ctx.beginPath();
+                points.forEach((p, i) => {
+                    const c = toCanvas(p.x, p.y);
+                    if (i === 0) ctx.moveTo(c.cx, c.cy);
+                    else ctx.lineTo(c.cx, c.cy);
+                });
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                
+                // Desenhar vértices e labels
+                ctx.setLineDash([]);
+                points.forEach((p, i) => {
+                    const c = toCanvas(p.x, p.y);
+                    ctx.fillStyle = isTransformed ? '#b91c1c' : '#1e40af';
+                    ctx.beginPath(); ctx.arc(c.cx, c.cy, 3, 0, Math.PI * 2); ctx.fill();
+                    ctx.font = '12px Arial';
+                    ctx.fillText(`${String.fromCharCode(65 + i)}'(${p.x}, ${p.y})`, c.cx + 15, c.cy - 10);
+                });
+            }
+            ctx.setLineDash([]); // Reset
+        }
+
+        function ptsToStr(pts, isPoint = false) {
+            if (isPoint) return `P'(${pts[0].x}, ${pts[0].y})`;
+            return pts.map((p, i) => `${String.fromCharCode(65 + i)}'(${p.x}, ${p.y})`).join(', ');
+        }
+
+        // --- Definição dos Exercícios ---
+        const exercises = [
+            {
+                id: 1,
+                title: "Exercício 1: Translação Simples",
+                desc: "Dado o ponto P(2, 3), aplique a translação com vetor (4, -2).",
+                type: 'point',
+                run: () => {
+                    const p = [{x: 2, y: 3}];
+                    const t = p.map(pt => Transforms.translate(pt, 4, -2));
+                    return { orig: p, trans: t, ans: `<strong>Novo ponto:</strong> ${ptsToStr(t, true)}<br><strong>Alteração:</strong> Ambas as coordenadas foram alteradas (x somou 4, y subtraiu 2).` };
+                }
+            },
+            {
+                id: 2,
+                title: "Exercício 2: Escala Uniforme",
+                desc: "Triângulo com vértices A(1, 1), B(3, 1) e C(2, 4). Escala uniforme fator 2.",
+                type: 'polygon',
+                run: () => {
+                    const p = [{x: 1, y: 1}, {x: 3, y: 1}, {x: 2, y: 4}];
+                    const t = p.map(pt => Transforms.scaleUniform(pt, 2));
+                    return { orig: p, trans: t, ans: `<strong>Novas coordenadas:</strong> ${ptsToStr(t)}<br><strong>O que acontece:</strong> O tamanho do triângulo dobra e ele se afasta da origem, mantendo suas proporções.` };
+                }
+            },
+            {
+                id: 3,
+                title: "Exercício 3: Escala Não Uniforme",
+                desc: "Triângulo anterior: fator de 2 no eixo x e fator de 0,5 no eixo y.",
+                type: 'polygon',
+                run: () => {
+                    const p = [{x: 1, y: 1}, {x: 3, y: 1}, {x: 2, y: 4}];
+                    const t = p.map(pt => Transforms.scaleNonUniform(pt, 2, 0.5));
+                    return { orig: p, trans: t, ans: `<strong>Novas coordenadas:</strong> ${ptsToStr(t)}<br><strong>Efeito:</strong> O triângulo fica mais "largo" (dobro em X) e "achatado" (metade em Y).` };
+                }
+            },
+            {
+                id: 4,
+                title: "Exercício 4: Rotação na Origem",
+                desc: "Rotacione P(1, 0) em 90° no sentido anti-horário em torno da origem.",
+                type: 'point',
+                run: () => {
+                    const p = [{x: 1, y: 0}];
+                    const t = p.map(pt => Transforms.rotate(pt, 90)); // Matemático padrão é anti-horário
+                    return { orig: p, trans: t, ans: `<strong>Nova posição:</strong> ${ptsToStr(t, true)}` };
+                }
+            },
+            {
+                id: 5,
+                title: "Exercício 5: Rotação de Polígono",
+                desc: "Quadrado A(1, 1), B(1, 4), C(4, 4), D(4, 1). Rotação de 45° sentido horário.",
+                type: 'polygon',
+                run: () => {
+                    const p = [{x: 1, y: 1}, {x: 1, y: 4}, {x: 4, y: 4}, {x: 4, y: 1}];
+                    const t = p.map(pt => Transforms.rotate(pt, -45)); // Sentido horário = ângulo negativo
+                    return { orig: p, trans: t, ans: `<strong>Novas coordenadas:</strong> ${ptsToStr(t)}` };
+                }
+            },
+            {
+                id: 6,
+                title: "Exercício 6: Reflexão Simples",
+                desc: "Dado o ponto P(2, 5), aplique reflexão no eixo y.",
+                type: 'point',
+                run: () => {
+                    const p = [{x: 2, y: 5}];
+                    const t = p.map(pt => Transforms.reflectY(pt));
+                    return { orig: p, trans: t, ans: `<strong>Nova posição:</strong> ${ptsToStr(t, true)}` };
+                }
+            },
+            {
+                id: 7,
+                title: "Exercício 7: Reflexão de Triângulo",
+                desc: "Triângulo A(2, 3), B(4, 3) e C(3, 5). Reflexão no eixo x.",
+                type: 'polygon',
+                run: () => {
+                    const p = [{x: 2, y: 3}, {x: 4, y: 3}, {x: 3, y: 5}];
+                    const t = p.map(pt => Transforms.reflectX(pt));
+                    return { orig: p, trans: t, ans: `<strong>Novas coordenadas:</strong> ${ptsToStr(t)}` };
+                }
+            },
+            {
+                id: 8,
+                title: "Exercício 8: Cisalhamento Horizontal",
+                desc: "Dado P(2, 3), aplique cisalhamento horizontal com k = 2.",
+                type: 'point',
+                run: () => {
+                    const p = [{x: 2, y: 3}];
+                    const t = p.map(pt => Transforms.shearX(pt, 2));
+                    return { orig: p, trans: t, ans: `<strong>Nova posição:</strong> ${ptsToStr(t, true)}` };
+                }
+            },
+            {
+                id: 9,
+                title: "Exercício 9: Composição 1",
+                desc: "P(3, 2). Transformações: 1. Trans(1, -1) | 2. Rot(90° anti-horário) | 3. Escala(f=2).",
+                type: 'point',
+                run: () => {
+                    const p = [{x: 3, y: 2}];
+                    const t1 = p.map(pt => Transforms.translate(pt, 1, -1)); // (4, 1)
+                    const t2 = t1.map(pt => Transforms.rotate(pt, 90));      // (-1, 4)
+                    const t3 = t2.map(pt => Transforms.scaleUniform(pt, 2)); // (-2, 8)
+                    return { orig: p, trans: t3, ans: `<strong>Nova posição final:</strong> ${ptsToStr(t3, true)}<br><br><em>Passo a passo:</em><br>1. Após translação: (4, 1)<br>2. Após rotação: (-1, 4)<br>3. Após escala: (-2, 8)` };
+                }
+            },
+            {
+                id: 10,
+                title: "Exercício 10: Composição 2",
+                desc: "Retângulo A(1,1), B(5,1), C(5,3), D(1,3). 1. Trans(-2, 3) | 2. Escala(x:1.5, y:0.5) | 3. Reflexão Y.",
+                type: 'polygon',
+                run: () => {
+                    const p = [{x: 1, y: 1}, {x: 5, y: 1}, {x: 5, y: 3}, {x: 1, y: 3}];
+                    const t1 = p.map(pt => Transforms.translate(pt, -2, 3));
+                    const t2 = t1.map(pt => Transforms.scaleNonUniform(pt, 1.5, 0.5));
+                    const t3 = t2.map(pt => Transforms.reflectY(pt));
+                    return { 
+                        orig: p, trans: t3, 
+                        ans: `<strong>Coordenadas Finais:</strong> ${ptsToStr(t3)}<br><br><em>Passo a passo do A(1,1):</em><br>1. Translação: A(-1, 4)<br>2. Escala: A(-1.5, 2)<br>3. Reflexão Y: A(1.5, 2)` 
+                    };
+                }
+            }
+        ];
+
+        // Setup da Interface e Eventos
+        const menu = document.getElementById('menu');
+        let currentActiveBtn = null;
+
+        exercises.forEach((ex, index) => {
+            const btn = document.createElement('button');
+            btn.className = "w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 border border-transparent text-gray-700 hover:bg-gray-100 hover:border-gray-200";
+            btn.innerHTML = `<span class="text-blue-500 font-bold mr-2">Ex ${ex.id}.</span>${ex.title.split(':')[1]}`;
+            
+            btn.onclick = () => {
+                if(currentActiveBtn) {
+                    currentActiveBtn.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-200');
+                    currentActiveBtn.classList.add('text-gray-700');
+                }
+                btn.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-200');
+                btn.classList.remove('text-gray-700');
+                currentActiveBtn = btn;
+
+                // Atualiza Textos
+                document.getElementById('ex-title').innerText = ex.title;
+                document.getElementById('ex-desc').innerHTML = ex.desc;
+                
+                // Roda simulação e atualiza canvas e respostas
+                clearCanvas();
+                const result = ex.run();
+                
+                const isPoint = ex.type === 'point';
+                drawShape(result.orig, false, isPoint);
+                drawShape(result.trans, true, isPoint);
+
+                document.getElementById('ex-results').innerHTML = `<p class="text-base">${result.ans}</p>`;
+            };
+            menu.appendChild(btn);
+        });
+
+        // Inicializa com Grid limpo
+        clearCanvas();
+        // Clica no primeiro exercício por padrão
+        menu.firstChild.click();
+
+    </script>
+</body>
+</html>

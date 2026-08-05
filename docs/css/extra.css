@@ -1,0 +1,17 @@
+:root > * {
+  --md-primary-fg-color: #193257;
+  --md-primary-fg-color--light: #4c92fa;
+  font-weight: 500;
+  --md-primary-fg-color--dark: #4c92fa;
+  --md-primary-bg-color: #fab90a;
+}
+
+.md-typeset table td {
+  font-size: 1.2em;
+}
+hr {
+  border: none;
+  height: 3px;
+  background-color: #193257;
+  margin: 2em 0;
+}
