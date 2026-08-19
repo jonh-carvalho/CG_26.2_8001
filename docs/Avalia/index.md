@@ -4,7 +4,7 @@
 
 Organize em pastas para cada AC e adicione o professor como colaborador no repositório.
 
-AC 01 - xx/08/2026
+AC 01 - 02/09/2026
 
 AC 02 - xx/09/2026
 
