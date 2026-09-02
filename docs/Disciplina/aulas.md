@@ -6,7 +6,7 @@ Aula 01 - 05/08/2026 | :material-check: [Introdução](../Disciplina/docs/aula01
 Aula 02 - 12/08/2026 | :material-check:  |
 Aula 03 - 19/08/2026 | :material-check: [Bibliotecas Gráficas](../Disciplina/docs/aula02/bibliotecas_graficas.pdf) <br> :material-check: [Imagens](../Disciplina/docs/aula03/imagens.pdf) <br> :material-check: [Transformações Geométricas 2D](../Disciplina/docs/aula05/tg2d3d.pdf) |
 Aula 04 - 26/08/2026 | :material-check: [Transformações Geométricas 3D](../Disciplina/docs/aula05/tg3d.pdf) <br> :material-check: [Blender](../Disciplina/docs/blender/blender.pdf)|
-
+Aula 05 - 02/09/2026 | :material-check:  [Projeções Geométricas](../Disciplina/docs/aula07/projecoes.pdf) <br> :material-check: [Matriz View](../Disciplina/docs/aula08/Aula7.pdf) <br> :material-check: [Matriz Wavefront](../Disciplina/docs/aula08/Aula8.pdf)|
 <!--
 
 Aula 05 - 15/04/2026 | :material-check: Apresentação ED03 |
