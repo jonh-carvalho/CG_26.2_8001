@@ -6,6 +6,10 @@
   --md-primary-bg-color: #fab90a;
 }
 
+h1 {
+  display: none;
+}
+
 .md-typeset table td {
   font-size: 1.2em;
 }
