@@ -18,7 +18,7 @@
     
     
       
-        <title>Aula4.Ex6 - Esfera - Transformação Geométrica 3D - CG_26.2_8001</title>
+        <title>Aula5.Ex5 - Cilindro - Transformação Geométrica 3D - CG_26.2_8001</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula4ex6-esfera-transformacao-geometrica-3d" class="md-skip">
+        <a href="#aula5ex5-cilindro-transformacao-geometrica-3d" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula4.Ex6 - Esfera - Transformação Geométrica 3D
+              Aula5.Ex5 - Cilindro - Transformação Geométrica 3D
             
           </span>
         </div>
@@ -551,12 +551,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -659,75 +653,6 @@
   
   <span class="md-ellipsis">
     AC3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC04/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC4
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC05/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC5
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC06/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC6
     
   </span>
   
@@ -1521,7 +1446,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="aula4ex6-esfera-transformacao-geometrica-3d">Aula4.Ex6 - Esfera - Transformação Geométrica 3D<a class="anchor-link" href="#aula4ex6-esfera-transformacao-geometrica-3d">¶</a></h1><h3 id="primeiro-importamos-as-bibliotecas-necessarias">Primeiro, importamos as bibliotecas necessárias.<a class="anchor-link" href="#primeiro-importamos-as-bibliotecas-necessarias">¶</a></h3><p>Verifique no código anterior um script para instalar as dependências necessárias (<code>OpenGL</code> e <code>GLFW</code>) antes de prosseguir.</p>
+<h1 id="aula5ex5-cilindro-transformacao-geometrica-3d">Aula5.Ex5 - Cilindro - Transformação Geométrica 3D<a class="anchor-link" href="#aula5ex5-cilindro-transformacao-geometrica-3d">¶</a></h1><h3 id="primeiro-importamos-as-bibliotecas-necessarias">Primeiro, importamos as bibliotecas necessárias.<a class="anchor-link" href="#primeiro-importamos-as-bibliotecas-necessarias">¶</a></h3><p>Verifique no código anterior um script para instalar as dependências necessárias (<code>OpenGL</code> e <code>GLFW</code>) antes de prosseguir.</p>
 </div>
 </div>
 </div>
@@ -1590,12 +1515,12 @@ import numpy as np</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">glfw</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">glfw</span><span class="o">.</span><span class="n">window_hint</span><span class="p">(</span><span class="n">glfw</span><span class="o">.</span><span class="n">VISIBLE</span><span class="p">,</span> <span class="n">glfw</span><span class="o">.</span><span class="n">FALSE</span><span class="p">);</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">glfw</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="s2">"Esfera"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">glfw</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="s2">"Cilindro"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="n">glfw</span><span class="o">.</span><span class="n">make_context_current</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">glfw.init()
 glfw.window_hint(glfw.VISIBLE, glfw.FALSE);
-window = glfw.create_window(700, 700, "Esfera", None, None)
+window = glfw.create_window(700, 700, "Cilindro", None, None)
 glfw.make_context_current(window)</div>
 </div>
 </div>
@@ -2002,7 +1927,7 @@ glUseProgram(program)</div>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="preparando-dados-para-enviar-a-gpu">Preparando dados para enviar à GPU<a class="anchor-link" href="#preparando-dados-para-enviar-a-gpu">¶</a></h3><p>Nesse momento, compilamos nossos <em>Vertex</em> e <em>Fragment Shaders</em> para que a GPU possa processá-los.</p>
 <p>Por outro lado, as informações de vértices geralmente estão na CPU e devem ser transmitidas para a GPU.</p>
-<h3 id="modelando-uma-esfera">Modelando uma Esfera<a class="anchor-link" href="#modelando-uma-esfera">¶</a></h3>
+<h3 id="modelando-um-cilindro">Modelando um Cilindro<a class="anchor-link" href="#modelando-um-cilindro">¶</a></h3>
 </div>
 </div>
 </div>
@@ -2030,48 +1955,48 @@ glUseProgram(program)</div>
 
 <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.141592</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># raio</span>
-<span class="n">num_sectors</span> <span class="o">=</span> <span class="mi">32</span> <span class="c1"># qtd de sectors (longitude)</span>
-<span class="n">num_stacks</span> <span class="o">=</span> <span class="mi">32</span> <span class="c1"># qtd de stacks (latitude)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">num_sectors</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># qtd de sectors (longitude)</span>
+<span class="n">num_stacks</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># qtd de stacks (latitude)</span>
 
 <span class="c1"># grid sectos vs stacks (longitude vs latitude)</span>
-<span class="n">sector_step</span><span class="o">=</span><span class="p">(</span><span class="n">PI</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">num_sectors</span> <span class="c1"># variar de 0 até 2π</span>
-<span class="n">stack_step</span><span class="o">=</span><span class="p">(</span><span class="n">PI</span><span class="p">)</span><span class="o">/</span><span class="n">num_stacks</span> <span class="c1"># variar de 0 até π</span>
+<span class="n">sector_step</span> <span class="o">=</span> <span class="p">(</span><span class="n">PI</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">num_sectors</span> <span class="c1"># variar de 0 até 2π</span>
+<span class="n">stack_step</span> <span class="o">=</span> <span class="n">H</span><span class="o">/</span><span class="n">num_stacks</span> <span class="c1"># variar de 0 até H</span>
 
-<span class="c1"># Entrada: angulo de longitude, latitude, raio</span>
-<span class="c1"># Saida: coordenadas na esfera</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># Entrada: angulo de t, altura h, raio r</span>
+<span class="c1"># Saida: coordenadas no cilindro</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">CoordCilindro</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">h</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 
 <span class="c1"># vamos gerar um conjunto de vertices representantes poligonos</span>
 <span class="c1"># para a superficie da esfera.</span>
 <span class="c1"># cada poligono eh representado por dois triangulos</span>
 <span class="n">vertices_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_sectors</span><span class="p">):</span> <span class="c1"># para cada sector (longitude)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_stacks</span><span class="p">):</span> <span class="c1"># para cada stack (latitude)</span>
-        
-        
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_stacks</span><span class="p">):</span> <span class="c1"># para cada stack (latitude)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_sectors</span><span class="p">):</span> <span class="c1"># para cada sector (longitude) </span>
         
         <span class="n">u</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">sector_step</span> <span class="c1"># angulo setor</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">stack_step</span> <span class="c1"># angulo stack</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">stack_step</span> <span class="c1"># altura da stack</span>
         
         <span class="n">un</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># angulo do proximo sector</span>
         <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">==</span><span class="n">num_sectors</span><span class="p">:</span>
             <span class="n">un</span> <span class="o">=</span> <span class="n">PI</span><span class="o">*</span><span class="mi">2</span>
         <span class="k">else</span><span class="p">:</span> <span class="n">un</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sector_step</span>
             
-        <span class="n">vn</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># angulo do proximo stack</span>
+        <span class="n">vn</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># altura da proxima stack</span>
         <span class="k">if</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">==</span><span class="n">num_stacks</span><span class="p">:</span>
-            <span class="n">vn</span> <span class="o">=</span> <span class="n">PI</span>
+            <span class="n">vn</span> <span class="o">=</span> <span class="n">H</span>
         <span class="k">else</span><span class="p">:</span> <span class="n">vn</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">stack_step</span>
         
         <span class="c1"># verticies do poligono</span>
-        <span class="n">p0</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p1</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p2</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p3</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">p0</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">p1</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">p2</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">p3</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
         
         <span class="c1"># triangulo 1 (primeira parte do poligono)</span>
         <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
@@ -2082,7 +2007,18 @@ glUseProgram(program)</div>
         <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
         <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
         <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
-
+        
+        <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">vn</span> <span class="o">==</span> <span class="n">H</span><span class="p">:</span>
+            <span class="c1">#faz um triangulo a partir do mesmo angulo u, mas com as alturas em h = vn</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
 <span class="n">total_vertices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vertices_list</span><span class="p">)</span>
 <span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">total_vertices</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"position"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
@@ -2096,48 +2032,48 @@ glUseProgram(program)</div>
 
 PI = 3.141592
 r = 0.5 # raio
-num_sectors = 32 # qtd de sectors (longitude)
-num_stacks = 32 # qtd de stacks (latitude)
+H = 0.6
+num_sectors = 50 # qtd de sectors (longitude)
+num_stacks = 50 # qtd de stacks (latitude)
 
 # grid sectos vs stacks (longitude vs latitude)
-sector_step=(PI*2)/num_sectors # variar de 0 até 2π
-stack_step=(PI)/num_stacks # variar de 0 até π
+sector_step = (PI*2)/num_sectors # variar de 0 até 2π
+stack_step = H/num_stacks # variar de 0 até H
 
-# Entrada: angulo de longitude, latitude, raio
-# Saida: coordenadas na esfera
-def F(u,v,r):
-    x = r*math.sin(v)*math.cos(u)
-    y = r*math.sin(v)*math.sin(u)
-    z = r*math.cos(v)
+# Entrada: angulo de t, altura h, raio r
+# Saida: coordenadas no cilindro
+def CoordCilindro(t, h, r):
+    x = r * math.cos(t)
+    y = r * math.sin(t)
+    z = h
     return (x,y,z)
 
 # vamos gerar um conjunto de vertices representantes poligonos
 # para a superficie da esfera.
 # cada poligono eh representado por dois triangulos
 vertices_list = []
-for i in range(0,num_sectors): # para cada sector (longitude)
-    for j in range(0,num_stacks): # para cada stack (latitude)
-        
-        
+for j in range(0,num_stacks): # para cada stack (latitude)
+    
+    for i in range(0,num_sectors): # para cada sector (longitude) 
         
         u = i * sector_step # angulo setor
-        v = j * stack_step # angulo stack
+        v = j * stack_step # altura da stack
         
         un = 0 # angulo do proximo sector
         if i+1==num_sectors:
             un = PI*2
         else: un = (i+1)*sector_step
             
-        vn = 0 # angulo do proximo stack
+        vn = 0 # altura da proxima stack
         if j+1==num_stacks:
-            vn = PI
+            vn = H
         else: vn = (j+1)*stack_step
         
         # verticies do poligono
-        p0=F(u, v, r)
-        p1=F(u, vn, r)
-        p2=F(un, v, r)
-        p3=F(un, vn, r)
+        p0=CoordCilindro(u, v, r)
+        p1=CoordCilindro(u, vn, r)
+        p2=CoordCilindro(un, v, r)
+        p3=CoordCilindro(un, vn, r)
         
         # triangulo 1 (primeira parte do poligono)
         vertices_list.append(p0)
@@ -2148,7 +2084,18 @@ for i in range(0,num_sectors): # para cada sector (longitude)
         vertices_list.append(p3)
         vertices_list.append(p1)
         vertices_list.append(p2)
-
+        
+        print(v)
+        
+        if v == 0:
+            vertices_list.append(p0)
+            vertices_list.append(p2)
+            vertices_list.append(CoordCilindro(0, v, 0))
+        if vn == H:
+            #faz um triangulo a partir do mesmo angulo u, mas com as alturas em h = vn
+            vertices_list.append(p1)
+            vertices_list.append(p3)
+            vertices_list.append(CoordCilindro(0, vn, 0))
 
 total_vertices = len(vertices_list)
 vertices = np.zeros(total_vertices, [("position", np.float32, 3)])
@@ -2459,8 +2406,8 @@ glEnableVertexAttribArray(loc)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="loop-principal-da-janela">Loop principal da janela<a class="anchor-link" href="#loop-principal-da-janela">¶</a></h3><p>Enquanto a janela não for fechada, esse laço será executado. É neste espaço que trabalhamos com algumas interações com a <code>OpenGL</code>.</p>
-<p>Usaremos o <code>GL_TRIANGLES</code> para modelar os triângulos (que formarão outros polígonos) da superfície da nossa esfera.</p>
+<h3 id="loop-principal-da-janela">Loop principal da janela.<a class="anchor-link" href="#loop-principal-da-janela">¶</a></h3><p>Enquanto a janela não for fechada, esse laço será executado. É neste espaço que trabalhamos com algumas interações com a <code>OpenGL</code>.</p>
+<p>Usaremos o <code>GL_TRIANGLE</code> para modelar os triângulos (que formarão outros polígonos) da superfície da nosso cilindro.</p>
 </div>
 </div>
 </div>
@@ -2542,6 +2489,8 @@ glEnableVertexAttribArray(loc)</div>
         
         <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="n">triangle</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     
 
+
+    
     <span class="n">glfw</span><span class="o">.</span><span class="n">swap_buffers</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 
 <span class="n">glfw</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
@@ -2605,6 +2554,8 @@ while not glfw.window_should_close(window):
         
         glDrawArrays(GL_TRIANGLES, triangle, 3)     
 
+
+    
     glfw.swap_buffers(window)
 
 glfw.terminate()</div>

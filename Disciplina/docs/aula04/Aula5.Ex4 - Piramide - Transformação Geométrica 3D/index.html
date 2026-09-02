@@ -18,7 +18,7 @@
     
     
       
-        <title>Aula5.Ex5 - Cilindro - Transformação Geométrica 3D - CG_26.2_8001</title>
+        <title>Aula5.Ex4 - Pirâmide - Transformação Geométrica 3D - CG_26.2_8001</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula5ex5-cilindro-transformacao-geometrica-3d" class="md-skip">
+        <a href="#aula5ex4-piramide-transformacao-geometrica-3d" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula5.Ex5 - Cilindro - Transformação Geométrica 3D
+              Aula5.Ex4 - Pirâmide - Transformação Geométrica 3D
             
           </span>
         </div>
@@ -551,12 +551,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -659,75 +653,6 @@
   
   <span class="md-ellipsis">
     AC3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC04/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC4
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC05/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC5
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Avalia/AC06/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AC6
     
   </span>
   
@@ -1521,7 +1446,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="aula5ex5-cilindro-transformacao-geometrica-3d">Aula5.Ex5 - Cilindro - Transformação Geométrica 3D<a class="anchor-link" href="#aula5ex5-cilindro-transformacao-geometrica-3d">¶</a></h1><h3 id="primeiro-importamos-as-bibliotecas-necessarias">Primeiro, importamos as bibliotecas necessárias.<a class="anchor-link" href="#primeiro-importamos-as-bibliotecas-necessarias">¶</a></h3><p>Verifique no código anterior um script para instalar as dependências necessárias (<code>OpenGL</code> e <code>GLFW</code>) antes de prosseguir.</p>
+<h1 id="aula5ex4-piramide-transformacao-geometrica-3d">Aula5.Ex4 - Pirâmide - Transformação Geométrica 3D<a class="anchor-link" href="#aula5ex4-piramide-transformacao-geometrica-3d">¶</a></h1><h3 id="primeiro-importamos-as-bibliotecas-necessarias">Primeiro, importamos as bibliotecas necessárias.<a class="anchor-link" href="#primeiro-importamos-as-bibliotecas-necessarias">¶</a></h3><p>Verifique no código anterior um script para instalar as dependências necessárias (<code>OpenGL</code> e <code>GLFW</code>) antes de prosseguir.</p>
 </div>
 </div>
 </div>
@@ -1565,6 +1490,69 @@ import numpy as np</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="pipeline-grafico-programavel-da-opengl">Pipeline Gráfico Programável da OpenGL<a class="anchor-link" href="#pipeline-grafico-programavel-da-opengl">¶</a></h3><ol>
+<li><p><strong>Inicialização e Configuração da Janela</strong></p>
+<ul>
+<li>A janela é criada e configurada usando a biblioteca <code>GLFW</code>. Isso inclui a definição de dimensões e a criação de um contexto OpenGL.</li>
+</ul>
+</li>
+<li><p><strong>Definição dos Shaders</strong></p>
+<ul>
+<li>Dois shaders são definidos:<ul>
+<li><strong>Vertex Shader</strong>: Responsável por transformar as coordenadas dos vértices. Ele aplica uma matriz de transformação (<code>mat_transformation</code>) para calcular a posição final dos vértices.</li>
+<li><strong>Fragment Shader</strong>: Responsável por determinar a cor de cada fragmento (pixel). Ele utiliza uma variável uniforme (<code>color</code>) para definir a cor.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Compilação e Linkagem dos Shaders</strong></p>
+<ul>
+<li>Os códigos dos shaders são compilados e associados a um programa principal. Esse programa é então linkado e ativado para uso.</li>
+</ul>
+</li>
+<li><p><strong>Preparação dos Dados</strong></p>
+<ul>
+<li>Os vértices da pirâmide são definidos em um array de numpy, contendo as coordenadas 3D de cada vértice.</li>
+<li>Esses dados são enviados para a GPU utilizando buffers (<code>glBufferData</code>).</li>
+</ul>
+</li>
+<li><p><strong>Associação de Dados aos Shaders</strong></p>
+<ul>
+<li>As variáveis do Vertex Shader (como <code>position</code>) são associadas aos dados enviados para a GPU. Isso inclui a definição de stride e offset para acessar os dados corretamente.</li>
+</ul>
+</li>
+<li><p><strong>Transformações Geométricas</strong></p>
+<ul>
+<li>Matrizes de rotação (em torno dos eixos X, Y e Z) são calculadas e aplicadas aos vértices no Vertex Shader. Isso permite que a pirâmide seja rotacionada dinamicamente.</li>
+</ul>
+</li>
+<li><p><strong>Renderização</strong></p>
+<ul>
+<li>As faces da pirâmide são desenhadas uma por uma, utilizando diferentes cores para cada face. Isso é feito com chamadas a <code>glDrawArrays</code>.</li>
+</ul>
+</li>
+<li><p><strong>Loop Principal</strong></p>
+<ul>
+<li>Um loop principal mantém a janela aberta enquanto processa eventos e atualiza a cena. Durante o loop, as transformações são recalculadas e a cena é redesenhada.</li>
+</ul>
+</li>
+<li><p><strong>Finalização</strong></p>
+<ul>
+<li>Após o fechamento da janela, os recursos são liberados e o programa é encerrado.</li>
+</ul>
+</li>
+</ol>
+<p>Este pipeline demonstra como criar e renderizar uma pirâmide 3D com transformações geométricas e cores dinâmicas usando OpenGL.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="inicializando-janela">Inicializando janela<a class="anchor-link" href="#inicializando-janela">¶</a></h3>
 </div>
 </div>
@@ -1590,12 +1578,12 @@ import numpy as np</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">glfw</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">glfw</span><span class="o">.</span><span class="n">window_hint</span><span class="p">(</span><span class="n">glfw</span><span class="o">.</span><span class="n">VISIBLE</span><span class="p">,</span> <span class="n">glfw</span><span class="o">.</span><span class="n">FALSE</span><span class="p">);</span>
-<span class="n">window</span> <span class="o">=</span> <span class="n">glfw</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="s2">"Cilindro"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">glfw</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="s2">"Pirâmide"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="n">glfw</span><span class="o">.</span><span class="n">make_context_current</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">glfw.init()
 glfw.window_hint(glfw.VISIBLE, glfw.FALSE);
-window = glfw.create_window(700, 700, "Cilindro", None, None)
+window = glfw.create_window(700, 700, "Pirâmide", None, None)
 glfw.make_context_current(window)</div>
 </div>
 </div>
@@ -1677,7 +1665,7 @@ glfw.make_context_current(window)</div>
 <li><code>void main()</code> é o ponto de entrada do nosso programa (função principal).</li>
 <li><code>gl_FragColor</code> é uma variável especial do <code>GLSL</code>. Variáveis que começam com <code>gl_</code> são desse tipo. Neste caso, determina a cor de um fragmento.</li>
 </ul>
-<h3 id="possibilitando-modificar-a-cor">Possibilitando modificar a cor<a class="anchor-link" href="#possibilitando-modificar-a-cor">¶</a></h3><p>Nos exemplos anteriores, a variável <code>gl_FragColor</code> estava definida de forma fixa (com cor $R=0$, $G=0$, $B=0$).</p>
+<h3 id="possibilitando-modificar-a-cor">Possibilitando modificar a cor.<a class="anchor-link" href="#possibilitando-modificar-a-cor">¶</a></h3><p>Nos exemplos anteriores, a variável <code>gl_FragColor</code> estava definida de forma fixa (com cor $R=0$, $G=0$, $B=0$).</p>
 <p>Agora, criaremos uma variável do tipo <code>uniform</code>, de quatro posições (<code>vec4</code>), para receber o dado de cor do nosso programa rodando em CPU.</p>
 </div>
 </div>
@@ -2002,7 +1990,6 @@ glUseProgram(program)</div>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="preparando-dados-para-enviar-a-gpu">Preparando dados para enviar à GPU<a class="anchor-link" href="#preparando-dados-para-enviar-a-gpu">¶</a></h3><p>Nesse momento, compilamos nossos <em>Vertex</em> e <em>Fragment Shaders</em> para que a GPU possa processá-los.</p>
 <p>Por outro lado, as informações de vértices geralmente estão na CPU e devem ser transmitidas para a GPU.</p>
-<h3 id="modelando-um-cilindro">Modelando um Cilindro<a class="anchor-link" href="#modelando-um-cilindro">¶</a></h3>
 </div>
 </div>
 </div>
@@ -2025,159 +2012,103 @@ glUseProgram(program)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-
-
-<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.141592</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># raio</span>
-<span class="n">H</span> <span class="o">=</span> <span class="mf">0.6</span>
-<span class="n">num_sectors</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># qtd de sectors (longitude)</span>
-<span class="n">num_stacks</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># qtd de stacks (latitude)</span>
-
-<span class="c1"># grid sectos vs stacks (longitude vs latitude)</span>
-<span class="n">sector_step</span> <span class="o">=</span> <span class="p">(</span><span class="n">PI</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">num_sectors</span> <span class="c1"># variar de 0 até 2π</span>
-<span class="n">stack_step</span> <span class="o">=</span> <span class="n">H</span><span class="o">/</span><span class="n">num_stacks</span> <span class="c1"># variar de 0 até H</span>
-
-<span class="c1"># Entrada: angulo de t, altura h, raio r</span>
-<span class="c1"># Saida: coordenadas no cilindro</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">CoordCilindro</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">h</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-
-<span class="c1"># vamos gerar um conjunto de vertices representantes poligonos</span>
-<span class="c1"># para a superficie da esfera.</span>
-<span class="c1"># cada poligono eh representado por dois triangulos</span>
-<span class="n">vertices_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_stacks</span><span class="p">):</span> <span class="c1"># para cada stack (latitude)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_sectors</span><span class="p">):</span> <span class="c1"># para cada sector (longitude) </span>
-        
-        <span class="n">u</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">sector_step</span> <span class="c1"># angulo setor</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">stack_step</span> <span class="c1"># altura da stack</span>
-        
-        <span class="n">un</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># angulo do proximo sector</span>
-        <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">==</span><span class="n">num_sectors</span><span class="p">:</span>
-            <span class="n">un</span> <span class="o">=</span> <span class="n">PI</span><span class="o">*</span><span class="mi">2</span>
-        <span class="k">else</span><span class="p">:</span> <span class="n">un</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sector_step</span>
-            
-        <span class="n">vn</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># altura da proxima stack</span>
-        <span class="k">if</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">==</span><span class="n">num_stacks</span><span class="p">:</span>
-            <span class="n">vn</span> <span class="o">=</span> <span class="n">H</span>
-        <span class="k">else</span><span class="p">:</span> <span class="n">vn</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">stack_step</span>
-        
-        <span class="c1"># verticies do poligono</span>
-        <span class="n">p0</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p1</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p2</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">p3</span><span class="o">=</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="n">un</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        
-        <span class="c1"># triangulo 1 (primeira parte do poligono)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
-        
-        <span class="c1"># triangulo 2 (segunda e ultima parte do poligono)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
-        <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">vn</span> <span class="o">==</span> <span class="n">H</span><span class="p">:</span>
-            <span class="c1">#faz um triangulo a partir do mesmo angulo u, mas com as alturas em h = vn</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
-            <span class="n">vertices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CoordCilindro</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vn</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
-<span class="n">total_vertices</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vertices_list</span><span class="p">)</span>
-<span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">total_vertices</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"position"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
-<span class="n">vertices</span><span class="p">[</span><span class="s1">'position'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vertices_list</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># preparando espaço para 24 vértices usando 3 coordenadas (x,y,z)</span>
+<span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"position"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">import math
+<div class="clipboard-copy-txt" id="cell-11"># preparando espaço para 24 vértices usando 3 coordenadas (x,y,z)
+vertices = np.zeros(16, [("position", np.float32, 3)])</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="modelando-uma-piramide">Modelando uma Pirâmide<a class="anchor-link" href="#modelando-uma-piramide">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># preenchendo as coordenadas de cada vértice</span>
+<span class="n">vertices</span><span class="p">[</span><span class="s1">'position'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Face 1 da Piramide (triangulo)</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
 
+    <span class="c1"># Face 2 da Piramide (triangulo)</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
 
-PI = 3.141592
-r = 0.5 # raio
-H = 0.6
-num_sectors = 50 # qtd de sectors (longitude)
-num_stacks = 50 # qtd de stacks (latitude)
-
-# grid sectos vs stacks (longitude vs latitude)
-sector_step = (PI*2)/num_sectors # variar de 0 até 2π
-stack_step = H/num_stacks # variar de 0 até H
-
-# Entrada: angulo de t, altura h, raio r
-# Saida: coordenadas no cilindro
-def CoordCilindro(t, h, r):
-    x = r * math.cos(t)
-    y = r * math.sin(t)
-    z = h
-    return (x,y,z)
-
-# vamos gerar um conjunto de vertices representantes poligonos
-# para a superficie da esfera.
-# cada poligono eh representado por dois triangulos
-vertices_list = []
-for j in range(0,num_stacks): # para cada stack (latitude)
+    <span class="c1"># Face 3 da Piramide (triangulo)</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
     
-    for i in range(0,num_sectors): # para cada sector (longitude) 
-        
-        u = i * sector_step # angulo setor
-        v = j * stack_step # altura da stack
-        
-        un = 0 # angulo do proximo sector
-        if i+1==num_sectors:
-            un = PI*2
-        else: un = (i+1)*sector_step
-            
-        vn = 0 # altura da proxima stack
-        if j+1==num_stacks:
-            vn = H
-        else: vn = (j+1)*stack_step
-        
-        # verticies do poligono
-        p0=CoordCilindro(u, v, r)
-        p1=CoordCilindro(u, vn, r)
-        p2=CoordCilindro(un, v, r)
-        p3=CoordCilindro(un, vn, r)
-        
-        # triangulo 1 (primeira parte do poligono)
-        vertices_list.append(p0)
-        vertices_list.append(p2)
-        vertices_list.append(p1)
-        
-        # triangulo 2 (segunda e ultima parte do poligono)
-        vertices_list.append(p3)
-        vertices_list.append(p1)
-        vertices_list.append(p2)
-        
-        print(v)
-        
-        if v == 0:
-            vertices_list.append(p0)
-            vertices_list.append(p2)
-            vertices_list.append(CoordCilindro(0, v, 0))
-        if vn == H:
-            #faz um triangulo a partir do mesmo angulo u, mas com as alturas em h = vn
-            vertices_list.append(p1)
-            vertices_list.append(p3)
-            vertices_list.append(CoordCilindro(0, vn, 0))
+    <span class="c1"># Face 4 da Piramide (triangulo)</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
+    
+    <span class="c1"># Face 5 da Piramide (quadrado)</span>
+    <span class="p">(</span><span class="o">+</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.25</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12"># preenchendo as coordenadas de cada vértice
+vertices['position'] = [
+    # Face 1 da Piramide (triangulo)
+    (0.0, 0.5, 0),
+    (+0.25, 0.0, -0.25),
+    (+0.25, 0.0, +0.25),
 
-total_vertices = len(vertices_list)
-vertices = np.zeros(total_vertices, [("position", np.float32, 3)])
-vertices['position'] = np.array(vertices_list)
+    # Face 2 da Piramide (triangulo)
+    (0.0, 0.5, 0),
+    (+0.25, 0.0, +0.25),
+    (-0.25, 0.0, +0.25),
 
-for v in vertices:
-    print(v)</div>
+    # Face 3 da Piramide (triangulo)
+    (0.0, 0.5, 0),
+    (-0.25, 0.0, +0.25),
+    (-0.25, 0.0, -0.25),
+    
+    # Face 4 da Piramide (triangulo)
+    (0.0, 0.5, 0),
+    (-0.25, 0.0, -0.25),
+    (+0.25, 0.0, -0.25),
+    
+    # Face 5 da Piramide (quadrado)
+    (+0.25, 0.0, +0.25),
+    (0.25, 0.0, -0.25),
+    (-0.25, 0.0, +0.25),
+    (-0.25, 0.0, -0.25),
+]</div>
 </div>
 </div>
 </div>
@@ -2203,7 +2134,7 @@ for v in vertices:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2218,7 +2149,7 @@ for v in vertices:
 <span class="c1"># Make this buffer the default one</span>
 <span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12"># Request a buffer slot from GPU
+<div class="clipboard-copy-txt" id="cell-13"># Request a buffer slot from GPU
 buffer = glGenBuffers(1)
 # Make this buffer the default one
 glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
@@ -2247,7 +2178,7 @@ glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2261,7 +2192,7 @@ glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
 <span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">vertices</span><span class="o">.</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">vertices</span><span class="p">,</span> <span class="n">GL_DYNAMIC_DRAW</span><span class="p">)</span>
 <span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># Upload data
+<div class="clipboard-copy-txt" id="cell-14"># Upload data
 glBufferData(GL_ARRAY_BUFFER, vertices.nbytes, vertices, GL_DYNAMIC_DRAW)
 glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
 </div>
@@ -2289,7 +2220,7 @@ glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2304,7 +2235,7 @@ glBindBuffer(GL_ARRAY_BUFFER, buffer)</div>
 <span class="n">stride</span> <span class="o">=</span> <span class="n">vertices</span><span class="o">.</span><span class="n">strides</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">offset</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14"># Bind the position attribute
+<div class="clipboard-copy-txt" id="cell-15"># Bind the position attribute
 # --------------------------------------
 stride = vertices.strides[0]
 offset = ctypes.c_void_p(0)</div>
@@ -2320,7 +2251,7 @@ offset = ctypes.c_void_p(0)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Em seguida, soliciamos à GPU a localização da variável <code>position</code> (que guarda coordenadas dos nossos vértices). Definimos essa variável no <em>Vertex Shader</em>.</p>
+<p>Em seguida, solicitamos à GPU a localização da variável <code>position</code> (que guarda coordenadas dos nossos vértices). Definimos essa variável no <em>Vertex Shader</em>.</p>
 </div>
 </div>
 </div>
@@ -2333,7 +2264,7 @@ offset = ctypes.c_void_p(0)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2346,7 +2277,7 @@ offset = ctypes.c_void_p(0)</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">loc</span> <span class="o">=</span> <span class="n">glGetAttribLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s2">"position"</span><span class="p">)</span>
 <span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">loc = glGetAttribLocation(program, "position")
+<div class="clipboard-copy-txt" id="cell-16">loc = glGetAttribLocation(program, "position")
 glEnableVertexAttribArray(loc)</div>
 </div>
 </div>
@@ -2380,7 +2311,7 @@ glEnableVertexAttribArray(loc)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2392,7 +2323,7 @@ glEnableVertexAttribArray(loc)</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">glVertexAttribPointer(loc, 3, GL_FLOAT, False, stride, offset)</div>
+<div class="clipboard-copy-txt" id="cell-17">glVertexAttribPointer(loc, 3, GL_FLOAT, False, stride, offset)</div>
 </div>
 </div>
 </div>
@@ -2418,7 +2349,7 @@ glEnableVertexAttribArray(loc)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2430,7 +2361,7 @@ glEnableVertexAttribArray(loc)</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">loc_color</span> <span class="o">=</span> <span class="n">glGetUniformLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">loc_color = glGetUniformLocation(program, "color")</div>
+<div class="clipboard-copy-txt" id="cell-18">loc_color = glGetUniformLocation(program, "color")</div>
 </div>
 </div>
 </div>
@@ -2456,7 +2387,7 @@ glEnableVertexAttribArray(loc)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2468,7 +2399,7 @@ glEnableVertexAttribArray(loc)</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">glfw</span><span class="o">.</span><span class="n">show_window</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">glfw.show_window(window)</div>
+<div class="clipboard-copy-txt" id="cell-19">glfw.show_window(window)</div>
 </div>
 </div>
 </div>
@@ -2482,7 +2413,7 @@ glEnableVertexAttribArray(loc)</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="loop-principal-da-janela">Loop principal da janela.<a class="anchor-link" href="#loop-principal-da-janela">¶</a></h3><p>Enquanto a janela não for fechada, esse laço será executado. É neste espaço que trabalhamos com algumas interações com a <code>OpenGL</code>.</p>
-<p>Usaremos o <code>GL_TRIANGLE</code> para modelar os triângulos (que formarão outros polígonos) da superfície da nosso cilindro.</p>
+<p>Usaremos o <code>GL_TRIANGLE_STRIP</code> e modelaremos uma face da Pirâmide por vez, por questões didáticas. Iremos colorir cada face da Pirâmide com uma cor diferente.</p>
 </div>
 </div>
 </div>
@@ -2495,7 +2426,7 @@ glEnableVertexAttribArray(loc)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2506,9 +2437,11 @@ glEnableVertexAttribArray(loc)</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">d</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">)</span> <span class="c1">### importante para 3D</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">random</span>
+
 
 <span class="k">def</span><span class="w"> </span><span class="nf">multiplica_matriz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">m_a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
@@ -2521,8 +2454,8 @@ glEnableVertexAttribArray(loc)</div>
 
     <span class="n">glfw</span><span class="o">.</span><span class="n">poll_events</span><span class="p">()</span> 
     
-    <span class="c1">### apenas para visualizarmos a esfera rotacionando</span>
-    <span class="n">d</span> <span class="o">-=</span> <span class="mf">0.01</span> <span class="c1"># modifica o angulo de rotacao em cada iteracao</span>
+    <span class="c1">### apenas para visualizarmos o cubo rotacionando</span>
+    <span class="n">d</span> <span class="o">-=</span> <span class="mf">0.001</span> <span class="c1"># modifica o angulo de rotacao em cada iteracao</span>
     <span class="n">cos_d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     <span class="n">sin_d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     
@@ -2546,34 +2479,44 @@ glEnableVertexAttribArray(loc)</div>
                                     <span class="o">-</span><span class="n">sin_d</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">cos_d</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> 
                                     <span class="mf">0.0</span><span class="p">,</span>    <span class="mf">0.0</span><span class="p">,</span>   <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     
-    <span class="n">mat_transform</span> <span class="o">=</span> <span class="n">multiplica_matriz</span><span class="p">(</span><span class="n">mat_rotation_z</span><span class="p">,</span><span class="n">mat_rotation_x</span><span class="p">)</span>
-    <span class="n">mat_transform</span> <span class="o">=</span> <span class="n">multiplica_matriz</span><span class="p">(</span><span class="n">mat_rotation_y</span><span class="p">,</span><span class="n">mat_transform</span><span class="p">)</span>
+    <span class="n">mat_transform</span> <span class="o">=</span> <span class="n">multiplica_matriz</span><span class="p">(</span><span class="n">mat_rotation_z</span><span class="p">,</span><span class="n">mat_rotation_y</span><span class="p">)</span>
+    <span class="n">mat_transform</span> <span class="o">=</span> <span class="n">multiplica_matriz</span><span class="p">(</span><span class="n">mat_rotation_x</span><span class="p">,</span><span class="n">mat_transform</span><span class="p">)</span>
+
+
 
     <span class="n">loc</span> <span class="o">=</span> <span class="n">glGetUniformLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s2">"mat_transformation"</span><span class="p">)</span>
     <span class="n">glUniformMatrix4fv</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">,</span> <span class="n">mat_transform</span><span class="p">)</span>
 
     <span class="c1">#glPolygonMode(GL_FRONT_AND_BACK,GL_LINE)</span>
+   
     
-    <span class="k">for</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">),</span><span class="mi">3</span><span class="p">):</span>
-       
-        <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span> <span class="n">triangle</span> <span class="p">)</span>
-        <span class="n">R</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-        <span class="n">B</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  
-        <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-        
-        <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="n">triangle</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     
-
-
+    <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">### vermelho</span>
+    <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    
+    <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">### azul</span>
+    <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    
+    <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">### verde</span>
+    <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    
+    <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">### amarela</span>
+    <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    
+    <span class="n">glUniform4f</span><span class="p">(</span><span class="n">loc_color</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1">### cinza</span>
+    <span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLE_STRIP</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    
+    
     
     <span class="n">glfw</span><span class="o">.</span><span class="n">swap_buffers</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
 
 <span class="n">glfw</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">import math
-import random
+<div class="clipboard-copy-txt" id="cell-20">import math
 d = 0.0
 glEnable(GL_DEPTH_TEST) ### importante para 3D
+
+from numpy import random
+
 
 def multiplica_matriz(a,b):
     m_a = a.reshape(4,4)
@@ -2586,8 +2529,8 @@ while not glfw.window_should_close(window):
 
     glfw.poll_events() 
     
-    ### apenas para visualizarmos a esfera rotacionando
-    d -= 0.01 # modifica o angulo de rotacao em cada iteracao
+    ### apenas para visualizarmos o cubo rotacionando
+    d -= 0.001 # modifica o angulo de rotacao em cada iteracao
     cos_d = math.cos(d)
     sin_d = math.sin(d)
     
@@ -2611,25 +2554,33 @@ while not glfw.window_should_close(window):
                                     -sin_d, 0.0, cos_d, 0.0, 
                                     0.0,    0.0,   0.0, 1.0], np.float32)
     
-    mat_transform = multiplica_matriz(mat_rotation_z,mat_rotation_x)
-    mat_transform = multiplica_matriz(mat_rotation_y,mat_transform)
+    mat_transform = multiplica_matriz(mat_rotation_z,mat_rotation_y)
+    mat_transform = multiplica_matriz(mat_rotation_x,mat_transform)
+
+
 
     loc = glGetUniformLocation(program, "mat_transformation")
     glUniformMatrix4fv(loc, 1, GL_TRUE, mat_transform)
 
     #glPolygonMode(GL_FRONT_AND_BACK,GL_LINE)
+   
     
-    for triangle in range(0,len(vertices),3):
-       
-        random.seed( triangle )
-        R = random.random()
-        G = random.random()
-        B = random.random()  
-        glUniform4f(loc_color, R, G, B, 1.0)
-        
-        glDrawArrays(GL_TRIANGLES, triangle, 3)     
-
-
+    glUniform4f(loc_color, 1, 0, 0, 1.0) ### vermelho
+    glDrawArrays(GL_TRIANGLES, 0, 3)
+    
+    glUniform4f(loc_color, 0, 0, 1, 1.0) ### azul
+    glDrawArrays(GL_TRIANGLES, 3, 3)
+    
+    glUniform4f(loc_color, 0, 1, 0, 1.0) ### verde
+    glDrawArrays(GL_TRIANGLES, 6, 3)
+    
+    glUniform4f(loc_color, 1, 1, 0, 1.0) ### amarela
+    glDrawArrays(GL_TRIANGLES, 9, 3)
+    
+    glUniform4f(loc_color, 0.5, 0.5, 0.5, 1.0) ### cinza
+    glDrawArrays(GL_TRIANGLE_STRIP, 12, 4)
+    
+    
     
     glfw.swap_buffers(window)
 
