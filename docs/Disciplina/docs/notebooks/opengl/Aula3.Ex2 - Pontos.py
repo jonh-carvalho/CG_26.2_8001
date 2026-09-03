@@ -5,7 +5,7 @@ import numpy as np
 
 glfw.init()
 glfw.window_hint(glfw.VISIBLE, glfw.FALSE);
-window = glfw.create_window(720, 600, "Pontos", None, None)
+window = glfw.create_window(480, 240, "Pontos", None, None)
 glfw.make_context_current(window)
 
 def key_event(window,key,scancode,action,mods):
@@ -77,7 +77,7 @@ vertices = np.zeros(3, [("position", np.float32, 2)])
 
 # preenchendo as coordenadas de cada vértice
 vertices['position'] = [
-                            ( 0.0, 0.0), # vertice 0
+                            ( 0.1, 0.1), # vertice 0
                             (+0.5,+0.5), # vertice 1
                             (-0.5,-0.5)  # vertice 2
                         ]
