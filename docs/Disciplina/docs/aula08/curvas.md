@@ -29,13 +29,13 @@
 
 Uma das aplicações clássicas das curvas é a definição do perfil lateral de um automóvel. O contorno da carroceria é desenhado utilizando curvas Bézier para garantir suavidade e precisão nas transições entre partes como teto, portas e para-lamas.
 
-    ```mermaid
+```mermaid
     graph TD
         A[Frente do carro] -- Curva Bézier --> B[Teto]
         B -- Curva Bézier --> C[Traseira]
         A -- Curva Bézier --> D[Para-lama]
         D -- Curva Bézier --> C
-    ```
+```
 
 > No software de modelagem, cada segmento do perfil pode ser ajustado movendo os pontos de controle das curvas, permitindo criar desde carros esportivos com linhas agressivas até veículos clássicos com formas arredondadas.
 

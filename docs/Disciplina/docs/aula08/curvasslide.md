@@ -78,4 +78,3 @@ graph TD
 - [Curvas Paramétricas em 2D - UFSC](http://lapix.ufsc.br/1.4.-curvas-parametricas-em-2d/)
 - [Apostila de Computação Gráfica - UEMS](https://www.comp.uems.br/~mercedes/disciplinas/2023/CG/CG-modelagem.pdf)
 - [Vídeo: Curvas em Computação Gráfica](https://www.youtube.com/watch?v=Dh5hKXygxqk)
-- [Mais referências no material original]
