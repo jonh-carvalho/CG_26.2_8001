@@ -7,15 +7,11 @@ Aula 02 - 12/08/2026 | :material-check: [Bibliotecas Gráficas](../Disciplina/do
 Aula 03 - 19/08/2026 | :material-check:  :material-check: [Imagens](../Disciplina/docs/aula03/imagens.pdf) <br> :material-check: [Transformações Geométricas 2D](../Disciplina/docs/aula05/tg2d3d.pdf) |
 Aula 04 - 26/08/2026 | :material-check: [Transformações Geométricas 3D](../Disciplina/docs/aula05/tg3d.pdf) <br> :material-check: [Blender](../Disciplina/docs/blender/blender.pdf)|
 Aula 05 - 02/09/2026 | :material-check:  [Projeções Geométricas](../Disciplina/docs/aula07/projecoes.pdf) <br> :material-check: [Matriz View](../Disciplina/docs/aula08/Aula7.pdf) <br> :material-check: [Matriz Wavefront](../Disciplina/docs/aula08/Aula8.pdf)|
-<!--
+Aula 06 - 09/09/2026 | :material-check: [Modelagem Geométrica](../Disciplina/docs/aula08/modelagem_geometrica.pdf) <br> :material-check: [Curvas](../Disciplina/docs/aula08/curvas.md) |
+Aula 07 - 16/09/2026 | :material-check: [Superfícies](../Disciplina/docs/aula08/superficies.md) |
+Aula 08 - 23/09/2026 | :material-check:  |
+Aula 09 - 30/09/2026 | :material-check: AP1 |
 
-Aula 05 - 15/04/2026 | :material-check: Apresentação ED03 |
-Aula 06 - 29/04/2026 | :material-check:  |
-Aula 07 - 13/05/2026 | :material-check:  [Projeções Geométricas](../Disciplina/docs/aula07/projeção.md) <br> :material-check: [Curvas](../Disciplina/docs/aula08/curvas.md) <br> :material-check: [Superfícies](../Disciplina/docs/aula08/superficies.md) |
-Aula 08 - 27/05/2026 | :material-check: ED04 |
-Aula 09 - 10/06/2026 | :material-check: ED05 |
-Aula 10 - 17/06/2026 | :material-check:  Apresentação ED06|
--->
 
 <!--
 <iframe src="../.././cg.html" width="100%" height="170px"></iframe>
