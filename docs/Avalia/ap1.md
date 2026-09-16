@@ -4,7 +4,7 @@
 
 As avaliações serão desenvolvidas em duas etapas. Nesta AP1, você criará a base visual e geométrica de uma peça audiovisual curta. Na AP2, essa mesma cena será finalizada com animação, iluminação, materiais, texturas, renderização e exportação do vídeo.
 
-O resultado pretendido para o projeto completo é uma animação de **15 segundos**, produzida no **Blender 4.5 LTS**, que destaque de forma legível e criativa a palavra **Ibmec**, nome do Centro Universitário Ibmec.
+O resultado pretendido para o projeto completo é uma animação de cerca de **15 segundos**, produzida no **Blender 4.5 LTS**, que destaque de forma legível e criativa a palavra **Ibmec**, nome do Centro Universitário Ibmec.
 
 ## Objetivo
 
@@ -20,13 +20,13 @@ Nesta etapa, o foco é a **construção da cena-conceito**. Não é necessário 
 
 ## Proposta da cena
 
-Crie uma composição em que a palavra **Ibmec** seja o elemento visual principal. A palavra pode ser construída com texto convertido em malha, letras modeladas, relevo, placas, objetos que formem as letras ou outra solução tridimensional autoral.
+Crie uma composição em que a palavra **Ibmec** seja o elemento visual principal. A palavra pode ser construída com texto convertido em malha, letras modeladas, relevo, placas, objetos que formem as letras ou outra solução tridimensional autoral(Mantendo a integridade da Marca - cor/fonts/estilo).
 
-A cena deve sugerir uma transformação, entrada, passagem, descoberta ou apresentação da marca ao longo dos futuros 15 segundos. A narrativa pode ser abstrata ou figurativa, mas deve ser compreensível a partir de um quadro estático e de um breve planejamento visual.
+A cena deve sugerir uma transformação, entrada, passagem, descoberta ou apresentação da marca ao longo dos futuros 15 segundos. A narrativa pode ser abstrata ou figurativa, mas deve ser compreensível a partir de um quadro estático e de um breve planejamento visual destacando solidez, futuridade, criatividade, construção, inovação, empreendedorismo.
 
 Além da palavra **Ibmec**, a cena deverá conter **exatamente três objetos autorais propostos pelo aluno**. Esses objetos devem contribuir para o conceito da peça e poderão ser animados ou detalhados na AP2. Exemplos: um livro, uma esfera, um veículo, uma ponte, um prédio, um personagem simples, um símbolo, uma letra especial ou um objeto relacionado à educação e inovação.
 
-Os três objetos podem ser modelados do zero ou construídos a partir de primitivas e modificadores. Modelos externos são permitidos apenas como apoio ou referência; os três objetos escolhidos devem ser identificados e justificados no relatório.
+Os três objetos podem ser modelados obrigatoriamente do zero ou construídos a partir de primitivas e modificadores. Modelos externos são permitidos apenas como apoio ou referência; os três objetos escolhidos devem ser identificados e justificados no relatório, outros objetos importados podem ser utilizados, mas devem ser integrados de forma coesa à cena.
 
 ## Requisitos da AP1
 
@@ -38,7 +38,7 @@ Os três objetos podem ser modelados do zero ou construídos a partir de primiti
 6. Utilizar pelo menos dois recursos de modelagem além da simples escala de primitivas, por exemplo: extrusão, inset, bevel, loop cut, edição proporcional, curvas, superfícies, modificadores ou composição de malhas.
 7. Configurar uma câmera principal para apresentar a composição. A câmera deve estar pronta para receber a animação na AP2, mas não precisa ser animada nesta etapa.
 8. Definir a duração planejada da peça como **15 segundos a 24 fps**, totalizando **360 frames**. Não é obrigatório renderizar o vídeo na AP1.
-9. Criar um storyboard simples com pelo menos três momentos: início, destaque ou transformação da palavra e encerramento. O storyboard pode ser feito em imagens, desenhos ou quadros do viewport.
+9. Criar uma storyboard simples com pelo menos três momentos: início, destaque ou transformação da palavra e encerramento. 
 
 ## O que fica para a AP2
 
