@@ -1,31 +1,36 @@
+---
+hide:
+    - navigation
+    - toc
+---
 ## Curvas na Modelagem Geométrica
 
 ### 1. Introdução às Curvas
 
-#### O papel das curvas como base para criação de formas complexas em modelagem digital.
+> - O papel das curvas como base para criação de formas complexas em modelagem digital.
 
-- A importância das curvas na representação de contornos suaves e detalhados, essenciais para objetos realistas em gráficos computacionais.
+> - A importância das curvas na representação de contornos suaves e detalhados, essenciais para objetos realistas em gráficos computacionais.
 
-    ---
-    ## Transições Suaves com Curvas
+### Transições Suaves com Curvas
 
-    > As curvas permitem a criação de transições suaves entre diferentes partes de um objeto, evitando arestas abruptas e proporcionando maior naturalidade visual.
+ As curvas permitem a criação de transições suaves entre diferentes partes de um objeto, evitando arestas abruptas e proporcionando maior naturalidade visual.
 
-    - Evita contornos artificiais e segmentados.
-    - Garante continuidade visual entre superfícies.
-    - Essencial para modelagem orgânica e realista.
+ > - Evita contornos artificiais e segmentados.
+ 
 
-    ---
+ > - Garante continuidade visual entre superfícies.
+ 
+>  - Essencial para modelagem orgânica e realista.
 
-    > São fundamentais para simular superfícies orgânicas, como rostos, músculos e tecidos, onde a precisão dos detalhes depende da qualidade da curva utilizada.
+> - São fundamentais para simular superfícies orgânicas, como rostos, músculos e tecidos, onde a precisão dos detalhes depende da qualidade da curva utilizada.
         
-    > Reduz a quantidade de polígonos necessários para modelar formas complexas, otimizando o desempenho em aplicações gráficas.
-        
-    > Facilitam ajustes e refinamentos no design, permitindo alterações precisas sem reconstruir toda a geometria.
+> - Reduz a quantidade de polígonos necessários para modelar formas complexas, otimizando o desempenho em aplicações gráficas.
+       
+> - Facilitam ajustes e refinamentos no design, permitindo alterações precisas sem reconstruir toda a geometria.
 
-#### Objetos que dependem de curvas para definição precisa, como personagens, veículos e elementos arquitetônicos.
+> - Objetos que dependem de curvas para definição precisa, como personagens, veículos e elementos arquitetônicos.
 
-**Exemplo Visual: Perfil de um Automóvel**
+### Exemplo: **Perfil de um Automóvel**
 
 Uma das aplicações clássicas das curvas é a definição do perfil lateral de um automóvel. O contorno da carroceria é desenhado utilizando curvas Bézier para garantir suavidade e precisão nas transições entre partes como teto, portas e para-lamas.
 
@@ -37,18 +42,20 @@ Uma das aplicações clássicas das curvas é a definição do perfil lateral de
         D -- Curva Bézier --> C
 ```
 
-> No software de modelagem, cada segmento do perfil pode ser ajustado movendo os pontos de controle das curvas, permitindo criar desde carros esportivos com linhas agressivas até veículos clássicos com formas arredondadas.
+No software de modelagem, cada segmento do perfil pode ser ajustado movendo os pontos de controle das curvas, permitindo criar desde carros esportivos com linhas agressivas até veículos clássicos com formas arredondadas.
 
-> Também é possível visualizar o uso de curvas na modelagem de personagens, onde o contorno do rosto, braços e pernas é definido por curvas suaves para garantir naturalidade e realismo.
+Também é possível visualizar o uso de curvas na modelagem de personagens, onde o contorno do rosto, braços e pernas é definido por curvas suaves para garantir naturalidade e realismo.
 
 
-#### Como curvas facilitam a transição entre formas simples e superfícies complexas, permitindo maior controle sobre o design.
+### Transição entre Formas Simples e Superfícies Complexas
+
+ Curvas facilitam a transição entre formas simples e superfícies complexas, permitindo maior controle sobre o design.
 
 - As curvas atuam como elementos intermediários entre formas geométricas básicas (como linhas e círculos) e superfícies complexas, permitindo ao designer controlar com precisão a geometria do objeto.
 - Ao ajustar os pontos de controle e parâmetros das curvas, é possível criar transições suaves entre diferentes regiões, conectar partes distintas e definir contornos detalhados. 
 - Resulta em superfícies contínuas e orgânicas, essenciais para modelagem de objetos realistas. Além disso, o uso de curvas possibilita modificações localizadas sem afetar toda a estrutura, tornando o processo de refinamento do design mais eficiente e flexível.
 
-#### O uso de curvas com técnicas de animação e simulação, destacando sua versatilidade em diferentes áreas da computação gráfica.
+### Curvas como técnica de animação e simulação
 
 - Conceitos fundamentais: ponto, linha, curva, e suas representações matemáticas.
 
@@ -56,18 +63,15 @@ Uma das aplicações clássicas das curvas é a definição do perfil lateral de
 
 - Exemplos práticos de aplicação: criação de círculos, elipses, superfícies e objetos orgânicos.
 
-#### 2. Curvas Paramétricas e Suas Propriedades
+### 2. Curvas Paramétricas e Suas Propriedades
 
 - Definir e explicar curvas paramétricas, como as curvas de Bézier, B-Splines e NURBS.
-
-
-
 
 - Compreender o uso dos pontos de controle e como eles influenciam a forma da curva.
 - Demonstração matemática simplificada da composição destas curvas.
 - Explorar o conceito de interpolação e aproximação na geração de curvas.
 
-#### 3. Ferramentas de Modelagem de Curvas em Software 3D (Ex: Blender)
+### 3. Ferramentas de Modelagem de Curvas em Software 3D (Ex: Blender)
 
 - Introdução prática à criação e edição de curvas:
   - Criação de curvas Bézier e NURBS.

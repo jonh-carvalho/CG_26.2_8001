@@ -81,6 +81,11 @@ markdown_extensions:
   # Formatting
   - pymdownx.tilde
   # Data Tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   - toc:
       permalink: true

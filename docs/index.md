@@ -6,28 +6,25 @@ hide:
 ---
 
 
-<div style="text-align: center;">
+<div class="grid cards" markdown>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0vAhWtIJbFY?si=yp6qJA89DNsH9zj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-   <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/0vAhWtIJbFY?si=yp6qJA89DNsH9zj0" title="Vídeo de apresentação da disciplina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+-   ## :material-github: Computação Gráfica
+
+    **IBM0168/8001**
+
+    ---
+
+    Disciplina que apresenta os conceitos da Computação Gráfica.
+
+    **Linguagens:** Python, OpenGL, Blender e Javascript
+
+    **Tecnologias:** Visual Studio Code e Github
+
+    As APs e ACs deverão ser enviadas no Github.
 
 </div>
-
-## :material-github:{ .lg .right } **Computação Gráfica**: IBM0168/8001
-
----
-
-Disciplina que apresenta os Conceitos da Computação Gráfica.
-
-## Ferramentas
-
-**Linguagens**: Python, OpenGL, Blender e Javascript
-
-**Tecnologias**: Visual Studio Code e Github
-
-As APs e ACs deverão ser enviadas no github.
-
-
-
 </div>
 
 
