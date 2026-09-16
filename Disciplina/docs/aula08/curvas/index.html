@@ -330,7 +330,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -713,6 +715,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -723,48 +727,60 @@
 
 <h2 id="curvas-na-modelagem-geometrica">Curvas na Modelagem Geométrica<a class="headerlink" href="#curvas-na-modelagem-geometrica" title="Permanent link">&para;</a></h2>
 <h3 id="1-introducao-as-curvas">1. Introdução às Curvas<a class="headerlink" href="#1-introducao-as-curvas" title="Permanent link">&para;</a></h3>
-<h4 id="o-papel-das-curvas-como-base-para-criacao-de-formas-complexas-em-modelagem-digital">O papel das curvas como base para criação de formas complexas em modelagem digital.<a class="headerlink" href="#o-papel-das-curvas-como-base-para-criacao-de-formas-complexas-em-modelagem-digital" title="Permanent link">&para;</a></h4>
+<blockquote>
 <ul>
 <li>
+<p>O papel das curvas como base para criação de formas complexas em modelagem digital.</p>
+</li>
+<li>
 <p>A importância das curvas na representação de contornos suaves e detalhados, essenciais para objetos realistas em gráficos computacionais.</p>
-<hr />
-<h2 id="transicoes-suaves-com-curvas">Transições Suaves com Curvas<a class="headerlink" href="#transicoes-suaves-com-curvas" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>As curvas permitem a criação de transições suaves entre diferentes partes de um objeto, evitando arestas abruptas e proporcionando maior naturalidade visual.</p>
-</blockquote>
-<ul>
-<li>Evita contornos artificiais e segmentados.</li>
-<li>Garante continuidade visual entre superfícies.</li>
-<li>Essencial para modelagem orgânica e realista.</li>
-</ul>
-<hr />
-<blockquote>
-<p>São fundamentais para simular superfícies orgânicas, como rostos, músculos e tecidos, onde a precisão dos detalhes depende da qualidade da curva utilizada.</p>
-<p>Reduz a quantidade de polígonos necessários para modelar formas complexas, otimizando o desempenho em aplicações gráficas.</p>
-<p>Facilitam ajustes e refinamentos no design, permitindo alterações precisas sem reconstruir toda a geometria.</p>
-</blockquote>
 </li>
 </ul>
-<h4 id="objetos-que-dependem-de-curvas-para-definicao-precisa-como-personagens-veiculos-e-elementos-arquitetonicos">Objetos que dependem de curvas para definição precisa, como personagens, veículos e elementos arquitetônicos.<a class="headerlink" href="#objetos-que-dependem-de-curvas-para-definicao-precisa-como-personagens-veiculos-e-elementos-arquitetonicos" title="Permanent link">&para;</a></h4>
-<p><strong>Exemplo Visual: Perfil de um Automóvel</strong></p>
-<p>Uma das aplicações clássicas das curvas é a definição do perfil lateral de um automóvel. O contorno da carroceria é desenhado utilizando curvas Bézier para garantir suavidade e precisão nas transições entre partes como teto, portas e para-lamas.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    graph TD
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        A[Frente do carro] -- Curva Bézier --&gt; B[Teto]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        B -- Curva Bézier --&gt; C[Traseira]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        A -- Curva Bézier --&gt; D[Para-lama]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        D -- Curva Bézier --&gt; C
-</span></code></pre></div>
+</blockquote>
+<h3 id="transicoes-suaves-com-curvas">Transições Suaves com Curvas<a class="headerlink" href="#transicoes-suaves-com-curvas" title="Permanent link">&para;</a></h3>
+<p>As curvas permitem a criação de transições suaves entre diferentes partes de um objeto, evitando arestas abruptas e proporcionando maior naturalidade visual.</p>
 <blockquote>
+<ul>
+<li>
+<p>Evita contornos artificiais e segmentados.</p>
+</li>
+<li>
+<p>Garante continuidade visual entre superfícies.</p>
+</li>
+<li>
+<p>Essencial para modelagem orgânica e realista.</p>
+</li>
+<li>
+<p>São fundamentais para simular superfícies orgânicas, como rostos, músculos e tecidos, onde a precisão dos detalhes depende da qualidade da curva utilizada.</p>
+</li>
+<li>
+<p>Reduz a quantidade de polígonos necessários para modelar formas complexas, otimizando o desempenho em aplicações gráficas.</p>
+</li>
+<li>
+<p>Facilitam ajustes e refinamentos no design, permitindo alterações precisas sem reconstruir toda a geometria.</p>
+</li>
+<li>
+<p>Objetos que dependem de curvas para definição precisa, como personagens, veículos e elementos arquitetônicos.</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="exemplo-perfil-de-um-automovel">Exemplo: <strong>Perfil de um Automóvel</strong><a class="headerlink" href="#exemplo-perfil-de-um-automovel" title="Permanent link">&para;</a></h3>
+<p>Uma das aplicações clássicas das curvas é a definição do perfil lateral de um automóvel. O contorno da carroceria é desenhado utilizando curvas Bézier para garantir suavidade e precisão nas transições entre partes como teto, portas e para-lamas.</p>
+<pre class="mermaid"><code>    graph TD
+        A[Frente do carro] -- Curva Bézier --&gt; B[Teto]
+        B -- Curva Bézier --&gt; C[Traseira]
+        A -- Curva Bézier --&gt; D[Para-lama]
+        D -- Curva Bézier --&gt; C</code></pre>
 <p>No software de modelagem, cada segmento do perfil pode ser ajustado movendo os pontos de controle das curvas, permitindo criar desde carros esportivos com linhas agressivas até veículos clássicos com formas arredondadas.</p>
 <p>Também é possível visualizar o uso de curvas na modelagem de personagens, onde o contorno do rosto, braços e pernas é definido por curvas suaves para garantir naturalidade e realismo.</p>
-</blockquote>
-<h4 id="como-curvas-facilitam-a-transicao-entre-formas-simples-e-superficies-complexas-permitindo-maior-controle-sobre-o-design">Como curvas facilitam a transição entre formas simples e superfícies complexas, permitindo maior controle sobre o design.<a class="headerlink" href="#como-curvas-facilitam-a-transicao-entre-formas-simples-e-superficies-complexas-permitindo-maior-controle-sobre-o-design" title="Permanent link">&para;</a></h4>
+<h3 id="transicao-entre-formas-simples-e-superficies-complexas">Transição entre Formas Simples e Superfícies Complexas<a class="headerlink" href="#transicao-entre-formas-simples-e-superficies-complexas" title="Permanent link">&para;</a></h3>
+<p>Curvas facilitam a transição entre formas simples e superfícies complexas, permitindo maior controle sobre o design.</p>
 <ul>
 <li>As curvas atuam como elementos intermediários entre formas geométricas básicas (como linhas e círculos) e superfícies complexas, permitindo ao designer controlar com precisão a geometria do objeto.</li>
 <li>Ao ajustar os pontos de controle e parâmetros das curvas, é possível criar transições suaves entre diferentes regiões, conectar partes distintas e definir contornos detalhados. </li>
 <li>Resulta em superfícies contínuas e orgânicas, essenciais para modelagem de objetos realistas. Além disso, o uso de curvas possibilita modificações localizadas sem afetar toda a estrutura, tornando o processo de refinamento do design mais eficiente e flexível.</li>
 </ul>
-<h4 id="o-uso-de-curvas-com-tecnicas-de-animacao-e-simulacao-destacando-sua-versatilidade-em-diferentes-areas-da-computacao-grafica">O uso de curvas com técnicas de animação e simulação, destacando sua versatilidade em diferentes áreas da computação gráfica.<a class="headerlink" href="#o-uso-de-curvas-com-tecnicas-de-animacao-e-simulacao-destacando-sua-versatilidade-em-diferentes-areas-da-computacao-grafica" title="Permanent link">&para;</a></h4>
+<h3 id="curvas-como-tecnica-de-animacao-e-simulacao">Curvas como técnica de animação e simulação<a class="headerlink" href="#curvas-como-tecnica-de-animacao-e-simulacao" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Conceitos fundamentais: ponto, linha, curva, e suas representações matemáticas.</p>
@@ -776,7 +792,7 @@
 <p>Exemplos práticos de aplicação: criação de círculos, elipses, superfícies e objetos orgânicos.</p>
 </li>
 </ul>
-<h4 id="2-curvas-parametricas-e-suas-propriedades">2. Curvas Paramétricas e Suas Propriedades<a class="headerlink" href="#2-curvas-parametricas-e-suas-propriedades" title="Permanent link">&para;</a></h4>
+<h3 id="2-curvas-parametricas-e-suas-propriedades">2. Curvas Paramétricas e Suas Propriedades<a class="headerlink" href="#2-curvas-parametricas-e-suas-propriedades" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Definir e explicar curvas paramétricas, como as curvas de Bézier, B-Splines e NURBS.</p>
@@ -787,7 +803,7 @@
 <li>Demonstração matemática simplificada da composição destas curvas.</li>
 <li>Explorar o conceito de interpolação e aproximação na geração de curvas.</li>
 </ul>
-<h4 id="3-ferramentas-de-modelagem-de-curvas-em-software-3d-ex-blender">3. Ferramentas de Modelagem de Curvas em Software 3D (Ex: Blender)<a class="headerlink" href="#3-ferramentas-de-modelagem-de-curvas-em-software-3d-ex-blender" title="Permanent link">&para;</a></h4>
+<h3 id="3-ferramentas-de-modelagem-de-curvas-em-software-3d-ex-blender">3. Ferramentas de Modelagem de Curvas em Software 3D (Ex: Blender)<a class="headerlink" href="#3-ferramentas-de-modelagem-de-curvas-em-software-3d-ex-blender" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Introdução prática à criação e edição de curvas:</li>
 <li>Criação de curvas Bézier e NURBS.</li>
@@ -837,8 +853,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 

@@ -745,12 +745,11 @@ h1, h2, h3 {
 </ul>
 <hr />
 <h3 id="exemplo-visual-perfil-de-um-automovel">Exemplo Visual: Perfil de um Automóvel<a class="headerlink" href="#exemplo-visual-perfil-de-um-automovel" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TD
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Frente do carro] -- Curva Bézier --&gt; B[Teto]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B -- Curva Bézier --&gt; C[Traseira]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    A -- Curva Bézier --&gt; D[Para-lama]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D -- Curva Bézier --&gt; C
-</span></code></pre></div>
+<pre class="mermaid"><code>graph TD
+    A[Frente do carro] -- Curva Bézier --&gt; B[Teto]
+    B -- Curva Bézier --&gt; C[Traseira]
+    A -- Curva Bézier --&gt; D[Para-lama]
+    D -- Curva Bézier --&gt; C</code></pre>
 <ul>
 <li>O perfil do carro é desenhado com curvas Bézier para garantir suavidade e precisão.</li>
 <li>Pontos de controle permitem criar desde linhas agressivas até formas arredondadas.</li>
