@@ -1,10 +1,10 @@
 Abaixo está o **modelo de estrutura em Markdown** completo e padronizado para o **Relatório Curto** e para a **Storyboard**, elaborado estritamente de acordo com os entregáveis e requisitos exigidos na documentação da AP1.
 
-Os alunos podem copiar a estrutura abaixo, preencher os campos indicados entre colchetes (`[ ... ]`) e salvar o arquivo diretamente como **`Relatorio_AP1_NomeSobrenome.md`** (ou convertê-lo para `.pdf`) para envio junto ao arquivo `.blend`.
+Vocês podem copiar a estrutura abaixo, preencher os campos indicados entre colchetes (`[ ... ]`) e salvar o arquivo diretamente como **`Relatorio_AP1_NomeSobrenome.md`** (ou convertê-lo para `.pdf`) para envio junto ao arquivo `.blend`.
 
 ---
 
-# 📄 Modelo de Documentação: Relatório Curto e Storyboard (AP1)
+# Modelo de Documentação: Relatório Curto e Storyboard (AP1)
 
 ```markdown
 # AP1 — Relatório Técnico e Planejamento Visual: “Ibmec em 15 segundos”
@@ -17,7 +17,7 @@ Os alunos podem copiar a estrutura abaixo, preencher os campos indicados entre c
 
 ---
 
-## 📑 PARTE 1: RELATÓRIO CURTO
+## PARTE 1: RELATÓRIO CURTO
 
 ### 1. Título da Peça e Conceito Geral
 * **Título da Peça:** "[Inserir o Título da Peça — Ex: 'Ibmec: O Padrão do Futuro']"
@@ -61,7 +61,7 @@ Para a segunda etapa da avaliação (AP2), estão planejadas as seguintes evolu�
 
 ---
 
-## 🎨 PARTE 2: STORYBOARD (PLANEJAMENTO AUDIOVISUAL DE 15 SEGUNDOS)
+## PARTE 2: STORYBOARD (PLANEJAMENTO AUDIOVISUAL DE 15 SEGUNDOS)
 
 A storyboard a seguir divide a animação planejada para a AP2 em **três momentos principais**, cobrindo o intervalo total de 360 frames a 24 fps:
 
@@ -95,13 +95,10 @@ A storyboard a seguir divide a animação planejada para a AP2 em **três moment
 | • Foco do Áudio/Visual: [Ex: Encerramento estático e elegante da vinheta...]      |
 +-----------------------------------------------------------------------------------+
 ```
-
 ---
 
-### 📌 Dicas Rápidas para a Validação dos Entregáveis
+### Dicas Rápidas para a Validação dos Entregáveis
 
 1. **Capturas de Tela para Anexar:** Lembre-se de gerar 1 imagem do enquadramento principal da câmera (em *Solid* ou *Material Preview*) e 3 capturas adicionais exibindo os detalhes da palavra **Ibmec** e dos três objetos autorais.
 2. **Nome do Arquivo `.blend`:** Confirme se o arquivo da cena no Blender foi salvo com a nomenclatura padrão `AP1_NomeSobrenome.blend`.
 3. **Coleção e Organização:** Garanta que todos os objetos criados estejam dentro da coleção `AP1_Ibmec_Conceito`.
-
-🎯 Quer que eu ajude a preencher um exemplo fictício desse relatório com uma ideia de cena completa (com título, narrativa e 3 objetos detalhados) para servir de inspiração para os alunos?
