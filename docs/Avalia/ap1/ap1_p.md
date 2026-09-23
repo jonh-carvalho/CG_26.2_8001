@@ -76,8 +76,7 @@ obrigatória na AP1; os momentos abaixo funcionam como planejamento para a AP2.
 	entrar no Edit Mode.
     - o CUBO deve estar frontalmente posicionado em relação à câmera, com a face frontal voltada para o espectador.
         - Rotacionar o cubo 90° no eixo X ou Y pode ser necessário para alinhar a face frontal com a câmera.
-    - Faça um `Inset` na face frontal e depois um `Extrude` para dentro, criando
-	uma abertura. Remova a face central ou modele duas colunas e uma travessa
+    - Faça um `Inset` na face frontal e depois um `Extrude` para dentro, criando uma abertura. Remova a face central ou modele duas colunas e uma travessa
 	para deixar o texto visível.
     - Aplique um pequeno `Bevel` nas arestas. Esses passos demonstram inset,
 	extrusão e bevel sem depender de escala simples de primitivas.
