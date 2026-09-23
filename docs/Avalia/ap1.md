@@ -38,8 +38,8 @@ Os três objetos podem ser modelados obrigatoriamente do zero ou construídos a 
 6. Utilizar pelo menos dois recursos de modelagem além da simples escala de primitivas, por exemplo: extrusão, inset, bevel, loop cut, edição proporcional, curvas, superfícies, modificadores ou composição de malhas.
 7. Configurar uma câmera principal para apresentar a composição. A câmera deve estar pronta para receber a animação na AP2, mas não precisa ser animada nesta etapa.
 8. Definir a duração planejada da peça como **15 segundos a 24 fps**, totalizando **360 frames**. Não é obrigatório renderizar o vídeo na AP1.
-9. Criar uma [storyboard(modelo)](./ap1/modelo.md) simples com pelo menos três momentos: início, destaque ou transformação da palavra e encerramento.
-	- [Template Preenchido](./ap1/modelo_preenchido.md). 
+9. Criar uma [**storyboard(modelo)**](./ap1/modelo.md) simples com pelo menos três momentos: início, destaque ou transformação da palavra e encerramento.
+	- [**Template Preenchido**](./ap1/modelo_preenchido.md). 
 
 ## O que fica para a AP2
 
