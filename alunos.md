@@ -23,3 +23,7 @@ https://github.com/andreccoelho/andre_CG_26.2_8001
 https://github.com/Marcio202302986072/AC-1---Marcio-Moreira-do-Nascimento-Filho
 
 https://github.com/bernardp112/Computacao_Grafica
+
+https://github.com/marceufilho/Marceu_CG_26.2_8001
+
+https://github.com/vitorsossa/Ac_Computacao_grafica
