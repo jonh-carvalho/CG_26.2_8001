@@ -9,7 +9,7 @@ Aula 04 - 26/08/2026 | :material-check: [Transformações Geométricas 3D](../Di
 Aula 05 - 02/09/2026 | :material-check:  [Projeções Geométricas](../Disciplina/docs/aula07/projecoes.pdf) <br> :material-check: [Matriz View](../Disciplina/docs/aula08/Aula7.pdf) <br> :material-check: [Matriz Wavefront](../Disciplina/docs/aula08/Aula8.pdf)|
 Aula 06 - 09/09/2026 | :material-check: [Modelagem Geométrica](../Disciplina/docs/aula08/modelagem_geometrica.pdf) <br>  |
 Aula 07 - 16/09/2026 | :material-check: [Curvas](../Disciplina/docs/aula08/curvas.md) <br> :material-check:  [Superfícies](../Disciplina/docs/aula08/superficies.md) |
-Aula 08 - 23/09/2026 | :material-check:  |
+Aula 08 - 23/09/2026 | :material-check: [Prática](../Avalia/ap1/ap1_p2.md) |
 Aula 09 - 30/09/2026 | :material-check: AP1 |
 
 

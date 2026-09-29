@@ -7,13 +7,18 @@ Com base no **enunciado da AP1**, o objetivo desse roteiro é a **construção d
 #### **Passo 1: Organização e Gestão da Cena no Outliner (10 min)**
 
 1. **Criar a Coleção da AP1:**
-   * No painel **Outliner** (canto superior direito), clique com o botão direito e escolha **New Collection**.
-   * Renomeie para `AP1_Ibmec_Conceito`.
+   
+   - No painel **Outliner** (canto superior direito), clique com o botão direito e escolha **New Collection**.
+   
+   - Renomeie para `AP1_Ibmec_Conceito`.
+
 2. **Criação e Conversão do Texto Principal:**
+   
    * Pressione **`Shift + A`** > **Text**.
    * Pressione **`Tab`** para entrar no Edit Mode, apague o texto e digite `Ibmec`.
    * Volte ao Object Mode (**`Tab`**), vá no painel de propriedades do texto (ícone `a` verde à direita) e, em **Geometry > Extrude**, adicione `0.1 m` de relevo.
    * Clique com o **Botão Direito (RMB)** sobre o texto na Viewport 3D e escolha **Convert To > Mesh** (transformando o texto em malha poligonal).
+
 3. **Resetar Transformações:**
    * Pressione **`Ctrl + A`** > **All Transforms** para congelar a escala `1.0` e a rotação `0.0`.
 
