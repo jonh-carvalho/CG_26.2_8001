@@ -5,6 +5,7 @@ hide:
     - template: home.html
 ---
 
+## **Não haverá aula hoje(30/09/2026), apenas envio da AP1**
 
 <div class="grid cards" markdown>
 
