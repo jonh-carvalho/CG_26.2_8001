@@ -15,7 +15,9 @@ nav:
          # - Rasterização: Disciplina\docs\aula04\rasteriza.ipynb
           #- Transformações Geométricas 2D: Disciplina\docs\aula05\Aula5.Ex1 - Transformação Geométrica (Exemplos em 2D).ipynb
           #- Transformações Geométricas 3D: Disciplina\docs\aula05\Aula5.Ex3 - Cubo - Transformação Geométrica 3D.ipynb
-
+      - Textos: 
+        - Cor e Visão: Disciplina/docs/aula10/cor_visao.md
+        - Cor e Representação: Disciplina/docs/aula10/cor_representacao.md
   - Avaliações:
       - AP1: Avalia/ap1.md
       #- AP2: Avalia/ap2.md
