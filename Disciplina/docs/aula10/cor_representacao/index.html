@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../cor_visao/">
+      
+      
+        <link rel="next" href="../../../../Avalia/ap1/">
       
       
       <link rel="icon" href="../../../../assets/ibmec_icon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Transformações em Objetos 3D com Python no Blender - CG_26.2_8001</title>
+        <title>Cor e Representação - CG_26.2_8001</title>
       
     
     
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transformacoes-em-objetos-3d-com-python-no-blender" class="md-skip">
+        <a href="#representacao-e-processamento-digital-de-imagens" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transformações em Objetos 3D com Python no Blender
+              Cor e Representação
             
           </span>
         </div>
@@ -250,10 +254,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../aulas/" class="md-tabs__link">
           
   
@@ -381,8 +387,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -396,17 +404,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -419,7 +430,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Disciplina
@@ -476,8 +487,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -492,11 +505,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -512,7 +525,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Textos
@@ -526,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula10/cor_visao/" class="md-nav__link">
+      <a href="../cor_visao/" class="md-nav__link">
         
   
   
@@ -546,10 +559,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../aula10/cor_representacao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cor e Representação
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -560,6 +593,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#representacao-e-processamento-digital-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representação e Processamento Digital de Imagens
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -837,22 +897,193 @@
   
 
 
-<h1 id="transformacoes-em-objetos-3d-com-python-no-blender">Transformações em Objetos 3D com Python no Blender<a class="headerlink" href="#transformacoes-em-objetos-3d-com-python-no-blender" title="Permanent link">&para;</a></h1>
-<h2 id="documentacao-oficial">Documentação Oficial<a class="headerlink" href="#documentacao-oficial" title="Permanent link">&para;</a></h2>
-<p>A API do Blender oferece operadores como <code>bpy.ops.transform.translate</code>, <code>rotate</code>, <code>resize</code> e <code>transform</code> para translações, rotações, escalas e matrizes de transformação em objetos 3D. Acesse a referência completa para scripts personalizados: https://docs.blender.org/api/current/bpy.ops.transform.html .</p>
-<h2 id="videos-tutoriais">Vídeos Tutoriais<a class="headerlink" href="#videos-tutoriais" title="Permanent link">&para;</a></h2>
+  <h1>Cor e Representação</h1>
+
+<h2 id="representacao-e-processamento-digital-de-imagens">Representação e Processamento Digital de Imagens<a class="headerlink" href="#representacao-e-processamento-digital-de-imagens" title="Permanent link">&para;</a></h2>
+<p>Sumário Executivo</p>
+<p>Este documento sintetiza os princípios fundamentais da representação, processamento e codificação digital de imagens, bem como os modelos de cores e a análise comparativa entre os sistemas visuais humano e artificial. Os pontos mais críticos abordados nas fontes incluem:</p>
 <ul>
-<li>Vídeo sobre transformações básicas (move, rotate, scale) em Python no Blender: https://www.youtube.com/watch?v=IyBdqIVdxkc. <a href="https://www.youtube.com/watch?v=IyBdqIVdxkc">youtube</a></li>
-<li>Como selecionar e transformar objetos com Python: https://www.youtube.com/watch?v=VAmNUSUdVA0. <a href="https://www.youtube.com/watch?v=VAmNUSUdVA0">youtube</a></li>
-<li>Tutorial em português sobre alinhamento de objetos via scripts Python: https://www.youtube.com/watch?v=mWNt8YVhyzU. <a href="https://www.youtube.com/watch?v=mWNt8YVhyzU">youtube</a>
-A imagem mostra um exemplo de cena 3D criada com Python no Blender, incluindo objetos orbitando, ideal para visualizar transformações.</li>
+<li>Definição e Escopo do Processamento de Imagens: O processamento não visa criar imagens a partir de dados brutos (computação gráfica), mas manipular, tratar, exibir e extrair informações de imagens previamente geradas.</li>
+<li>Estrutura da Imagem Digital: As imagens são representadas por matrizes de pontos chamados pixels (Bit-Map), cujas resoluções espaciais dependem da quantidade de elementos nos eixos horizontal (X) e vertical (Y).</li>
+<li>Psicofísica do Sistema Visual Humano: A percepção de cores baseia-se na teoria dos três estímulos (tri-stimulus theory), com receptores sensíveis a comprimentos de onda específicos (Vermelho: 700 nm, Verde: 546,1 nm, Azul: 435,8 nm). O olho humano possui maior sensibilidade ao verde e à luminância do que às variações de cromaticidade.</li>
+<li>Modelos e Espaços de Cores: Destacam-se os modelos aditivos (RGB), subtrativos (CMY/CMYK) e modelos desacoplados orientados à transmissão ou ao usuário (YIQ, YUV, HSI, HLS, HSV). O desacoplamento da luminância em relação à cor é essencial tanto para a economia de banda em transmissões de TV quanto para o processamento de imagem em algoritmos inspirados na visão humana.</li>
+<li>Codificação e Profundidade de Bits: A quantização define a quantidade de cores disponíveis. Sistemas de Cor Verdadeira (True Color) utilizam 24 bits/pixel (16 milhões de cores), enquanto sistemas limitados (4 ou 8 bits) empregam paletas de cores (Color Look-Up Tables) e técnicas como dithering para simular nuances de cor.</li>
+<li>
+<p>Visão Humana versus Visão Artificial: A visão humana é altamente flexível, subjetiva e otimizada para tarefas 3D no espectro visível. A visão artificial opera em espectros amplos (raios X ao infravermelho), é altamente exata e rápida em medições 2D baseadas em pixels, mas rígida e limitada em contexto tridimensional.</p>
+</li>
+<li>
+<p>Fundamentos e Aplicações do Processamento de Imagens</p>
+</li>
 </ul>
-<h2 id="demos-e-scripts">Demos e Scripts<a class="headerlink" href="#demos-e-scripts" title="Permanent link">&para;</a></h2>
+<p>Definição e Conceito</p>
+<p>O Processamento de Imagens abrange a manipulação, exibição e tratamento de imagens digitais pré-existentes, além de prover a interface entre arquivos de imagem e dispositivos gráficos de entrada/saída. Não deve ser confundido com a geração sintética de imagens; seu foco é o aprimoramento do sinal visual ou a extração automática de dados contidos na imagem.</p>
+<p>Áreas de Aplicação</p>
+<p>As aplicações do processamento digital dividem-se centralmente em duas grandes categorias:</p>
+<ol>
+<li>Tratamento e Melhoria de Imagens:</li>
+<li>Medicina e Biologia;</li>
+<li>Controle de Qualidade industrial;</li>
+<li>Sistemas de Segurança e Monitoração;</li>
+<li>Geologia e Sensoriamento Remoto (processamento de imagens de satélite);</li>
+<li>Meteorologia.</li>
+<li>Reconhecimento e Classificação de Objetos:</li>
+<li>Sistemas de identificação de impressões digitais;</li>
+<li>Interpretação automática de textos (OCR);</li>
+<li>Visão artificial e Robótica;</li>
+<li>Exploração automatizada (sistemas de exploração submarina, anti-bombas e mísseis teleguiados).</li>
+</ol>
+<p>Estrutura e Resolução da Imagem Digital</p>
 <ul>
-<li>Script pronto para aplicar matriz de transformação em vértices de malha: https://gist.github.com/tesfabpel/a34e77154b47ea32eb46e8072a82051b. Copie e execute no Text Editor do Blender para testar rotações e translações. <a href="https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm">tripo3d</a></li>
-<li>Tutorial com Geometry Nodes via Python para transformações geométricas: https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm. <a href="https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm">tripo3d</a></li>
-<li>Exemplo de automação de animações 3D com Python: https://www.youtube.com/watch?v=BSsjSj0iOaE. <a href="https://www.youtube.com/watch?v=BSsjSj0iOaE">youtube</a></li>
+<li>Pixel (Picture Element / Dot): Elemento básico e indivisível de uma imagem.</li>
+<li>Mapa de Bits (Bit-Map): Matriz bidimensional de pixels dispostos na tela do computador. Cada pixel contém uma informação de cor associada, obtida de forma direta ou por meio de consulta indireta a uma tabela de palette.</li>
+<li>Resolução Espacial: Define a quantidade de pontos disponíveis nas dimensões horizontal (eixo X) e vertical (eixo Y).</li>
 </ul>
+<p>Padrões de Resolução e Razão de Aspecto</p>
+<p>Dispositivo / Sistema   Resolução Típica (Pixels)   Razão de Aspecto
+Campo Visual Humano 3000 \times 3000    N/A
+Televisão Comum (NTSC / PAL-M)  512 \times 480  4/3
+Computadores PC 640 \times 480, 800 \times 600, 1024 \times 768 4/3
+Televisão de Alta Definição (HDTV)  2000 \times 1100    \approx 2
+Cinema  Variável    \approx 2</p>
+<ol>
+<li>Psicofísica da Visão Humana e Teoria das Cores</li>
+</ol>
+<p>Receptores e Sensibilidade do Olho Humano</p>
+<p>O espectro visível humano situa-se entre 400 nm (violeta) e 700 nm (vermelho) — com algumas tabelas do material registrando a faixa estendida de luz visível de 300 nm a 700 nm.</p>
+<p>A percepção das cores fundamenta-se na Teoria dos Três Estímulos (tri-stimulus theory), segundo a qual a retina possui três tipos de receptores específicos para comprimentos de onda correspondentes às cores primárias:</p>
+<ul>
+<li>Vermelho (Red): Pico em 700 nm;</li>
+<li>Verde (Green): Pico em 546,1 nm;</li>
+<li>Azul (Blue): Pico em 435,8 nm.</li>
+</ul>
+<p>O olho humano não apresenta sensibilidade uniforme ao espectro: possui maior sensibilidade ao verde, seguida pela sensibilidade ao vermelho, sendo consideravelmente menor a sensibilidade ao azul. As cores percebidas no cotidiano são o resultado de uma combinação linear (soma ponderada) das intensidades dessas três faixas.</p>
+<p>Parâmetros Fundamentais da Cor</p>
+<p>As fontes luminosas e a percepção cromática caracterizam-se por três parâmetros principais:</p>
+<ol>
+<li>Intensidade / Luminância / Brilho (Brightness):</li>
+<li>Mede a energia luminosa emitida ou refletida.</li>
+<li>O valor zero (ausência de energia) representa o preto.</li>
+<li>É o parâmetro visual ao qual o olho humano é mais sensível.</li>
+<li>Sistemas monocromáticos (escala de cinza) operam exclusivamente com informação de luminância (geralmente codificada em 8 bits).</li>
+<li>Matiz (Hue):</li>
+<li>Representa o comprimento de onda dominante da radiação luminosa.</li>
+<li>Distingue a identidade da cor (ex.: diferença entre azul, verde e vermelho).</li>
+<li>Codificação típica: cerca de 4 bits.</li>
+<li>Saturação:</li>
+<li>Mede a pureza da cor ou a quantidade de luz branca misturada a ela.</li>
+<li>A cor branca representa saturação zero (impureza máxima, mistura de todas as cores).</li>
+<li>Cores altamente saturadas são chamadas de "brilhantes"; cores com baixa saturação são denominadas "pastel".</li>
+<li>
+<p>Codificação típica: cerca de 4 bits.</p>
+</li>
+<li>
+<p>Modelos e Espaços de Cores</p>
+</li>
+</ol>
+<p>A representação de cores varia conforme o objetivo tecnológico (exibição em telas, impressão de pigmentos, transmissão de vídeo ou processamento centrado na percepção do usuário).</p>
+<p>Sistema Aditivo (RGB)</p>
+<ul>
+<li>Fundamento: Baseia-se na emissão direta de luz por três fontes primárias (Red, Green, Blue).</li>
+<li>Funcionamento: A cor final é obtida adicionando-se intensidade às componentes.</li>
+<li>Intensidade zero em R, G e B \rightarrow Preto.</li>
+<li>Intensidade máxima em R, G e B \rightarrow Branco.</li>
+<li>Aplicações: Monitores de computador, displays e dispositivos de tubo de imagem (CRT).</li>
+</ul>
+<p>Sistema Subtrativo (CMY e CMYK)</p>
+<ul>
+<li>Fundamento: Baseia-se na absorção e reflexão da luz por pigmentos e tintas (Ciano, Magenta, Amarelo). É o modelo complementar/inverso do RGB.</li>
+<li>Geometria de Espaço: Pode ser representado por um cubo simétrico ao cubo RGB, no qual a origem (0,0,0) é o Branco e o vértice máximo (1,1,1) representa o Preto.</li>
+<li>Variante CMYK: Adiciona o pigmento preto (Key/Black) devido à dificuldade prática de obter pigmentos puros que resultem num preto perfeito pela mistura de C, M e Y.</li>
+<li>Aplicações: Processos de impressão gráfica e fotografia.</li>
+</ul>
+<p>Modelos de Cores Desacoplados e Orientados à Aplicação</p>
+<ol>
+<li>Sistemas YIQ e YUV (Transmissão de Vídeo)</li>
+</ol>
+<p>Projetados para a transmissão comercial de TV (padrão NTSC) e compatibilidade com receptores em preto e branco.</p>
+<ul>
+<li>Desacoplamento: A componente de luminância (Y) é mantida em uma banda de frequência mais larga, enquanto as componentes de cromaticidade (I e Q ou U e V) utilizam bandas mais estreitas (as cromaticidades podem ser codificadas em apenas 5% da banda sem degradar o sinal).</li>
+<li>Fórmulas do Sistema YUV:</li>
+<li>U = 0,493 \times (B - Y)</li>
+<li>V = 0,877 \times (R - Y)</li>
+<li>
+<p>Matriz de Conversão RGB para YIQ: \begin{bmatrix} Y \ I \ Q \end{bmatrix} = \begin{bmatrix} 0,30 &amp; 0,59 &amp; 0,11 \ 0,60 &amp; -0,28 &amp; -0,32 \ 0,21 &amp; -0,52 &amp; 0,31 \end{bmatrix} \begin{bmatrix} R \ G \ B \end{bmatrix}</p>
+</li>
+<li>
+<p>Sistemas HSI, HSV e HLS (Orientados ao Usuário)</p>
+</li>
+<li>
+<p>Estes sistemas estruturam a cor em termos de Matiz (Hue), Saturação (Saturation) e Intensidade (Intensity) / Valor (Value) / Luminância (Lightness).</p>
+</li>
+<li>Ao desacoplar a intensidade das informações cromáticas, o modelo HSI aproxima-se da percepção visual humana, tornando-se ideal para o desenvolvimento de algoritmos de processamento de imagens baseados no olho humano.</li>
+<li>A interface gráfica dos sistemas operacionais frequentemente disponibiliza caixas de seleção baseadas no modelo HLS combinadas com entradas RGB.</li>
+</ul>
+<p>Gama de Cores (Gamut)</p>
+<p>A Gama de um sistema é o conjunto total de cores que pode ser produzido a partir de suas primárias. O aumento da saturação das primárias amplia a gama do sistema.</p>
+<p>Hierarquia de Gamut entre Tecnologias: \text{Fotografia} &gt; \text{Monitores Profissionais} &gt; \text{TV Comum} \text{Monitores} &gt; \text{Técnicas de Impressão}</p>
+<ol>
+<li>Codificação, Quantização e Transparência</li>
+</ol>
+<p>Codificação e Quantização</p>
+<ul>
+<li>Canal de Cor: Cada cor primária individual usada no sistema.</li>
+<li>Amostragem: Processo em que a intensidade de cada primária é codificada em um valor discreto para o canal.</li>
+<li>Quantização: Define a precisão/número de bits alocados por canal (comumente entre 1 e 8 bits).</li>
+</ul>
+<p>Cor Verdadeira (True Color) versus Sistemas de Paleta</p>
+<ol>
+<li>Sistemas de Cor Verdadeira (True Color):</li>
+<li>O valor do pixel é a combinação direta dos valores dos canais.</li>
+<li>Padrão 24 bits: 8 bits para cada uma das 3 primárias (R, G, B), gerando 256 níveis de luminância por canal \rightarrow reproduz cerca de 16 milhões de cores.</li>
+<li>Padrão 15 bits (Econômico): Usa 5 bits por cor (32.768 cores). Para ajustar em palavras de 16 bits, pode-se usar uma codificação não simétrica sacrifiçando a precisão da cor azul, ou reservando o bit extra para transparência.</li>
+<li>Sistemas de Paleta / Tabela de Cores (Color Look-Up Table - LUT):</li>
+<li>Utilizados quando a capacidade gráfica do hardware é menor que a de cor verdadeira (sistemas de 4 ou 8 bits).</li>
+<li>O valor gravado no pixel não representa a cor final, mas sim um índice referente a uma tabela de cores armazenada em memória dedicada.</li>
+<li>Em modos 8 bits (VGA/SuperVGA), permite a exibição simultânea de até 256 cores.</li>
+<li>Diminui a profundidade do pixel, reduzindo o uso de memória do sistema.</li>
+</ol>
+<p>Técnica de Dithering</p>
+<p>Em imagens restritas a 8 bits, o realismo é prejudicado. Para mitigar esse problema, troca-se resolução espacial por resolução de cor: grupos de pixels vizinhos são combinados com diferentes padrões de cores para simular tons que não existem diretamente na paleta ativa.</p>
+<p>Codificação da Transparência (Canal Alfa)</p>
+<ul>
+<li>Sistemas de 16 bits (15 bits + 1 bit alfa): O bit adicional especifica transparência binária para o pixel (cada pixel é estritamente opaco ou transparente).</li>
+<li>
+<p>Sistemas de 32 bits (24 bits RGB + 8 bits alfa): O canal alfa dedicado de 8 bits permite até 256 gradações de transparência, recurso amplamente aplicado em efeitos e processamento de vídeo.</p>
+</li>
+<li>
+<p>Diretrizes para o Uso Eficiente de Cores</p>
+</li>
+</ul>
+<p>O uso de cores em interfaces digitais atende a propósitos estéticos, de destaque visual e de codificação de dados (como relevo, variação de temperatura e dinâmica de fluidos). Devido às limitações fisiológicas do sistema visual humano, aplicam-se as seguintes regras:</p>
+<ul>
+<li>Sensibilidade Espacial: O olho humano é mais sensível a variações espaciais de intensidade do que de cor. Detalhes pequenos devem diferir do fundo primariamente em intensidade (brilho) e não apenas em tonalidade.</li>
+<li>Combinações Inadequadas:</li>
+<li>Azul e preto;</li>
+<li>Amarelo e branco;</li>
+<li>Regra de Ouro: Não utilizar a cor azul para elementos de texto.</li>
+<li>Acessibilidade para Daltônicos: Evitar o uso simultâneo de verdes e vermelhos que apresentem baixa saturação e baixa intensidade.</li>
+<li>Percepção de Objetos Pequenos: A capacidade humana de identificar e discriminar cores cai drasticamente em objetos de pequenas dimensões.</li>
+<li>Ilusões e Efeitos Contextuais:</li>
+<li>A cor percebida de um elemento é alterada diretamente pela cor do fundo que o circunda.</li>
+<li>Cores altamente saturadas causam o surgimento de pós-imagens (afterimages) no olho humano.</li>
+<li>
+<p>Cores afetam o tamanho e a distância percebidos: objetos na cor vermelha aparentam ser maiores do que objetos na cor verde. Além disso, a refração diferenciada das cores na lente ocular causa a ilusão de que as cores estão a distâncias distintas do observador.</p>
+</li>
+<li>
+<p>Comparação Extensiva: Sistema Visual Humano vs. Visão Artificial</p>
+</li>
+</ul>
+<p>A tabela a seguir consolida as diferenças funcionais e físicas entre o sistema biológico humano e os sistemas de visão computacional artificial:</p>
+<p>Parâmetro de Comparação Sistema Visual Humano   Sistema de Visão Artificial
+Espectro de Atuação Limitado à faixa de luz visível (300\text{ nm} a 700\text{ nm}).    Opera em praticamente todo o espectro eletromagnético (dos raios X ao infravermelho).
+Flexibilidade   Extremamente flexível; adapta-se facilmente a diferentes tarefas e ambientes de trabalho.   Normalmente inflexível; apresenta bom desempenho apenas na tarefa específica para a qual foi projetado.
+Habilidade / Precisão   Estabelece estimativas relativamente precisas em julgamentos subjetivos.    Efetua medições exatas baseadas em contagem de pixels (depende da resolução da imagem digitalizada).
+Processamento de Cor    Possui capacidade de interpretação altamente subjetiva de cores.    Mede de forma objetiva e quantitativa os valores das componentes R, G e B.
+Sensibilidade Ambiental Adapta-se a variações de iluminação, características da superfície e distância do objeto.   Sensível ao nível e padrão de iluminação, à distância do objeto e às suas características físicas.
+Níveis de Cinza Limitado na distinção simultânea de muitos níveis de cinza. Trabalha facilmente com centenas de tons de cinza simultâneos, conforme o projeto do digitalizador.
+Tempo de Resposta   Elevado, situado na ordem de 0,1\text{ segundo}.    Dependente do hardware, podendo alcançar tempos tão baixos quanto 0,001\text{ segundo}.
+Processamento 2D e 3D   Executa tarefas 3D e processa múltiplos comprimentos de onda facilmente.    Executa tarefas 2D com facilidade, mas é lento e bastante limitado em tarefas 3D.
+Percepção de Brilho Percebe variações de brilho em escala logarítmica. A interpretação depende da área ao redor.    Pode perceber o brilho em escala linear ou logarítmica.</p>
 
 
 

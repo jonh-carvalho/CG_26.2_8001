@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../../../ambiente/">
+      
+      
+        <link rel="next" href="../cor_representacao/">
       
       
       <link rel="icon" href="../../../../assets/ibmec_icon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Transformações em Objetos 3D com Python no Blender - CG_26.2_8001</title>
+        <title>Cor e Visão - CG_26.2_8001</title>
       
     
     
@@ -71,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#transformacoes-em-objetos-3d-com-python-no-blender" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transformações em Objetos 3D com Python no Blender
+              Cor e Visão
             
           </span>
         </div>
@@ -250,10 +249,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../aulas/" class="md-tabs__link">
           
   
@@ -381,8 +382,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -396,17 +399,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -419,7 +425,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Disciplina
@@ -476,8 +482,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -492,11 +500,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -512,7 +520,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Textos
@@ -523,10 +531,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../aula10/cor_visao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -537,6 +552,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -549,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula10/cor_representacao/" class="md-nav__link">
+      <a href="../cor_representacao/" class="md-nav__link">
         
   
   
@@ -837,22 +853,125 @@
   
 
 
-<h1 id="transformacoes-em-objetos-3d-com-python-no-blender">Transformações em Objetos 3D com Python no Blender<a class="headerlink" href="#transformacoes-em-objetos-3d-com-python-no-blender" title="Permanent link">&para;</a></h1>
-<h2 id="documentacao-oficial">Documentação Oficial<a class="headerlink" href="#documentacao-oficial" title="Permanent link">&para;</a></h2>
-<p>A API do Blender oferece operadores como <code>bpy.ops.transform.translate</code>, <code>rotate</code>, <code>resize</code> e <code>transform</code> para translações, rotações, escalas e matrizes de transformação em objetos 3D. Acesse a referência completa para scripts personalizados: https://docs.blender.org/api/current/bpy.ops.transform.html .</p>
-<h2 id="videos-tutoriais">Vídeos Tutoriais<a class="headerlink" href="#videos-tutoriais" title="Permanent link">&para;</a></h2>
+  <h1>Cor e Visão</h1>
+
+<p>Fundamentos da Visão Humana, Espectro Óptico e Iluminação Artificial (Com Tecnologia LED)</p>
+<ol>
+<li>Visão Geral e Contexto de Atualização</li>
+</ol>
+<p>Este relatório técnico-executivo tem como finalidade sintetizar os princípios fundamentais da percepção visual humana e da teoria da cor, além de atualizar a taxonomia tradicional das fontes de iluminação artificial para incorporar a tecnologia de iluminação de Estado Sólido (LED - Diodo Emissor de Luz). O documento consolida os parâmetros biológicos, físicos e cromáticos que regem a engenharia de iluminação e o desempenho dos sistemas ópticos modernos.</p>
+<p>A estrutura deste relatório apoia-se em três pilares centrais:</p>
 <ul>
-<li>Vídeo sobre transformações básicas (move, rotate, scale) em Python no Blender: https://www.youtube.com/watch?v=IyBdqIVdxkc. <a href="https://www.youtube.com/watch?v=IyBdqIVdxkc">youtube</a></li>
-<li>Como selecionar e transformar objetos com Python: https://www.youtube.com/watch?v=VAmNUSUdVA0. <a href="https://www.youtube.com/watch?v=VAmNUSUdVA0">youtube</a></li>
-<li>Tutorial em português sobre alinhamento de objetos via scripts Python: https://www.youtube.com/watch?v=mWNt8YVhyzU. <a href="https://www.youtube.com/watch?v=mWNt8YVhyzU">youtube</a>
-A imagem mostra um exemplo de cena 3D criada com Python no Blender, incluindo objetos orbitando, ideal para visualizar transformações.</li>
+<li>Fundamentos Biológicos e Ópticos: Anatomia do olho humano, mecanismos fisiológicos e fotorreceptores da percepção visual, além das características da radiação eletromagnética.</li>
+<li>Classificação de Fontes Luminosas: Mapeamento taxonômico abrangente de fontes naturais e artificiais, integrando as tecnologias tradicionais (incandescentes e de descarga) à eletroluminescência em estado sólido (LED).</li>
+<li>
+<p>Métricas de Desempenho do LED: Análise das propriedades cromáticas da luz artificial, com foco na Temperatura de Cor Correlacionada e no Índice de Reprodução de Cor embasados na distribuição espectral de potência.</p>
+</li>
+<li>
+<p>Anatomia do Sistema de Visão Humana e Mecanismos Perceptivos</p>
+</li>
 </ul>
-<h2 id="demos-e-scripts">Demos e Scripts<a class="headerlink" href="#demos-e-scripts" title="Permanent link">&para;</a></h2>
+<p>O sistema de visão humana processa o estímulo luminoso por meio de estruturas anatômicas especializadas que captam, focalizam e convertem a radiação eletromagnética em impulsos eletroquímicos para processamento pelo cérebro.</p>
+<p>Elemento Anatômico  Função / Descrição
+Esclerótica Membrana elástica externa de proteção, conhecida popularmente como o "branco do olho".
+Córnea  Elemento refrativo frontal transparente que atua como uma lente simples, captando e concentrando a luz incidente.
+Íris    Membrana colorida estruturada para regular a entrada de luz, controlando dinamicamente a dimensão da abertura central.
+Pupila  Orifício central negro delimitado pela íris, através do qual a luz efetivamente penetra no interior do olho.
+Humor aquoso    Fluido transparente contido na pequena câmara anterior localizada entre a córnea e o cristalino.
+Cristalino  Lente biconvexa flexível responsável pelo ajuste focal (acomodação) da imagem projetada.
+Humor vítreo    Substância gelatinosa transparente que preenche a cavidade posterior atrás do cristalino, mantendo a forma ocular.
+Retina  Superfície fotossensível composta por cerca de 100 milhões de fotorreceptores que convertem estímulos luminosos em sinais elétricos.
+Nervo ótico Via neural condutora encarregada de transmitir os sinais elétricos gerados na retina diretamente ao cérebro.</p>
+<p>Parâmetros do Processo Visual</p>
+<p>O funcionamento do olho humano envolve seis características operacionais principais durante o processamento da imagem:</p>
+<ol>
+<li>Acomodação: Ajuste dinâmico da distância focal do cristalino para focar objetos a diferentes distâncias.</li>
+<li>Adaptação: Capacidade de ajuste do sistema visual a amplas variações na intensidade luminosa do ambiente.</li>
+<li>Campo de Visão: Extensão angular da área espacial percebida simultaneamente por um olho estático.</li>
+<li>Acuidade: Capacidade de discriminação espacial e resolução de detalhes finos na cena visual.</li>
+<li>Persistência Visual: Fenômeno de retenção temporal da imagem na retina por uma fração de segundo.</li>
+<li>Visão de Cores: Capacidade de diferenciação e interpretação das variações no comprimento de onda do espectro visível.</li>
+</ol>
+<p>Visão Escotópica vs. Visão Fotópica</p>
+<p>A resposta do sistema visual opera em regimes diferenciados de acordo com o nível de iluminação e a ativação dos fotorreceptores retinal:</p>
 <ul>
-<li>Script pronto para aplicar matriz de transformação em vértices de malha: https://gist.github.com/tesfabpel/a34e77154b47ea32eb46e8072a82051b. Copie e execute no Text Editor do Blender para testar rotações e translações. <a href="https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm">tripo3d</a></li>
-<li>Tutorial com Geometry Nodes via Python para transformações geométricas: https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm. <a href="https://www.tripo3d.ai/pt/blog/collect/creating-a-geometry-nodes-network-with-blender-python-script-is8qu7onvzm">tripo3d</a></li>
-<li>Exemplo de automação de animações 3D com Python: https://www.youtube.com/watch?v=BSsjSj0iOaE. <a href="https://www.youtube.com/watch?v=BSsjSj0iOaE">youtube</a></li>
+<li>Visão Escotópica: Atua sob baixos níveis de luminância (próximos ao limiar de visão). É mediada prioritariamente pelos fotorreceptores do tipo bastonetes, que possuem altíssima sensibilidade à intensidade luminosa, porém não promovem a percepção de cores nem alta resolução espacial.</li>
+<li>
+<p>Visão Fotópica: Atua sob elevados níveis de intensidade luminosa (acima do limiar de transição). É mediada pelos cones, fotorreceptores concentrados na região central da retina especializados na visão de alta acuidade e no processamento da discriminação cromática.</p>
+</li>
+<li>
+<p>A Natureza da Luz e o Espectro Eletromagnético</p>
+</li>
 </ul>
+<p>A luz é uma forma de radiação eletromagnética radiante. Ao incidir sobre superfícies e meios materiais, a energia radiante interage por meio de três fenômenos ópticos fundamentais:</p>
+<ul>
+<li>Reflexão: Redirecionamento da radiação incidente que bate na superfície e retorna ao meio de origem.</li>
+<li>Absorção: Conversão ou retenção da energia radiante pela estrutura do matéria.</li>
+<li>Transmissão: Propagação da onda luminosa através de um meio físico transparente ou translúcido.</li>
+</ul>
+<p>O espectro eletromagnético engloba uma vasta amplitude de comprimentos de onda, dos quais apenas uma faixa restrita estimula o sistema visual humano.</p>
+<p>Classificação da Radiação   Faixa de Comprimento de Onda (nm)   Efeito / Categoria
+UV-C    100 a 280 nm    Ondas curtas
+UV-B    280 a 315 nm    Ondas médias (Actíneo)
+UV-A    315 a 400 nm    Ondas longas
+Espectro Visível    400 a 700 nm    Visível
+IV-A    700 a 1400 nm   Ondas curtas
+IV-B    1400 a 3000 nm  Ondas médias (Térmico)
+IV-C    mais de 3000 nm Ondas longas</p>
+<ol>
+<li>Percepção de Cor, Teoria Tricromática e Modelos Cromáticos</li>
+</ol>
+<p>A percepção de cores pelo ser humano é explicada pela Teoria Tricromática, a qual postula que a retina necessita de apenas três tipos de fotorreceptores operando em diferentes faixas de sensibilidade espectral para codificar a totalidade do espaço cromático. Aprofundando este princípio, a Teoria de Maxwell identifica que os três tipos de cones fotópicos retinais são seletivamente sensíveis aos comprimentos de onda correspondentes ao Vermelho (R), Verde (G) e Azul (B), definidos como as cores primárias da luz.</p>
+<p>Tabela de Combinação Cromática (Vetor R, G, B em %)</p>
+<p>Cor Resultante  R (%)   G (%)   B (%)
+Vermelho puro   100 0   0
+Azul puro   0   0   100
+Amarelo 100 100 0
+Laranja 100 50  0
+Verde musgo 0   25  0
+Salmão  100 50  50
+Cinza   50  50  50</p>
+<p>Modos de Representação e Percepção</p>
+<p>A geração e interpretação da informação cromática ocorrem por meio de dois sistemas ópticos distintos:</p>
+<ul>
+<li>Sistemas Emissivos: Fontes primárias de energia radiante (como monitores, luminárias e LEDs) que emitem diretamente os comprimentos de onda que compõem a luz percebida.</li>
+<li>Sistemas Refletivos: Objetos e superfícies que não possuem emissão própria, produzindo a cor visualizada mediante a reflexão seletiva da luz proveniente de uma fonte iluminante externa.</li>
+</ul>
+<p>A integração entre o estímulo óptico e a interpretação neural é regida pela Invariância Perceptiva de Cor. Este fenômeno cognitivo permite que o cérebro identifique e preserve a constância da cor de um objeto independentemente de interferências do contexto visual. Um exemplo clássico dessa interação psicofísica é o efeito Stroop (ilustrado visualmente por palavras que descrevem cores impressas em tintas de tonalidades conflitantes), no qual o processamento cognitivo do significado textual interfere no tempo de reação da identificação sensorial da cor, demonstrando a complexidade do sistema visual humano.</p>
+<ol>
+<li>Classificação Atualizada das Fontes de Iluminação</li>
+</ol>
+<p>As fontes de iluminação dividem-se primariamente em duas categorias essenciais:</p>
+<ol>
+<li>Fontes Naturais: Fontes de radiação espontâneas ou cósmicas (Sol, fogo e estrelas).</li>
+<li>Fontes Artificiais: Dispositivos e iluminantes desenvolvidos pela engenharia humana para conversão de energia em luz.</li>
+</ol>
+<p>A taxonomia tradicional das lâmpadas artificiais organiza-se pelo princípio físico de geração de luz (incandescência e descarga em gases), sendo aqui expandida para incluir formalmente a tecnologia de iluminação de Estado Sólido (LED):</p>
+<p>Categoria Tecnológica   Tipos / Subcategorias   Modelos / Variantes
+Incandescentes  Convencionais   Vidro prensado, Vidro soprado, Refletoras (com refletor na parte esférica)
+Incandescentes  Halógenas   -
+Descarga - Baixa Pressão    Fluorescentes   Com starter, Sem starter
+Descarga - Alta Pressão Variações de Vapor e Mistas Vapor de Mercúrio, Vapor Metálico, Luz Mista, Vapor de Sódio
+Estado Sólido (Inserção Atualizada) Diodo Emissor de Luz    LED</p>
+<ol>
+<li>Atributos Cromáticos da Iluminação e Desempenho do LED</li>
+</ol>
+<p>A qualidade e a adequação de uma fonte de luz artificial ao ambiente construído são categorizadas por dois atributos cromáticos fundamentais: a Aparência de Cor (Temperatura de Cor Correlacionada - CCT) e a Capacidade de Reprodução de Cor (Índice de Reprodução de Cor - IRC / R_a).</p>
+<p>Aparência de Cor / Temperatura de Cor (K)</p>
+<p>A temperatura de cor, quantificada em Kelvin (K), descreve a tonalidade aparente do fluxo luminoso emitido pela fonte luminosa por comparação à radiação de um corpo negro ideal.</p>
+<p>Faixa de Temperatura de Cor (K) Aparência de Cor    Tonalidade Percebida
+T &gt; 5000\text{ K}   Fria    Branca-azulada
+3300\text{ K} \le T \le 5000\text{ K}   Intermediária   Branca
+T &lt; 3300\text{ K}   Quente  Branca-avermelhada</p>
+<p>Nota de Engenharia: Em normas técnicas e tabelas clássicas de referência (como Philips, 1983), os limites de transição da faixa intermediária utilizam desiguais estritas (3300 &lt; T &lt; 5000\text{ K}), mantendo-se a equivalência prática de aplicação aos projetos luminotécnicos.</p>
+<p>Capacidade de Reprodução de Cor (IRC / Ra)</p>
+<p>O Índice de Reprodução de Cor (IRC ou R_a) representa a medida quantitativa da fidelidade com que uma fonte de luz artificial revela as cores reais dos objetos quando comparada a uma fonte de referência natural ou corpo negro de mesma temperatura de cor.</p>
+<p>A base física para a fidelidade de cor reside na Distribuição Espectral de Potência (SPD) emitida pela fonte:</p>
+<ul>
+<li>Fontes com Espectro Discreto/Monocromático: As lâmpadas de Vapor de Sódio (VS), por exemplo, concentram sua emissão em linhas espectrais estreitas (predominantemente na região do amarelo/laranja). Devido à ausência de comprimentos de onda nas faixas do azul e do verde, objetos sob essa iluminação sofrem severa distorção cromática, resultando em um baixo valor de R_a.</li>
+<li>Fontes com Espectro Contínuo ou Otimizado: As lâmpadas de Vapor Metálico (MVM) e, proeminentemente, os dispositivos LED modernos (que utilizam conversores de fósforo sobre emissores semicondutores) fornecem uma distribuição espectral ampla e contínua ao longo de todo o espectro visível (400 a 700 nm).</li>
+</ul>
+<p>Em consequência dessa continuidade espectral, a tecnologia LED proporciona um elevado R_a (frequentemente R_a &gt; 80 ou R_a &gt; 90), garantindo excelente fidelidade cromática, alta eficiência energética e versatilidade superior para aplicações corporativas, industriais e arquiteturais.</p>
 
 
 
