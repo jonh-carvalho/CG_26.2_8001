@@ -11,6 +11,15 @@ Aula 06 - 09/09/2026 | :material-check: [Modelagem Geométrica](../Disciplina/do
 Aula 07 - 16/09/2026 | :material-check: [Curvas](../Disciplina/docs/aula08/curvas.md) <br> :material-check:  [Superfícies](../Disciplina/docs/aula08/superficies.md) |
 Aula 08 - 23/09/2026 | :material-check: [Prática](../Avalia/ap1/ap1_p2.md) |
 Aula 09 - 30/09/2026 | :material-check: AP1 |
+Aula 10 - 07/10/2026 | :material-check:[Cor - Visão](../Disciplina/docs/files/corvisao.pdf), [Cor](../Disciplina/docs/files/CorPI.pdf) <br>:material-check: [Modelos de Iluminação](../Disciplina/docs/files/Ilumina.pdf) |
+Aula 11 - 14/10/2026 | :material-check: [Iluminação](../Disciplina/docs/aula12/Modelo_Iluminação.md) <br> :material-check: [Visualizando](../Disciplina/docs/aula12/00_Visualizando.md), [Principais Modelos](../Disciplina/docs/aula12/01_Quaisosprincipaismodelos.md), [Comparação](../Disciplina/docs/aula12/02_Comparação.md) |
+Aula 12 - 21/10/2026 | :material-check:  [Texturas](../Disciplina/docs/aula12/aula12_Texturas.md), [UV Wraping](../Disciplina/docs/aula12/04_UVWraping.md) |
+Aula 13 - 28/10/2026 | :material-check:  [Materiais](../Disciplina/docs/aula12/03_Materiais.md) |
+Aula 14 - 04/11/2026 | :material-check:  [Animação](../Disciplina/docs/aula13/Animação.md) <br> :material-check: [Rigging](../Disciplina/docs/aula13/Rigging.md) <br> :material-check: [Constraints ](../Disciplina/docs/aula13/Constraints.md) <br> :material-check: [Jogos UPBGE](../Disciplina/docs/aula13/Upbge.md)   |
+Aula 15 - 11/11/2026 | :material-check: Prática AP2 |
+Aula 16 - 18/11/2026 | :material-check: AP2 |
+Aula 17 - 25/11/2026 | :material-check:  |
+Aula 18 - 02/12/2026 | :material-check: AS |
 
 
 <!--
