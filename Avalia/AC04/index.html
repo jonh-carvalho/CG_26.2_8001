@@ -18,7 +18,7 @@
     
     
       
-        <title>Estudo Dirigido 04 - CG_26.2_8001</title>
+        <title>AC04 — Evolução da Cena: Modelos de Iluminação - CG_26.2_8001</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estudo-dirigido-04" class="md-skip">
+        <a href="#ac04-evolucao-da-cena-modelos-de-iluminacao" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Estudo Dirigido 04
+              AC04 — Evolução da Cena: Modelos de Iluminação
             
           </span>
         </div>
@@ -837,133 +837,76 @@
   
 
 
-<h1 id="estudo-dirigido-04"><strong>Estudo Dirigido 04</strong><a class="headerlink" href="#estudo-dirigido-04" title="Permanent link">&para;</a></h1>
-<h2 id="atividade-preparacao-de-cena-3d-projecao-cameras-e-matrizes"><strong>Atividade: Preparação de Cena 3D (Projeção, Câmeras e Matrizes)</strong><a class="headerlink" href="#atividade-preparacao-de-cena-3d-projecao-cameras-e-matrizes" title="Permanent link">&para;</a></h2>
-<p><strong>Versão da ferramenta</strong>: Blender <strong>4.5 LTS</strong></p>
-<h3 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h3>
-<!--
-Na próxima atividade (AC05), você vai montar uma cena noturna de estudo com iluminação e animação.
-Antes disso, nesta AC04, o foco será organizar os principais fundamentos geométricos e de visualização de uma cena 3D:
-
-- sistema de coordenadas;
-- transformações geométricas;
-- câmera e enquadramento;
-- projeção geométrica;
-- uso conceitual da pipeline **Model -> View -> Projection (MVP)**.
-
-O objetivo é preparar a estrutura da cena para que, na AC05, você concentre seus esforços em materiais, luz e animação.
-
-### Pré-requisitos (Blender 4.5 LTS)
-
-- Abra o Blender 4.5 LTS em uma cena nova (**File -> New -> General**).
-- Salve o arquivo como `AC04_NomeSobrenome.blend`.
-- Trabalhe em **Layout** e ative os overlays do viewport.
-- Use unidades padrão do Blender (1 unidade = 1 metro, aproximação didática).
-
-### Objetivo
-
-Construir uma cena-base 3D da mesa de estudo com objetos principais, configurar câmera e projeção, e documentar como cada transformação pode ser interpretada pelas matrizes **Model**, **View** e **Projection**.
-
-### Instruções
-
-1. **Configuração Inicial da Cena (guiado)**
-
-    - Na cena padrão, mantenha a câmera e a luz iniciais apenas por enquanto.
-    - Apague o cubo padrão (se necessário): selecione o cubo e pressione `X`.
-    - Crie coleções no Outliner para organizar o projeto:
-      - `Mesa_e_Objetos`
-      - `Camera`
-      - `Luzes` (será mais usada na AC05)
-    - Renomeie os objetos sempre após criar (ex.: `Mesa`, `Livro`, `Copo`, `Lapis`).
-
-2. **Modelagem Básica da Cena (guiado)**
-
-    - **Mesa**:
-      - `Shift + A -> Mesh -> Plane`
-      - Renomeie para `Mesa`.
-      - Escale no eixo X e Y para obter proporção aproximada de 10x5 (ex.: `S`, `X`, `5` e depois `S`, `Y`, `2.5`).
-    - **Livro**:
-      - `Shift + A -> Mesh -> Cube`
-      - Renomeie para `Livro`.
-      - Aplique escala para deixá-lo achatado (ex.: `S`, `Z`, `0.1`) e ajuste tamanho em X/Y.
-      - Posicione sobre a mesa (`G`, `Z`) e levemente deslocado do centro (`G`, `X` / `G`, `Y`).
-    - **Copo/Caneca**:
-      - `Shift + A -> Mesh -> Cylinder`
-      - Renomeie para `Copo`.
-      - Ajuste escala para ficar mais alto e fino (ex.: `S`, `Z`, `1.5` e `S`, `0.35`).
-      - Posicione ao lado do livro.
-    - **Lápis**:
-      - `Shift + A -> Mesh -> Cylinder`
-      - Renomeie para `Lapis`.
-      - Reduza raio e aumente comprimento (ex.: `S`, `0.12` e `S`, `Z`, `2.2`).
-      - Rotacione para ficar deitado sobre o livro (ex.: `R`, `Y`, `90`) e ajuste diagonalmente (rotação em `Z`).
-    - Ative **Shade Smooth** apenas se necessário para visualização preliminar.
-
-3. **Transformações Geométricas e Matriz Model**
-
-    - Para cada objeto, aplique pelo menos:
-      - uma translação;
-      - uma rotação;
-      - uma escala.
-    - Registre no relatório os valores finais de `Location`, `Rotation` e `Scale` no painel `Item` (`N`).
-    - Registre no relatório quais transformações foram aplicadas e explique que essas operações compõem a **matriz Model** de cada objeto (transformação do espaço local para o espaço do mundo).
-
-4. **Configuração da Câmera e Matriz View (guiado)**
-
-    - Selecione a câmera e renomeie para `Camera_Principal`.
-    - Posicione a câmera em vista levemente superior da mesa (sugestão inicial: eixo Z positivo e deslocamento em Y).
-    - Use `Numpad 0` para visualizar pela câmera.
-    - Ative o painel lateral (`N`) e ajuste `Lens` (sugestão: entre 35 mm e 50 mm) para enquadrar melhor.
-    - Ajuste enquadramento para manter livro e região futura do abajur visíveis.
-    - Explique no relatório que a **matriz View** representa a transformação do mundo para o referencial da câmera.
-
-5. **Projeção Geométrica e Matriz Projection (guiado)**
-
-    - Produza duas versões da cena:
-      - **projeção perspectiva** (Camera -> Type: Perspective);
-      - **projeção ortográfica** (Camera -> Type: Orthographic).
-    - Na ortográfica, ajuste `Orthographic Scale` até enquadrar área semelhante à versão perspectiva.
-    - Compare visualmente as duas projeções, destacando diferenças de profundidade e percepção de escala.
-    - Explique que a **matriz Projection** converte a visualização da câmera para o espaço de projeção (com ou sem efeito de perspectiva).
-
-6. **Composição MVP (Visão Conceitual)**
-
-    - Escolha um objeto da cena (ex.: livro) e descreva, de forma textual, o caminho conceitual:
-      - coordenadas locais do objeto;
-      - aplicação da matriz Model;
-      - transformação pela matriz View;
-      - projeção final pela matriz Projection.
-    - Não é necessário calcular matrizes numericamente, mas a sequência conceitual deve estar correta.
-
-### Entregáveis
-
-1. Arquivo da cena 3D (`.blend`) contendo objetos e câmera configurados no Blender 4.5 LTS.
-2. Duas imagens renderizadas da mesma cena:
-    - uma em perspectiva;
-    - uma em ortográfica.
-3. Relatório curto (1 a 2 páginas) contendo:
-    - descrição das transformações aplicadas (Model);
-    - descrição da configuração da câmera (View);
-    - comparação entre projeções (Projection);
-    - explicação conceitual da composição MVP em um objeto.
-
-### Critérios de Avaliação
-
-- **Configuração inicial e organização da cena (2,0 pts)**: coleções, nomes e estrutura do arquivo.
-- **Modelagem básica guiada (2,0 pts)**: criação correta de mesa, livro, copo e lápis.
-- **Transformações e matriz Model (2,0 pts)**: uso correto de translação, rotação e escala.
-- **Câmera e matriz View (2,0 pts)**: posicionamento e justificativa do enquadramento.
-- **Projeção geométrica e matriz Projection (1,5 pts)**: comparação clara entre perspectiva e ortográfica.
-- **Explicação conceitual MVP (0,5 pts)**: sequência correta e uso adequado dos conceitos.
-
-### Observações
-
-- Esta atividade não exige iluminação realista completa.
-- Foque na base geométrica e de visualização da cena.
-- A cena desenvolvida aqui será reaproveitada e expandida na AC05.
-- Em caso de dúvidas de interface, considere os nomes de menus e painéis do Blender 4.5 LTS.
-
--->
+<h1 id="ac04-evolucao-da-cena-modelos-de-iluminacao">AC04 — Evolução da Cena: Modelos de Iluminação<a class="headerlink" href="#ac04-evolucao-da-cena-modelos-de-iluminacao" title="Permanent link">&para;</a></h1>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h2>
+<p>Na AP1, você concebeu e modelou uma cena para apresentar a palavra <strong>Ibmec</strong>, acompanhada de três objetos autorais. Nesta atividade, você irá evoluir essa mesma cena estudando como diferentes modelos de iluminação afetam a aparência das superfícies.</p>
+<p>O foco será comparar os modelos <strong>Lambert</strong>, <strong>Phong</strong> e <strong>Blinn-Phong</strong>, aplicando seus materiais aos objetos da cena e documentando as diferenças observadas. A proposta visual e a organização estabelecidas na AP1 devem ser preservadas.</p>
+<p><strong>Ferramenta:</strong> Blender <strong>4.5 LTS</strong>.</p>
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
+<p>Aplicar e comparar materiais inspirados nos modelos Lambert, Phong e Blinn-Phong em uma cena 3D, observando as componentes difusa e especular e a influência da luz, da rugosidade e do ângulo de observação.</p>
+<h2 id="continuidade-da-ap1">Continuidade da AP1<a class="headerlink" href="#continuidade-da-ap1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Abra a cena desenvolvida na AP1 e salve uma cópia como <code>AC04_NomeSobrenome.blend</code>, sem sobrescrever o arquivo original.</li>
+<li>Preserve a ideia, a composição e a leitura da palavra <strong>Ibmec</strong>, bem como os três objetos autorais identificados na AP1.</li>
+<li>Organize os materiais e as luzes em coleções apropriadas no Outliner. Mantenha nomes claros para os objetos e materiais.</li>
+<li>Não altere a identidade visual da palavra <strong>Ibmec</strong> para realizar os testes. A comparação deve ser feita nos objetos autorais.</li>
+</ol>
+<h2 id="atividade">Atividade<a class="headerlink" href="#atividade" title="Permanent link">&para;</a></h2>
+<h3 id="1-preparar-a-iluminacao-da-cena">1. Preparar a iluminação da cena<a class="headerlink" href="#1-preparar-a-iluminacao-da-cena" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Escolha uma luz principal que produza áreas iluminadas e sombras perceptíveis nos objetos. Uma luz <strong>Area</strong> ou <strong>Sun</strong> é adequada.</li>
+<li>Posicione a luz de modo que os objetos recebam iluminação em ângulos diferentes, permitindo observar as regiões difusas e os brilhos especulares.</li>
+<li>Mantenha a posição, a intensidade, a cor da luz e o enquadramento da câmera iguais durante as comparações.</li>
+<li>Se necessário, use uma luz de preenchimento suave, mas não altere sua configuração entre as imagens comparativas.</li>
+</ul>
+<h3 id="2-criar-e-aplicar-os-tres-materiais">2. Criar e aplicar os três materiais<a class="headerlink" href="#2-criar-e-aplicar-os-tres-materiais" title="Permanent link">&para;</a></h3>
+<p>Crie três materiais distintos, nomeando-os <code>MAT_Lambert</code>, <code>MAT_Phong</code> e <code>MAT_BlinnPhong</code>. Aplique <strong>um modelo diferente a cada um dos três objetos autorais da AP1</strong>, de modo que, no mínimo, três objetos da cena recebam os três materiais. Registre no relatório qual objeto recebeu cada material.</p>
+<p>Use cores-base distintas para facilitar a identificação e configure os materiais conforme as referências da disciplina:</p>
+<ul>
+<li><strong>Lambert — reflexão difusa:</strong> superfície fosca, sem brilho especular evidente. Como aproximação no <code>Principled BSDF</code>, use rugosidade alta (por exemplo, <code>1.0</code>) e especular reduzido. Também é possível demonstrar a componente difusa com o nó <code>Diffuse BSDF</code>.</li>
+<li><strong>Phong — difusa e especular:</strong> superfície polida, com brilho especular mais concentrado. Como aproximação no <code>Principled BSDF</code>, use rugosidade baixa (por exemplo, <code>0.2</code>) e especular moderado.</li>
+<li><strong>Blinn-Phong — difusa e especular baseada no vetor médio:</strong> aparência polida e brilho especular concentrado. Como aproximação no <code>Principled BSDF</code>, use rugosidade baixa (por exemplo, <code>0.1</code>) e especular mais intenso.</li>
+</ul>
+<p>Os valores são pontos de partida: ajuste-os para tornar a comparação visível sem estourar as áreas claras nem ocultar a forma dos objetos. Se a versão do nó apresentar o controle <code>IOR Level</code> em vez de <code>Specular</code>, use esse controle para ajustar a intensidade especular e registre os valores utilizados.</p>
+<blockquote>
+<p><strong>Nota técnica:</strong> o <code>Principled BSDF</code> do Blender 4.5 é um shader baseado em princípios físicos; seus parâmetros não implementam literalmente as equações clássicas de Phong e Blinn-Phong. Nesta atividade, as configurações do <code>Principled BSDF</code> são aproximações visuais para fins de comparação. Identifique essa limitação no relatório. A demonstração do Lambert com <code>Diffuse BSDF</code> é uma alternativa direta para a componente difusa.</p>
+</blockquote>
+<h3 id="3-comparar-e-observar">3. Comparar e observar<a class="headerlink" href="#3-comparar-e-observar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Observe a cena no modo <strong>Rendered</strong> e faça ao menos um render de teste.</li>
+<li>Compare o comportamento dos três materiais sob a mesma iluminação: presença e intensidade do brilho, área do highlight e aparência fosca ou polida.</li>
+<li>Para investigar a influência do ângulo de iluminação, mova ou gire temporariamente a luz e observe os resultados. Depois, restaure a configuração escolhida para a imagem final.</li>
+<li>Não é necessário animar a cena nem produzir o vídeo de 15 segundos nesta atividade.</li>
+</ul>
+<h2 id="entregaveis">Entregáveis<a class="headerlink" href="#entregaveis" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Arquivo <code>AC04_NomeSobrenome.blend</code>, salvo no Blender 4.5 LTS, contendo a cena da AP1 evoluída, os três materiais aplicados e a iluminação configurada.</li>
+<li>Imagem renderizada da cena final, com a palavra <strong>Ibmec</strong> legível e os três objetos autorais visíveis.</li>
+<li>Imagem ou captura adicional que permita comparar os três objetos e seus materiais sob a mesma iluminação.</li>
+<li>Relatório curto (<code>.md</code> ou <code>.pdf</code>) contendo:</li>
+<li>identificação dos três objetos e do material aplicado a cada um;</li>
+<li>configuração da luz principal e, se utilizada, da luz de preenchimento;</li>
+<li>valores principais de cor, rugosidade e especular (ou <code>IOR Level</code>) de cada material;</li>
+<li>comparação das aparências Lambert, Phong e Blinn-Phong observadas;</li>
+<li>explicação de que as configurações Phong e Blinn-Phong no <code>Principled BSDF</code> são aproximações, e não implementações literais das equações clássicas.</li>
+</ol>
+<h2 id="criterios-de-avaliacao">Critérios de avaliação —<a class="headerlink" href="#criterios-de-avaliacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Continuidade e composição da cena da AP1 —</strong> preservação do conceito, da palavra <strong>Ibmec</strong> legível e da composição da cena.</li>
+<li><strong>Aplicação dos três materiais —</strong> presença dos materiais Lambert, Phong e Blinn-Phong em pelo menos três objetos, com atribuição identificável e diferenças visuais coerentes.</li>
+<li><strong>Configuração de iluminação —</strong> luz posicionada e ajustada para evidenciar as características dos materiais, mantendo condições comparáveis.</li>
+<li><strong>Comparação e análise —</strong> observações fundamentadas sobre reflexão difusa, brilho especular, rugosidade e influência do ângulo da luz.</li>
+<li><strong>Organização e entregáveis —</strong> arquivo <code>.blend</code> organizado, imagens legíveis e relatório completo.</li>
+</ul>
+<h2 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../Disciplina/docs/aula11/pratica/01_cena/">Cena — preparação do ambiente</a></li>
+<li><a href="../../Disciplina/docs/aula11/pratica/2.1_lambert/">Modelo Lambert</a></li>
+<li><a href="../../Disciplina/docs/aula11/pratica/2.2_phong/">Modelo Phong</a></li>
+<li><a href="../../Disciplina/docs/aula11/pratica/2.3_blinn-phong/">Modelo Blinn-Phong</a></li>
+<li><a href="../ap1/">AP1 — Conceito e Modelagem da Peça “Ibmec em 15 segundos”</a></li>
+<li><a href="https://docs.blender.org/manual/en/latest/">Blender 4.5 LTS — documentação oficial</a></li>
+</ul>
 
 
 
