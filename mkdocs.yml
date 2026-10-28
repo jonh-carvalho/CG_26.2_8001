@@ -19,17 +19,16 @@ nav:
         - Cor e Visão: Disciplina/docs/aula10/cor_visao.md
         - Cor e Representação: Disciplina/docs/aula10/cor_representacao.md
   - Avaliações:
-      - AP1: Avalia/ap1.md
-      - AP2: Avalia/ap2.md
-      #- AS: Avalia/as.md
       - AC:
         - Index: Avalia/index.md
         - AC1: Avalia/AC01.md
         - AC2: Avalia/AC02.md
         - AC3: Avalia/AC03.md
         - AC4: Avalia/AC04.md
-#        - AC5: Avalia/AC05.md
-#        - AC6: Avalia/AC06.md
+        - AC5: Avalia/AC05.md
+      - AP1: Avalia/ap1.md
+      - AP2: Avalia/ap2.md
+      #- AS: Avalia/as.md
 
   - Bibliografia: Disciplina/bibliografia.md
 
