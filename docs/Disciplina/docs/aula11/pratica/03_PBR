@@ -1,0 +1,50 @@
+## 3.1 Introdução ao PBR (Physically Based Rendering) — Materiais Dielétricos e Metálicos
+
+### 1. Fundamentação Teórica
+
+O modelo **PBR (Physically Based Rendering)** não é uma fórmula única, mas um conjunto de princípios que orientam a simulação do comportamento da luz de acordo com leis físicas mensuráveis. Diferentemente dos modelos empíricos da computação gráfica clássica (como o Phong visto na Aula 1), que ajustavam parâmetros para "parecer bonito", o PBR busca que os parâmetros tenham correspondência direta com propriedades mensuráveis de superfícies reais. O resultado é que um material definido corretamente se comporta de maneira consistente sob diferentes condições de iluminação, sem necessidade de retrabalho manual.
+
+### 2. O Princípio da Conservação de Energia
+
+A lei física mais central para o PBR é a **conservação de energia**. Em um sistema isolado, a energia total permanece constante. Aplicada ao rendering, isso significa que a quantidade de luz que incide sobre um ponto da superfície deve ser igual à soma da luz refletida, transmitida e absorvida naquele ponto .
+
+Na prática, isso impõe uma restrição fundamental: **uma superfície nunca pode refletir mais luz do que recebe**. Quando um artista aumenta o brilho especular de um material, o software PBR automaticamente reduz a contribuição difusa correspondente para manter o balanço energético. Essa é a razão pela qual materiais PBR bem configurados não "estouram" visualmente quando a intensidade da luz é aumentada — eles saturaram de forma fisicamente plausível.
+
+### 3. Dielétricos e Metálicos: Duas Categorias, Dois Comportamentos
+
+O fluxo de trabalho PBR moderno, adotado pelo Blender 4.5 através do nó **Principled BSDF**, organiza os materiais em duas grandes categorias físicas, controladas pelo parâmetro **Metallic** .
+
+#### 3.1 Materiais Dielétricos (Metallic = 0.0)
+
+Dielétricos são isolantes elétricos: plástico, madeira, cerâmica, vidro, pele, gesso. Fisicamente, eles possuem duas camadas distintas de interação com a luz:
+
+- **Camada difusa (difusa):** a luz penetra levemente na superfície, é espalhada internamente e reemerge em direções variadas. A cor dessa luz é determinada pelo **Base Color**. Em dielétricos, o Base Color é a cor que percebemos como "a cor do objeto".
+- **Camada especular (especular):** uma fração da luz é refletida diretamente na superfície sem penetrar no material. Em dielétricos reais, essa reflexão é **incolor** (branca). A intensidade dessa reflexão é controlada pelo **IOR (Index of Refraction)** ou, no Principled BSDF, pelo parâmetro **Specular IOR Level** .
+
+No Principled BSDF do Blender 4.5, com `Metallic = 0.0`, o material consiste em uma camada base difusa ou transmissiva com uma camada de reflexão especular por cima . A reflectância especular de dielétricos comuns gira em torno de **2% a 5%** da luz incidente na incidência normal , o que explica por que plásticos e cerâmicas não parecem "espelhados" mesmo quando polidos.
+
+#### 3.2 Materiais Metálicos (Metallic = 1.0)
+
+Metais são condutores elétricos: ferro, ouro, cobre, alumínio. Seu comportamento óptico é radicalmente diferente dos dielétricos:
+
+- **Não possuem reflexão difusa interna.** A luz não penetra e retorna espalhada. Toda a interação ocorre na superfície.
+- **A reflexão é colorida pelo próprio metal.** No Principled BSDF, quando `Metallic = 1.0`, o **Base Color** deixa de ser "a cor do objeto" e passa a ser **a cor da reflexão especular** . Um metal "dourado" tem Base Color dourado porque reflete preferencialmente comprimentos de onda na faixa do amarelo/laranja.
+- **A reflexão é intensa.** Metais refletem a maior parte da luz que recebem, o que os torna naturalmente brilhantes e sensíveis ao ambiente ao redor.
+
+A documentação oficial do Blender 4.5 descreve esse comportamento com precisão: "Um valor de 1.0 dá uma reflexão totalmente especular colorida pelo Base Color, sem reflexão difusa ou transmissão" .
+
+#### 3.3 A Fronteira entre os Dois Mundos
+
+Na realidade física, um material é ou não é metal. Não existe "50% metal" no mundo real. No entanto, o parâmetro Metallic aceita valores intermediários (0.0 a 1.0) por razões práticas: texturas de Metalness podem apresentar transições (bordas desgastadas, sujeira sobre metal, corrosão parcial), e o artista pode precisar misturar as duas respostas em uma mesma superfície . Para um material homogêneo, porém, o valor deve ser **0.0 ou 1.0** — nunca 0.5 "por segurança".
+
+### 4. Roughness: O Controle do "Polimento"
+
+Independentemente de o material ser dielétrico ou metálico, o parâmetro **Roughness** controla a nitidez da reflexão especular. A documentação do Blender define: "Um valor de 0.0 dá uma reflexão perfeitamente nítida, enquanto 1.0 dá uma reflexão difusa" .
+
+Fisicamente, Roughness descreve a **rugosidade da microfaceta** — as irregularidades microscópicas da superfície. Quanto mais rugosa, mais a direção da reflexão se espalha. Isso se aplica igualmente a metais e dielétricos:
+
+- **Metal polido (Roughness baixo):** reflexo nítido, quase espelhado, do ambiente.
+- **Metal escovado (Roughness médio):** reflexo alongado e borrado.
+- **Plástico fosco (Roughness alto):** brilho especular amplo e suave, sem reflexo definido.
+
+A diferença é que, em metais, a reflexão borrada ainda carrega a cor do Base Color; em dielétricos, a reflexão borrada permanece incolor (branca ou da cor da luz).
