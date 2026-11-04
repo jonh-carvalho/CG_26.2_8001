@@ -1,0 +1,1107 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jonh Carvalho">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/ibmec_icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Rigging - CG_26.2_8001</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-planejamento-e-conceituacao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="CG_26.2_8001" class="md-header__button md-logo" aria-label="CG_26.2_8001" data-md-component="logo">
+      
+  <img src="../../../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CG_26.2_8001
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rigging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="#193257" data-md-color-accent="#FAB90A"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="all" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jonh-carvalho/CG_26.2_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../aulas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Disciplina
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Avalia/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Avaliações
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bibliografia/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Bibliografia
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="CG_26.2_8001" class="md-nav__button md-logo" aria-label="CG_26.2_8001" data-md-component="logo">
+      
+  <img src="../../../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    CG_26.2_8001
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jonh-carvalho/CG_26.2_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Disciplina
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Disciplina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../aulas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Textos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Textos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/aula10/cor_visao.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cor e Visão
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/aula10/cor_representacao.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cor e Representação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Avaliações
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Avaliações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Avalia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AC
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            AC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/ap1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AP1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/ap2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AP2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Rigging</h1>
+
+<h2 id="1-planejamento-e-conceituacao">1. Planejamento e Conceituação<a class="headerlink" href="#1-planejamento-e-conceituacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definição de Requisitos:</strong> Determine a finalidade da animação (jogos, cinema, etc.), os movimentos que o modelo precisa executar e quem irá animá-lo.</li>
+<li><strong>Posição na Produção:</strong> Compreenda o rigging como a ponte entre a etapa de modelagem e a fase de <em>posing</em> e animação.</li>
+</ul>
+<h3 id="2-preparacao-da-malha-modelo-3d">2. Preparação da Malha (Modelo 3D)<a class="headerlink" href="#2-preparacao-da-malha-modelo-3d" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Topologia e Pose de Referência:</strong> Garanta que a malha tenha loops de arestas suficientes nas articulações para dobrar sem colapsar e que o modelo esteja em uma pose neutra.</li>
+<li><strong>Alinhamento e Escala:</strong> Verifique a simetria, resete a escala e a rotação da malha, e ajuste a sua origem antes de criar o esqueleto.</li>
+</ul>
+<h3 id="3-construcao-do-esqueleto-armature-e-bones">3. Construção do Esqueleto (<em>Armature</em> e <em>Bones</em>)<a class="headerlink" href="#3-construcao-do-esqueleto-armature-e-bones" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Criação dos Ossos:</strong> Adicione o objeto <em>Armature</em> (em <em>Object Mode</em>) e posicione as extremidades (<em>Head</em> e <em>Tail</em>) dos ossos no modo <em>Edit Mode</em>, ajustando o alinhamento dos eixos (<em>Roll</em>).</li>
+<li><strong>Hierarquia:</strong> Estabeleça relações de parentesco (<em>Parent</em>) e conexões entre ossos pais e filhos.</li>
+<li><strong>Organização com Bone Collections:</strong> Utilize as <strong>Bone Collections</strong> do Blender 4.5 para organizar e agrupar ossos por função ou região do corpo.</li>
+</ul>
+<h3 id="4-configuracao-de-controles-e-restricoes-constraints">4. Configuração de Controles e Restrições (<em>Constraints</em>)<a class="headerlink" href="#4-configuracao-de-controles-e-restricoes-constraints" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Divisão de Funções:</strong> Distinga ossos de deformação (<em>Deform bones</em>), ossos de controle (<em>Control bones</em>) e auxiliares (<em>Helper bones</em>).</li>
+<li><strong>Sistemas FK e IK:</strong></li>
+<li><strong>FK (<em>Forward Kinematics</em>):</strong> Configure para obter controle direto das rotações ao longo de uma cadeia (ex.: braço ou rabo).</li>
+<li><strong>IK (<em>Inverse Kinematics</em>):</strong> Aplique restrições IK com alvos para posicionar facilmente extremidades como pés e mãos.</li>
+<li><strong>Formas de Controle (<em>Custom Shapes</em>):</strong> Substitua a visualização padrão de ossos por formas geométricas personalizadas para facilitar a seleção pelo animador.</li>
+</ul>
+<h3 id="5-associacao-da-malha-e-ajuste-de-pesos-skinning">5. Associação da Malha e Ajuste de Pesos (<em>Skinning</em>)<a class="headerlink" href="#5-associacao-da-malha-e-ajuste-de-pesos-skinning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Vínculo:</strong> Associe a malha ao esqueleto usando o <strong>Armature Modifier</strong> e crie a correspondência de vértices via <strong>Vertex Groups</strong>.</li>
+<li><strong>Weight Painting:</strong> No modo <em>Weight Paint Mode</em>, ajuste as influências (<em>weights</em>) das articulações (como ombros, cotovelos e joelhos) para evitar deformações estranhas e estiramentos.</li>
+</ul>
+<h3 id="6-teste-e-validacao">6. Teste e Validação<a class="headerlink" href="#6-teste-e-validacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ajustes no <em>Pose Mode</em>:</strong> Manipule os controles em posições e movimentos extremos para testar limites de deformação e praticidade dos controles.</li>
+<li><strong>Revisão Iterativa:</strong> Corrija falhas de peso ou posição de ossos reveladas pelos testes.</li>
+</ul>
+<p>Para aplicar o roteiro de rigging de forma prática e sem complicações, a melhor atividade introdutória é o <strong>Rigging de um Cilindro Articulado</strong> (como um dedo ou braço mecânico simples). Esse exercício passa por todas as etapas fundamentais sem a complexidade de um personagem completo.</p>
+<hr />
+<h3 id="pratica-guiada-rigging-de-um-cilindro-articulado">Prática Guiada: Rigging de um Cilindro Articulado<a class="headerlink" href="#pratica-guiada-rigging-de-um-cilindro-articulado" title="Permanent link">&para;</a></h3>
+<p><strong>Objetivo:</strong> Criar um tubo simples de dois segmentos e montar um esqueleto de 2 ossos para entender como a malha responde às rotações e ao peso da articulação.</p>
+<h4 id="etapa-1-planejamento"><strong>Etapa 1: Planejamento</strong><a class="headerlink" href="#etapa-1-planejamento" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Meta:</strong> Fazer com que um cilindro dobre suavemente no ponto médio, simulando uma junta ou articulação de dedo/braço.</li>
+</ul>
+<h4 id="etapa-2-preparacao-da-malha"><strong>Etapa 2: Preparação da Malha</strong><a class="headerlink" href="#etapa-2-preparacao-da-malha" title="Permanent link">&para;</a></h4>
+<ol>
+<li>No <strong>Object Mode</strong>, adicione um cilindro: <strong><code>Shift + A</code> &gt; Mesh &gt; Cylinder</strong>.</li>
+<li>Escale o cilindro no eixo Z para deixá-lo alongado (<strong><code>S</code> &gt; <code>Z</code></strong>).</li>
+<li>Entre no <strong>Edit Mode</strong> (<strong><code>Tab</code></strong>) e adicione <strong>3 Loop Cuts</strong> horizontais exatamente na metade do cilindro (<strong><code>Ctrl + R</code></strong>, use a roda do mouse para 3 cortes): <em>essa densidade de arestas no centro previne que a malha colapse ou achate ao dobrar</em>.</li>
+<li>Volte ao <strong>Object Mode</strong> e aplique a escala/transformações: <strong><code>Ctrl + A</code> &gt; All Transforms</strong> (garante que a escala esteja em <code>1.0</code>).</li>
+</ol>
+<h4 id="etapa-3-construcao-do-esqueleto-armature"><strong>Etapa 3: Construção do Esqueleto (<em>Armature</em>)</strong><a class="headerlink" href="#etapa-3-construcao-do-esqueleto-armature" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Adicione um osso básico: <strong><code>Shift + A</code> &gt; Armature</strong>.</li>
+<li>Na aba de propriedades do esqueleto (<em>Object Data Properties</em> - ícone do boneco verde), em <strong>Viewport Display</strong>, marque a opção <strong>In Front</strong> (para enxergar o osso dentro do cilindro).</li>
+<li>Entre no <strong>Edit Mode</strong> do esqueleto:</li>
+<li>Posicione a base do primeiro osso na parte inferior do cilindro e a ponta no centro (onde estão os loop cuts).</li>
+<li>Selecione a ponta superior e pressione <strong><code>E</code></strong> (<strong>Extrude</strong>) puxando o segundo osso até o topo do cilindro.</li>
+<li>Renomeie os ossos no painel <em>Bone Properties</em>: <code>Bone_Base</code> e <code>Bone_Ponta</code>.</li>
+</ol>
+<h4 id="etapa-4-configuracao-de-controles"><strong>Etapa 4: Configuração de Controles</strong><a class="headerlink" href="#etapa-4-configuracao-de-controles" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Para esta prática inicial, utilizaremos a hierarquia FK padrão (onde o osso da ponta é filho do osso da base).</li>
+</ul>
+<h4 id="etapa-5-associacao-da-malha-e-ajuste-de-pesos-skinning"><strong>Etapa 5: Associação da Malha e Ajuste de Pesos (<em>Skinning</em>)</strong><a class="headerlink" href="#etapa-5-associacao-da-malha-e-ajuste-de-pesos-skinning" title="Permanent link">&para;</a></h4>
+<ol>
+<li>No <strong>Object Mode</strong>, selecione primeiro a <strong>malha do cilindro</strong> e, em seguida, mantenha <strong><code>Shift</code></strong> pressionado e selecione o <strong>esqueleto</strong>.</li>
+<li>Pressione <strong><code>Ctrl + P</code></strong> e selecione <strong>With Automatic Weights</strong>.</li>
+<li>Selecione apenas a malha e mude para o <strong>Weight Paint Mode</strong> na lista suspensa do canto superior esquerdo:</li>
+<li>Selecione <code>Bone_Ponta</code> para ver a influência dos pesos (vermelho indica 100% de controle, azul indica 0%). Note o gradiente suave na região central.</li>
+</ol>
+<h4 id="etapa-6-teste-e-validacao"><strong>Etapa 6: Teste e Validação</strong><a class="headerlink" href="#etapa-6-teste-e-validacao" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Selecione a armature e entre no <strong>Pose Mode</strong> (<strong><code>Ctrl + Tab</code></strong>).</li>
+<li>Selecione <code>Bone_Ponta</code> e pressione <strong><code>R</code></strong> para rotacionar.</li>
+<li>Observe como a articulação do cilindro dobra e confirme se a deformação da malha permanece natural.</li>
+</ol>
+<hr />
+<h3 id="passo-a-passo-configurando-ik-no-cilindro-articulado">Passo a Passo: Configurando IK no Cilindro Articulado<a class="headerlink" href="#passo-a-passo-configurando-ik-no-cilindro-articulado" title="Permanent link">&para;</a></h3>
+<h4 id="passo-1-criar-os-ossos-de-controle-ik-target-e-pole-target"><strong>Passo 1: Criar os Ossos de Controle (<em>IK Target</em> e <em>Pole Target</em>)</strong><a class="headerlink" href="#passo-1-criar-os-ossos-de-controle-ik-target-e-pole-target" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Selecione a <strong>Armature</strong> e entre no <strong>Edit Mode</strong> (<strong><code>Tab</code></strong>).</li>
+<li><strong>Criar o osso de ponta (<em>IK Target</em>):</strong></li>
+<li>Selecione a junta do topo do osso <code>Bone_Ponta</code>.</li>
+<li>Pressione <strong><code>E</code></strong> (<strong>Extrude</strong>) e puxe um novo osso curto para cima.</li>
+<li>Com o novo osso selecionado, pressione <strong><code>Alt + P</code></strong> e escolha <strong>Clear Parent</strong> (para soltá-lo da hierarquia).</li>
+<li>No painel <em>Bone Properties</em>, renomeie-o para <strong><code>IK_Target</code></strong> e <strong>desmarque</strong> a caixa <strong>Deform</strong> (pois ele servirá apenas de controle, não para deformar a malha).</li>
+<li><strong>Criar o osso da junta/joelho (<em>Pole Target</em>):</strong></li>
+<li>Selecione a junta central (entre a base e a ponta).</li>
+<li>Pressione <strong><code>E</code></strong> e extrude um osso para a frente.</li>
+<li>Pressione <strong><code>Alt + P</code></strong> &gt; <strong>Clear Parent</strong> e posicione-o um pouco afastado à frente da articulação.</li>
+<li>Renomeie-o para <strong><code>IK_Pole</code></strong> e <strong>desmarque</strong> a caixa <strong>Deform</strong>.</li>
+</ol>
+<h4 id="passo-2-aplicar-a-restricao-inverse-kinematics"><strong>Passo 2: Aplicar a Restrição <em>Inverse Kinematics</em></strong><a class="headerlink" href="#passo-2-aplicar-a-restricao-inverse-kinematics" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Mude para o <strong>Pose Mode</strong> (<strong><code>Ctrl + Tab</code></strong>).</li>
+<li>Selecione o osso <strong><code>Bone_Ponta</code></strong> (o osso da ponta da cadeia principal).</li>
+<li>Na barra lateral de propriedades (à direita), acesse a aba <strong>Bone Constraint Properties</strong> (ícone de um osso com anéis).</li>
+<li>Clique em <strong>Add Bone Constraint</strong> e selecione <strong>Inverse Kinematics</strong>.</li>
+</ol>
+<h4 id="passo-3-configurar-os-parametros-da-ik"><strong>Passo 3: Configurar os Parâmetros da IK</strong><a class="headerlink" href="#passo-3-configurar-os-parametros-da-ik" title="Permanent link">&para;</a></h4>
+<p>No painel da constraint no <code>Bone_Ponta</code>, preencha as opções:
+* <strong>Target:</strong> Selecione a sua <strong>Armature</strong>.
+* <strong>Bone:</strong> Escolha o osso <strong><code>IK_Target</code></strong>.
+* <strong>Pole Target:</strong> Selecione a sua <strong>Armature</strong>.
+* <strong>Bone:</strong> Escolha o osso <strong><code>IK_Pole</code></strong>.
+* <strong>Chain Length:</strong> Mude o valor para <strong><code>2</code></strong> <em>(crucial: isso limita a ação da IK aos 2 ossos da articulação, sem afetar a base do rig)</em>.</p>
+<h4 id="passo-4-ajustar-a-orientacao-pole-angle"><strong>Passo 4: Ajustar a Orientação (<em>Pole Angle</em>)</strong><a class="headerlink" href="#passo-4-ajustar-a-orientacao-pole-angle" title="Permanent link">&para;</a></h4>
+<p>Se o cilindro torcer ou girar de lado ao conectar o <em>Pole Target</em>:
+* Ajuste o valor de <strong>Pole Angle</strong> no card da constraint (geralmente ajustando para <code>90°</code>, <code>-90°</code> ou <code>180°</code>) até que a junta volte à posição neutra virada para frente.</p>
+<h4 id="passo-5-testar-o-funcionamento"><strong>Passo 5: Testar o Funcionamento</strong><a class="headerlink" href="#passo-5-testar-o-funcionamento" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Selecione o osso <strong><code>IK_Target</code></strong> e pressione <strong><code>G</code></strong> para movê-lo: veja os dois ossos dobrando automaticamente para acompanhar a ponta.</li>
+<li>Selecione o osso <strong><code>IK_Pole</code></strong> e mova-o para redirecionar para onde a articulação aponta.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright ©️ 2026, Jonh Carvalho
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
