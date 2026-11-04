@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estudo-dirigido-05" class="md-skip">
+        <a href="#ac05-evolucao-da-cena-materiais-pbr-e-texturas" class="md-skip">
           Skip to content
         </a>
       
@@ -869,16 +869,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#atividade-iluminacao-textura-e-realismo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Atividade: Iluminação, Textura e Realismo
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Atividade: Iluminação, Textura e Realismo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
       Contexto
@@ -886,9 +876,109 @@
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuidade-da-ap1-e-da-ac04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continuidade da AP1 e da AC04
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceitos importantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atividade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atividade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparar-e-organizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Preparar e organizar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-criar-materiais-pbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Criar materiais PBR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-preparar-uvs-e-aplicar-mapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Preparar UVs e aplicar mapas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-revisar-a-cena" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Revisar a cena
+    </span>
+  </a>
+  
+</li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregaveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregáveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-e-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos e referências
+    </span>
+  </a>
   
 </li>
       
@@ -1003,186 +1093,108 @@
   
 
 
-<h1 id="estudo-dirigido-05"><strong>Estudo Dirigido 05</strong><a class="headerlink" href="#estudo-dirigido-05" title="Permanent link">&para;</a></h1>
-<h2 id="atividade-iluminacao-textura-e-realismo"><strong>Atividade: Iluminação, Textura e Realismo</strong><a class="headerlink" href="#atividade-iluminacao-textura-e-realismo" title="Permanent link">&para;</a></h2>
-<p><strong>Versão da ferramenta</strong>: Blender <strong>4.5 LTS</strong></p>
-<h3 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h3>
-<!--
-
-Na AC04 você construiu a cena-base da mesa de estudo, configurou câmera e explorou as matrizes MVP. Nesta AC05 o foco muda: você vai **dar vida** à cena adicionando o abajur, configurando a iluminação noturna com os três componentes do modelo Phong, aplicando materiais realistas e texturas PBR a cada objeto, e finalizando com um render de qualidade.
-
-A cena desenvolvida aqui será a base da AC06 (animação e/ou jogo interativo).
-
-### Pré-requisitos
-
-- Arquivo `AC04_NomeSobrenome.blend` concluído (mesa, livro, copo, lápis e câmera configurados).
-- Salve uma cópia com o nome `AC05_NomeSobrenome.blend` antes de iniciar.
-- Mantenha as coleções criadas na AC04 (`Mesa_e_Objetos`, `Camera`, `Luzes`).
-
-### Objetivo
-
-Expandir a cena-base da AC04 com iluminação noturna realista (modelo Phong/Principled BSDF), materiais e texturas PBR aplicados a todos os objetos, e produzir renders demonstrando os efeitos de luz, sombra e reflexão.
-
----
-
-### Instruções
-
-#### 1. Criação do Abajur (guiado)
-
-Adicione os objetos à coleção `Mesa_e_Objetos` e renomeie-os imediatamente.
-
-- **Base do abajur**:
-  - `Shift + A → Mesh → Cylinder`
-  - Renomeie para `Abajur_Base`.
-  - Escale para um cilindro pequeno e baixo (ex.: `S`, `0.3`, depois `S`, `Z`, `0.2`).
-  - Posicione na ponta da mesa (`G`, `X` ou `G`, `Y`).
-- **Haste**:
-  - `Shift + A → Mesh → Cylinder`
-  - Renomeie para `Abajur_Haste`.
-  - Reduza o raio e aumente a altura (ex.: `S`, `0.05` e `S`, `Z`, `1.5`).
-  - Centralize sobre a base e eleve (`G`, `Z`).
-- **Cúpula**:
-  - `Shift + A → Mesh → UV Sphere`
-  - Renomeie para `Abajur_Cupula`.
-  - Entre em Edit Mode (`Tab`), selecione os vértices da metade inferior e apague-os, deixando uma meia-esfera.
-  - Posicione no topo da haste; escale para encaixar (ex.: `S`, `0.6`).
-- **Luz interna (Point Light)**:
-  - `Shift + A → Light → Point`
-  - Renomeie para `Luz_Abajur`.
-  - Mova para dentro da cúpula (`G`, `Z`).
-  - Mova para a coleção `Luzes`.
-
----
-
-#### 2. Configuração da Iluminação — Modelo Phong (guiado)
-
-O modelo de Phong decompõe a iluminação em três componentes. Configure cada um conforme descrito abaixo.
-
-| Componente | Configuração no Blender | Efeito esperado |
-|---|---|---|
-| **Ambiente** | `World → Surface → Background`: cor azul escuro (`#0A0A1A`), intensidade 0,05 | Iluminação noturna de fundo, sem sombras |
-| **Difusa** | `Luz_Abajur → Power`: 30–60 W; cor branca quente (`#FFF5E0`) | Ilumina suavemente os objetos ao redor |
-| **Especular** | Ajustar `Roughness` nos materiais dos objetos (valores baixos = mais brilhante) | Reflexos de luz na mesa e no copo |
-
-- Verifique as **sombras** no painel de propriedades da luz (`Properties → Light → Shadow`); no **EEVEE Next** (Blender 4.5), as sombras já estão ativas por padrão para luzes *Point*. Ajuste o `Clip Start` e a resolução do shadow map se necessário.
-- Use `Viewport Shading → Rendered` (`Z → Rendered`) para visualizar em tempo real.
-- Registre no relatório os valores finais de cada componente.
-
----
-
-#### 3. Materiais e Texturas (guiado)
-
-Abra o **Shader Editor** (`Shift + F3` ou painel inferior). Aplique um material **Principled BSDF** a cada objeto.
-
-##### 3.1 Mesa — Madeira Escura (PBR com textura de imagem)
-
-1. Baixe um conjunto de texturas PBR de madeira escura em [Poly Haven](https://polyhaven.com) (arquivos: `albedo.jpg`, `normal.jpg`, `roughness.jpg`).
-2. Selecione a `Mesa` e acesse o Shader Editor.
-3. Adicione nós: `Image Texture` (Albedo) → `Base Color` do Principled BSDF.
-4. Adicione `Image Texture` (Roughness) → `Roughness` do Principled BSDF.
-5. Adicione `Image Texture` (Normal) → `Normal Map` → `Normal` do Principled BSDF.
-6. Aplique `Smart UV Project` na mesa: Edit Mode → `U → Smart UV Project`.
-7. Ajuste `Metallic` para `0.0` e **`Specular IOR Level`** para `0.3` (o antigo `Specular` foi renomeado no Principled BSDF do Blender 4.0+).
-
-##### 3.2 Livro — Material Fosco Procedural
-
-1. Crie um novo material para o `Livro`.
-2. No Shader Editor, adicione um nó `Noise Texture` e conecte-o a `Color Ramp` (tons de bege e amarelo claro).
-3. Conecte a saída do `Color Ramp` ao `Base Color` do Principled BSDF.
-4. Ajuste `Roughness` para `0.9` e `Metallic` para `0.0`.
-
-##### 3.3 Copo — Vidro Fosco
-
-1. Crie um novo material para o `Copo`.
-2. No Principled BSDF:
-   - `Base Color`: branco (`#FFFFFF`).
-   - **`Transmission Weight`**: `1.0` (transmissão total de luz; renomeado de *Transmission* no Blender 4.0+).
-   - `Roughness`: `0.15` (levemente fosco).
-   - `IOR`: `1.45` (vidro comum).
-3. Para renderização correta do vidro em **EEVEE Next** (Blender 4.5):
-   - Acesse `Render Properties → Raytracing` e **ative** a opção.
-   - Habilite **`Raytraced Transmissions`** — substitui o antigo método de Alpha Hashed e produz refração realista.
-   - Com Raytracing ativo, **não é necessário** alterar `Blend Mode` em `Material Properties → Settings`.
-
-##### 3.4 Lápis — Cor Sólida
-
-1. Crie um material para o `Lapis`.
-2. `Base Color`: vermelho (`#CC2200`) ou azul (`#0033AA`).
-3. `Roughness`: `0.5`, `Metallic`: `0.0`.
-
-##### 3.5 Abajur — Plástico com Emissão Leve
-
-1. Crie um material para `Abajur_Cupula`.
-2. `Base Color`: bege claro (`#F5E6C0`).
-3. No Blender 4.x o Principled BSDF possui inputs de emissão integrados — **não** é necessário um `Mix Shader` separado:
-   - **`Emission Color`**: amarelo quente (`#FFD580`).
-   - **`Emission Strength`**: `0.1` — simula o plástico levemente aquecido pela lâmpada.
-
----
-
-#### 4. Configurações de Render
-
-- **Engine**: **EEVEE Next** — engine padrão do Blender 4.5 (recomendado para iniciantes; Cycles como desafio avançado).
-- Acesse `Render Properties`:
-  - **EEVEE Next**: configure as seguintes opções:
-    - `Ambient Occlusion` — ative para oclusão ambiente.
-    - `Bloom` — disponível em Blender 4.2+; ative com intensidade baixa para o brilho da lâmpada.
-    - `Raytracing` — ative e habilite **`Raytraced Reflections`** (substitui o antigo *Screen Space Reflections*) e **`Raytraced Transmissions`** (para o vidro do copo).
-  - **Cycles** (opcional): defina `Samples` entre 128 e 256 e ative `Denoise`.
-- Resolução sugerida: **1920 × 1080**.
-- Suavize a aparência dos objetos curvos: selecione o objeto → clique direito → `Shade Smooth`. Para controle automático por ângulo (Blender 4.1+), adicione o modificador **`Smooth by Angle`** — a antiga opção `Auto Smooth` do painel de propriedades foi substituída por este modificador.
-
----
-
-#### 5. Renders Finais
-
-Produza **duas imagens renderizadas** usando a câmera configurada na AC04:
-
-1. **Perspectiva com iluminação** — cena noturna completa com o abajur aceso.
-2. **Perspectiva sem luz ambiente** — desative o World Shader para evidenciar apenas a contribuição da `Luz_Abajur`.
-
-Para renderizar: `Render → Render Image` (`F12`) e salve com `Image → Save As`.
-
----
-
-### Entregáveis
-
-1. Arquivo `AC05_NomeSobrenome.blend` com abajur, luzes e materiais configurados.
-2. Duas imagens renderizadas (salvas em `.png` ou `.jpg`).
-3. Relatório (1–2 páginas) contendo:
-   - Descrição dos três componentes de iluminação configurados (tabela com valores).
-   - Justificativa dos materiais escolhidos para cada objeto.
-   - Comparação visual entre as duas imagens renderizadas.
-   - (Opcional) Reflexão sobre diferenças entre EEVEE e Cycles.
-
----
-
-### Critérios de Avaliação
-
-| Critério | Pontos |
-|---|---|
-| Abajur criado e luz Point configurada corretamente | 2,0 |
-| Três componentes Phong documentados e configurados | 2,0 |
-| Materiais aplicados a todos os objetos (PBR + procedural + vidro) | 2,0 |
-| UV Unwrapping e textura de imagem na mesa | 2,0 |
-| Renders com qualidade e relatório completo | 2,0 |
-| **Total** | **10,0** |
-
----
-
-### Desafio Avançado
-
-- Substitua o Engine por **Cycles** e compare a qualidade das sombras e reflexões com EEVEE.
-- Aplique uma textura procedural de **metal escovado** à superfície da mesa usando os nós `Anisotropic BSDF` ou `Brushed Metal` do Principled BSDF (`Metallic` alto, `Roughness` baixo com anisotropia).
-- Experimente iluminação **HDRI** no World Shader (imagens disponíveis em [Poly Haven — HDRIs](https://polyhaven.com/hdris)) como substituto da luz ambiente.
-
-### Observações
-
-- O arquivo `.blend` da AC04 **não deve ser modificado**; trabalhe sempre na cópia `AC05_NomeSobrenome.blend`.
-- A cena desenvolvida nesta atividade será reutilizada na AC06 (animação e/ou jogo interativo).
-- Em caso de dúvida sobre nós do Shader Editor, consulte o material da Aula 12 disponível no repositório da disciplina.
-
--->
+<h1 id="ac05-evolucao-da-cena-materiais-pbr-e-texturas">AC05 — Evolução da Cena: Materiais PBR e Texturas<a class="headerlink" href="#ac05-evolucao-da-cena-materiais-pbr-e-texturas" title="Permanent link">&para;</a></h1>
+<p><strong>Ferramenta:</strong> Blender <strong>4.5 LTS</strong></p>
+<h2 id="contexto">Contexto<a class="headerlink" href="#contexto" title="Permanent link">&para;</a></h2>
+<p>Na AP1, você concebeu e modelou uma cena para apresentar a palavra <strong>Ibmec</strong>, acompanhada de três objetos autorais. Na AC04, evoluiu essa mesma cena e comparou modelos de iluminação aplicados aos objetos. Nesta atividade, o foco passa a ser a aparência das superfícies: você criará materiais baseados em princípios físicos (PBR) e aplicará texturas à cena.</p>
+<p>O resultado deve preservar o conceito e a composição das etapas anteriores. A palavra <strong>Ibmec</strong> precisa permanecer legível e respeitar sua identidade visual; a aplicação de texturas deve se concentrar nos outros objetos da cena.</p>
+<h2 id="objetivos">Objetivos<a class="headerlink" href="#objetivos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Criar materiais com o shader <strong>Principled BSDF</strong> e compreender suas propriedades PBR.</li>
+<li>Preparar e avaliar coordenadas UV para posicionar texturas de imagem.</li>
+<li>Usar mapas de cor base, rugosidade e normal de forma adequada.</li>
+<li>Observar como materiais e texturas respondem à iluminação da cena.</li>
+<li>Organizar e documentar os materiais, mapas e fontes utilizados.</li>
+</ul>
+<h2 id="continuidade-da-ap1-e-da-ac04">Continuidade da AP1 e da AC04<a class="headerlink" href="#continuidade-da-ap1-e-da-ac04" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Abra o arquivo da AC04 e salve uma cópia como <code>AC05_NomeSobrenome.blend</code>. Não sobrescreva os arquivos da AP1 ou da AC04.</li>
+<li>Preserve a ideia, a composição e o enquadramento principal da cena, assim como a palavra <strong>Ibmec</strong> e os três objetos autorais.</li>
+<li>Use a iluminação e a câmera da AC04 como ponto de partida. Se fizer ajustes para apresentar melhor os materiais, registre-os no relatório e mantenha as condições consistentes entre as comparações.</li>
+<li>Crie novos materiais PBR além do objetos com os materiais usados na comparação Lambert, Phong e Blinn-Phong por materiais PBR. Os arquivos anteriores continuam preservando as etapas já realizadas.</li>
+<li>Atualize à palavra <strong>Ibmec</strong> com um material que mantenha suas cores e sua leitura. Não use texturas, relevos ou efeitos que comprometam sua identidade visual mas é possível uso de PBR.</li>
+</ol>
+<h2 id="conceitos-importantes">Conceitos importantes<a class="headerlink" href="#conceitos-importantes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Material:</strong> conjunto de propriedades que define como uma superfície interage com a luz.</li>
+<li><strong>PBR (Physically Based Rendering):</strong> abordagem que usa parâmetros fundamentados no comportamento dos materiais para produzir resultados coerentes sob diferentes iluminações.</li>
+<li><strong>Principled BSDF:</strong> shader versátil do Blender que reúne propriedades como cor base, rugosidade, metalicidade, índice de refração e normal.</li>
+<li><strong>Textura:</strong> imagem ou padrão usado para variar propriedades do material pela superfície.</li>
+<li><strong>UV:</strong> coordenadas 2D que determinam como uma imagem é posicionada sobre a malha 3D.</li>
+</ul>
+<p>Um material PBR não garante realismo sozinho: modelo, escala, UV, mapas e iluminação precisam funcionar em conjunto.</p>
+<h2 id="atividade">Atividade<a class="headerlink" href="#atividade" title="Permanent link">&para;</a></h2>
+<h3 id="1-preparar-e-organizar">1. Preparar e organizar<a class="headerlink" href="#1-preparar-e-organizar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se criar elementos auxiliares para apresentar ou testar materiais, organize-os em uma coleção chamada <code>AC05_Materiais_Texturas</code>. Mantenha os materiais nomeados de forma descritiva e preserve a organização de objetos da cena.</li>
+<li>Renomeie os materiais com nomes descritivos, por exemplo, <code>MAT_Madeira_PBR</code> ou <code>MAT_Metal_Escovado</code>.</li>
+<li>Escolha referências visuais para os materiais dos três objetos autorais. Considere o tipo de superfície, o contexto da cena e o conceito da AP1.</li>
+<li>Escolha texturas de imagem adequadas ao formato e à escala dos objetos. Você também pode usar texturas procedurais, desde que registre como foram criadas.</li>
+</ul>
+<h3 id="2-criar-materiais-pbr">2. Criar materiais PBR<a class="headerlink" href="#2-criar-materiais-pbr" title="Permanent link">&para;</a></h3>
+<p>Crie e aplique um material ao <strong>Principled BSDF</strong> para cada um dos três objetos que pareçam com metal, madeira, espelho:</p>
+<ul>
+<li>Ajuste <strong>Base Color</strong>, <strong>Roughness</strong> e <strong>Metallic</strong> de acordo com o material escolhido.</li>
+<li>Use valores coerentes: metalicidade alta apenas para superfícies metálicas; materiais não metálicos geralmente usam <code>Metallic = 0</code>.</li>
+<li>Ajuste a rugosidade para controlar a nitidez dos reflexos. Compare o material sob a iluminação da cena, não apenas no Shader Editor.</li>
+<li>O terceiro material pode ser baseado em cor sólida, textura procedural ou imagem; os três objetos ainda devem ter materiais PBR identificáveis.</li>
+</ul>
+<h3 id="3-preparar-uvs-e-aplicar-mapas">3. Preparar UVs e aplicar mapas<a class="headerlink" href="#3-preparar-uvs-e-aplicar-mapas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crie ou revise um mapa UV para cada objeto autoral que receber textura de imagem. Escolha um método de projeção adequado à forma e inspecione as ilhas no UV Editor.</li>
+<li>Aplique texturas de imagem a pelo menos <strong>dois</strong> dos objetos.</li>
+<li>Em pelo menos um material, use um conjunto que demonstre os três canais:</li>
+<li><strong>Base Color/Albedo:</strong> conectado ao <code>Base Color</code> do Principled BSDF.</li>
+<li><strong>Roughness:</strong> conectado ao <code>Roughness</code>.</li>
+<li><strong>Normal:</strong> conectado ao nó <code>Normal Map</code>, cuja saída vai ao <code>Normal</code> do Principled BSDF.</li>
+<li>No segundo objeto texturizado, use ao menos uma textura de imagem adequada e configure corretamente o material.</li>
+<li>Um mapa <strong>Metallic</strong> é opcional; use-o somente quando fizer sentido para o material. Não trate mapas de dados como mapas de cor.</li>
+</ul>
+<p><strong>Espaço de cor:</strong> imagens de cor base devem ser interpretadas como cor (normalmente <code>sRGB</code>). Mapas de roughness, metallic e normal contêm dados; configure-os como <code>Non-Color</code>. Um mapa normal tangente deve passar pelo nó <code>Normal Map</code> antes de chegar à entrada <code>Normal</code>.</p>
+<h3 id="4-revisar-a-cena">4. Revisar a cena<a class="headerlink" href="#4-revisar-a-cena" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Compare os objetos no <code>Material Preview</code> e no <code>Rendered</code>, usando a câmera principal.</li>
+<li>Verifique escala, orientação, distorção e repetição das texturas; corrija o mapa UV ou o mapeamento quando necessário.</li>
+<li>Observe se a rugosidade e os relevos aparecem sob a iluminação definida.</li>
+<li>Faça ajustes de iluminação apenas quando necessários à leitura dos materiais e registre as mudanças.</li>
+<li>Confirme que a palavra <strong>Ibmec</strong> continua legível e que a composição da AP1 foi preservada.</li>
+</ul>
+<h2 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Utilizar Blender <strong>4.5 LTS</strong> e entregar uma cópia da cena da AC04.</li>
+<li>Preservar a composição da AP1/AC04, a palavra <strong>Ibmec</strong> e seus três objetos autorais.</li>
+<li>Aplicar materiais baseados no Principled BSDF aos três objetos autorais.</li>
+<li>Configurar UVs para os objetos autorais texturizados e usar texturas de imagem em pelo menos dois.</li>
+<li>Demonstrar os mapas <strong>Base Color</strong>, <strong>Roughness</strong> e <strong>Normal</strong> em pelo menos um dos materiais.</li>
+<li>Configurar corretamente o espaço de cor dos mapas de dados e a ligação do mapa normal.</li>
+<li>Manter a palavra <strong>Ibmec</strong> visualmente íntegra, sem texturas que prejudiquem sua leitura.</li>
+<li>Organizar os materiais e empacotar as imagens externas no arquivo <code>.blend</code> (<code>File &gt; External Data &gt; Pack Resources</code>) ou manter os recursos entregues junto ao projeto, sem caminhos locais quebrados.</li>
+</ol>
+<h2 id="entregaveis">Entregáveis<a class="headerlink" href="#entregaveis" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Arquivo <code>AC05_NomeSobrenome.blend</code>, com a cena, os materiais e as texturas configurados.</li>
+<li>Uma imagem renderizada pela câmera principal, apresentando a cena final.</li>
+<li>Uma captura do Shader Editor mostrando os nós de um material com Base Color, Roughness e Normal.</li>
+<li>Uma captura do UV Editor de um dos objetos texturizados.</li>
+<li>Relatório curto (<code>.md</code> ou <code>.pdf</code>) contendo:</li>
+<li>identificação dos três objetos e descrição dos materiais aplicados;</li>
+<li>propriedades principais de cada material (Base Color, Roughness, Metallic e outros pertinentes);</li>
+<li>mapas utilizados e como foram conectados;</li>
+<li>método de UV utilizado e ajustes feitos para reduzir distorções;</li>
+<li>origem e licença das texturas externas, quando utilizadas;</li>
+<li>breve observação sobre como a iluminação influenciou a aparência.</li>
+</ol>
+<h2 id="recursos-e-referencias">Recursos e referências<a class="headerlink" href="#recursos-e-referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../Disciplina/aula12/01_Materiais/">Introdução aos materiais no Blender</a></li>
+<li><a href="../../Disciplina/aula12/03_Texturas/">Texturas em computação gráfica</a></li>
+<li><a href="../../Disciplina/aula12/04_UVWraping/">Introdução ao UV Unwrapping</a></li>
+<li><a href="../../Disciplina/aula12/05_TexturasBlender/">Texturas no Blender</a></li>
+<li><a href="https://polyhaven.com/textures">Poly Haven — texturas PBR</a></li>
+<li><a href="https://ambientcg.com/">ambientCG — materiais e texturas</a></li>
+<li><a href="https://docs.blender.org/manual/en/4.5/">Blender 4.5 LTS — documentação oficial</a></li>
+</ul>
+<p>Use texturas cuja licença permita o uso pretendido e registre sua fonte no relatório.</p>
 
 
 
