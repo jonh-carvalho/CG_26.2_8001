@@ -70,3 +70,45 @@ Por padrão, o Blender suaviza todas as entradas e saídas. Vamos ajustar os vet
 #### **Passo 6: Playback e Ajustes**
 * Pressione **`Espaço`** para rodar a animação. 
 * Observe a sensação de peso: se a bola parecer de borracha dura, diminua o *Squash*; se parecer uma bexiga com água, aumente a deformação.
+
+---
+
+Aqui está o guia passo a passo para criar um **rig de bola com *Stretch Bones*** no Blender 4.5. Esse sistema utiliza a restrição *Stretch To* para calcular automaticamente o achatamento (*Squash*) e o esticamento (*Stretch*) com preservação de volume real.
+
+---
+
+## Passo a Passo: Rigging da Bola com *Stretch Bones*
+
+#### **Passo 1: Criar a Estrutura de Ossos (*Armature*)**
+1. No **Object Mode**, adicione o esqueleto: **`Shift + A` > Armature**.
+2. Na aba **Object Data Properties** (ícone do boneco verde), no painel **Viewport Display**, marque a caixa **In Front** para enxergar os ossos através da esfera.
+3. Entre no **Edit Mode** (**`Tab`**):
+   * **Osso de Deformação (`Ball_Deform`):** Posicione a base do osso na parte inferior da esfera e a ponta no topo (ele deve atravessar a esfera de baixo para cima).
+   * **Osso de Controle Superior (`Stretch_Ctrl`):** Selecione a ponta do `Ball_Deform`, pressione **`E`** (**Extrude**) e puxe um pequeno osso para cima. Com ele selecionado, pressione **`Alt + P` > Clear Parent** para deixá-lo solto.
+   * **Osso de Controle Base (`Root_Ctrl`):** Adicione um osso horizontal no chão logo abaixo da esfera para servir de controle principal de movimento da cena.
+4. **Ajustar a Hierarquia (Parentesco):**
+   * Selecione `Ball_Deform`, depois `Root_Ctrl` e pressione **`Ctrl + P` > Keep Offset**.
+   * Selecione `Stretch_Ctrl`, depois `Root_Ctrl` e pressione **`Ctrl + P` > Keep Offset**.
+5. No painel **Bone Properties**, desmarque a caixa **Deform** dos ossos `Root_Ctrl` e `Stretch_Ctrl` (apenas o `Ball_Deform` deve deformar a malha).
+
+#### **Passo 2: Configurar a Constraint *Stretch To***
+1. Mude para o **Pose Mode** (**`Ctrl + Tab`**).
+2. Selecione o osso de deformação **`Ball_Deform`**.
+3. Na barra lateral direita, acesse a aba **Bone Constraint Properties** (ícone de um osso com anéis).
+4. Clique em **Add Bone Constraint** e selecione **Stretch To**.
+5. Configure os seguintes parâmetros:
+   * **Target:** Selecione a sua **Armature**.
+   * **Bone:** Escolha o osso **`Stretch_Ctrl`**.
+   * **Original Length:** Clique no botão **Reset Original Length** para gravar a altura padrão de repouso.
+   * **Volume:** Mantenha marcada a opção de preservação de volume em **`XZ`** ou **`Maintain Volume`**.
+
+#### **Passo 3: Parentear a Esfera ao Esqueleto (*Skinning*)**
+1. Volte ao **Object Mode**.
+2. Selecione a **Esfera** e, mantendo **`Shift`** pressionado, selecione a **Armature**.
+3. Pressione **`Ctrl + P`** e escolha **With Automatic Weights**.
+
+#### **Passo 4: Como Utilizar o Rig na Prática**
+Entre no **Pose Mode** para testar os controles:
+* **Translação da Cena:** Mova o osso **`Root_Ctrl`** (**`G`**) para deslocar a bola inteira pela cena.
+* **Elasticidade Automática:** Mova o osso **`Stretch_Ctrl`** para baixo para simular o **Squash** (a bola achata no eixo vertical e ganha largura nos lados automaticamente). Puxe-o para cima para simular o **Stretch** (a bola estica e afina as laterais).
+
