@@ -5,7 +5,7 @@ hide:
     - template: home.html
 ---
 
-## **Não haverá aula hoje(30/09/2026), apenas envio da AP1**
+## **AP2 18/11/2026, às 18h40, apresentação presencial no Lab 212.**
 
 <div class="grid cards" markdown>
 
