@@ -2,20 +2,20 @@
 
 |Aula                 | Conteúdo |
 | ----------------------------------------------------------------| |
-Aula 01 - 05/08/2026 | :material-check: [Introdução](../Disciplina/docs/aula01/intro.pdf) a Computação Gráfica |
-Aula 02 - 12/08/2026 | :material-check: [Bibliotecas Gráficas](../Disciplina/docs/aula02/bibliotecas_graficas.pdf) |
-Aula 03 - 19/08/2026 | :material-check:  :material-check: [Imagens](../Disciplina/docs/aula03/imagens.pdf) <br> :material-check: [Transformações Geométricas 2D](../Disciplina/docs/aula05/tg2d3d.pdf) |
-Aula 04 - 26/08/2026 | :material-check: [Transformações Geométricas 3D](../Disciplina/docs/aula05/tg3d.pdf) <br> :material-check: [Blender](../Disciplina/docs/blender/blender.pdf)|
-Aula 05 - 02/09/2026 | :material-check:  [Projeções Geométricas](../Disciplina/docs/aula07/projecoes.pdf) <br> :material-check: [Matriz View](../Disciplina/docs/aula08/Aula7.pdf) <br> :material-check: [Matriz Wavefront](../Disciplina/docs/aula08/Aula8.pdf)|
-Aula 06 - 09/09/2026 | :material-check: [Modelagem Geométrica](../Disciplina/docs/aula08/modelagem_geometrica.pdf) <br>  |
-Aula 07 - 16/09/2026 | :material-check: [Curvas](../Disciplina/docs/aula08/curvas.md) <br> :material-check:  [Superfícies](../Disciplina/docs/aula08/superficies.md) |
+Aula 01 - 05/08/2026 | :material-check: [Introdução](../Disciplina/aula01/intro.pdf) a Computação Gráfica |
+Aula 02 - 12/08/2026 | :material-check: [Bibliotecas Gráficas](../Disciplina/aula02/bibliotecas_graficas.pdf) |
+Aula 03 - 19/08/2026 | :material-check:  :material-check: [Imagens](../Disciplina/aula03/imagens.pdf) <br> :material-check: [Transformações Geométricas 2D](../Disciplina/aula05/tg2d3d.pdf) |
+Aula 04 - 26/08/2026 | :material-check: [Transformações Geométricas 3D](../Disciplina/aula05/tg3d.pdf) <br> :material-check: [Blender](../Disciplina/blender/blender.pdf)|
+Aula 05 - 02/09/2026 | :material-check:  [Projeções Geométricas](../Disciplina/aula07/projecoes.pdf) <br> :material-check: [Matriz View](../Disciplina/aula08/Aula7.pdf) <br> :material-check: [Matriz Wavefront](../Disciplina/aula08/Aula8.pdf)|
+Aula 06 - 09/09/2026 | :material-check: [Modelagem Geométrica](../Disciplina/aula08/modelagem_geometrica.pdf) <br>  |
+Aula 07 - 16/09/2026 | :material-check: [Curvas](../Disciplina/aula08/curvas.md) <br> :material-check:  [Superfícies](../Disciplina/aula08/superficies.md) |
 Aula 08 - 23/09/2026 | :material-check: [Prática](../Avalia/ap1/ap1_p2.md) |
 Aula 09 - 30/09/2026 | :material-check: AP1 |
-Aula 10 - 07/10/2026 | :material-check:[Cor - Visão](../Disciplina/docs/aula10/A_Decodificação_da_Luz.pdf), [Cor - Digital](../Disciplina/docs/aula10/Engenharia_da_Cor_e_Visão_Digital.pdf)  |
-Aula 11 - 14/10/2026 | :material-check: [Modelos de Iluminação](../Disciplina/docs/files/Ilumina.pdf) <br> [Iluminação](../Disciplina/docs/aula12/Modelo_Iluminação.md) <br> :material-check: [Visualizando](../Disciplina/docs/aula12/00_Visualizando.md), [Principais Modelos](../Disciplina/docs/aula12/01_Quaisosprincipaismodelos.md), [Comparação](../Disciplina/docs/aula12/02_Comparação.md) |
-Aula 12 - 21/10/2026 | :material-check: [Materiais](../Disciplina/docs/aula12/03_Materiais.md)  |
-Aula 13 - 28/10/2026 | :material-check: [Texturas](../Disciplina/docs/aula12/aula12_Texturas.md), [UV Wraping](../Disciplina/docs/aula12/04_UVWraping.md) |
-Aula 14 - 04/11/2026 | :material-check:  [Animação](../Disciplina/docs/aula13/Animação.md) <br> :material-check: [Rigging](../Disciplina/docs/aula13/Rigging.md) <br> :material-check: [Constraints ](../Disciplina/docs/aula13/Constraints.md) <br> :material-check: [Jogos UPBGE](../Disciplina/docs/aula13/Upbge.md)   |
+Aula 10 - 07/10/2026 | :material-check:[Cor - Visão](../Disciplina/aula10/A_Decodificação_da_Luz.pdf), [Cor - Digital](../Disciplina/aula10/Engenharia_da_Cor_e_Visão_Digital.pdf)  |
+Aula 11 - 14/10/2026 | :material-check: [Modelos de Iluminação](../Disciplina/files/Ilumina.pdf) <br> [Iluminação](../Disciplina/aula12/Modelo_Iluminação.md) <br> :material-check: [Visualizando](../Disciplina/aula12/00_Visualizando.md), [Principais Modelos](../Disciplina/aula12/01_Quaisosprincipaismodelos.md), [Comparação](../Disciplina/aula12/02_Comparação.md) |
+Aula 12 - 21/10/2026 | :material-check: [Materiais](../Disciplina/aula12/03_Materiais.md)  |
+Aula 13 - 28/10/2026 | :material-check: [Texturas](../Disciplina/aula12/aula12_Texturas.md), [UV Wraping](../Disciplina/aula12/04_UVWraping.md) |
+Aula 14 - 04/11/2026 | :material-check:  [Animação](../Disciplina/aula14/Animação.md) <br> :material-check: [Rigging](../Disciplina/aula14/Rigging.md) <br> :material-check: [Constraints ](../Disciplina/aula14/Constraints.md) <br> :material-check: [Jogos UPBGE](../Disciplina/aula14/Upbge.md)   |
 Aula 15 - 11/11/2026 | :material-check: Prática AP2 |
 Aula 16 - 18/11/2026 | :material-check: AP2 |
 Aula 17 - 25/11/2026 | :material-check:  |

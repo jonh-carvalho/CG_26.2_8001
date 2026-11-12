@@ -1,196 +1,124 @@
-# **AP2**
+# **AP2 — Peça Audiovisual “Ibmec em 15 segundos”**
 
-## **Prazo de Entrega: 19/12/2025** 
+**Ferramenta:** Blender **4.5 LTS**
 
-**Envio pelo GitHub no mesmo repositório das ACs e AP1**
+**Data entrega e apresentação:** 18/11/2026 no Lab 212.
+**Envio:** no repositório GitHub utilizado nas ACs e na AP1
 
-**Entrega e Documentação**
+## Contexto
 
-- Arquivo `.blend` da cena completa
-- Pelo menos 1 renders final(imagem)
-- Um **Vídeo da animação** renderizado (formato .mp4 ou .avi, mínimo 5 segundos) ou **Cena Interativa** usando UPBGE.
-- Breve documento (PDF ou MD) explicando:
-    - As escolhas de materiais e texturas
-    - O conceito da animação criada
-    - Desafios encontrados e soluções aplicadas
+Na **AP1**, você concebeu e modelou uma cena para apresentar a palavra **Ibmec**, acompanhada de três objetos autorais, e planejou uma narrativa em storyboard. Na **AC04**, estudou a iluminação da cena e comparou os modelos Lambert, Phong e Blinn-Phong. Na **AC05**, desenvolveu materiais PBR e aplicou texturas aos objetos.
 
----
+Na AP2, você integrará essas etapas em uma peça audiovisual de **15 segundos**, com animação, iluminação, materiais, texturas, renderização e exportação. O projeto deve preservar a ideia central da AP1, a legibilidade e a identidade visual da palavra **Ibmec**, e a contribuição dos três objetos autorais.
 
-## **Objetivo**
+## Objetivo
 
-<!--
-Evoluir a cena desenvolvida na AP1, aplicando modelos de iluminação, texturas, materiais e animação para criar um ambiente visualmente realista, dinâmico e interativo.
+Finalizar a cena da AP1 como uma animação 3D curta, utilizando o planejamento visual, os recursos de iluminação estudados na AC04 e os materiais e texturas preparados na AC05. A peça deverá comunicar uma ideia com clareza e apresentar movimento, composição e acabamento visual coerentes.
 
-## **Introdução**
+## Conceitos mobilizados
 
-Na **AP1**, você desenvolveu uma cena básica no Blender contendo dois terrenos separados por um lago, com uma ponte conectando-os e objetos que utilizam essa ponte. Agora, na **AP2**, vamos aprimorar essa cena aplicando conceitos fundamentais de renderização realista:
+- **Planejamento visual:** conceito, storyboard, ritmo e organização de planos.
+- **Animação:** poses-chave, keyframes, timing, espaçamento e interpolação.
+- **Câmera:** enquadramento, movimento e continuidade visual.
+- **Iluminação:** posição, tipo e intensidade das luzes para orientar a atenção.
+- **Materiais PBR e texturas:** resposta das superfícies à luz, UVs e mapas.
+- **Renderização e exportação:** configuração da cena e produção do vídeo final.
 
-### **Modelos de Iluminação**
+## Continuidade das etapas anteriores
 
-A iluminação é essencial para criar profundidade e realismo em cenas 3D. Nesta avaliação, você trabalhará com dois modelos principais:
+1. Abra a cena da AC05 e salve uma cópia como `AP2_NomeSobrenome.blend`. Preserve os arquivos da AP1, AC04 e AC05.
+2. Mantenha o conceito, a composição e os momentos previstos no storyboard da AP1. É permitido ajustar a modelagem e o enquadramento quando isso melhorar a animação, sem descaracterizar a proposta.
+3. Preserve a palavra **Ibmec** como elemento visual principal, mantendo sua leitura e identidade visual. Evite movimentos, efeitos, iluminação ou texturas que a ocultem ou prejudiquem.
+4. Mantenha na cena os três objetos autorais identificados na AP1. Eles devem participar da narrativa ou contribuir intencionalmente para sua apresentação.
+5. Reaproveite os materiais e mapas da AC05. Ajuste-os quando necessário para que funcionem durante o movimento e sob a iluminação final.
+6. Considere os estudos de iluminação da AC04, mas escolha a configuração final em função da cena e da leitura dos materiais. O `Principled BSDF` é baseado em princípios físicos; não deve ser descrito como implementação literal de Phong ou Blinn-Phong.
 
-- **Phong Shading**: Modelo clássico que simula reflexão especular, difusa e ambiente. É importante entender este modelo fundamental antes de partir para técnicas mais avançadas.
+## Proposta da peça
 
-- **PBR (Physically Based Rendering) com Principled BSDF**: Modelo moderno que simula o comportamento físico real da luz ao interagir com diferentes materiais. O shader Principled BSDF do Blender combina múltiplas propriedades físicas em um único nó, permitindo criar materiais realistas com base em princípios físicos.
+Crie uma sequência com início, desenvolvimento e encerramento. A narrativa deve apresentar a palavra **Ibmec** e integrar os objetos autorais de forma coerente com o conceito da AP1.
 
-### **Texturas e Materiais**
+Use o storyboard como guia e ajuste-o se a duração, a câmera ou a ação planejada mudar. A peça pode ser abstrata ou figurativa; não é necessário contar uma história complexa. A prioridade é que o público compreenda a intenção e consiga acompanhar a ação.
 
-Texturas e materiais transformam objetos simples em elementos convincentes. Você utilizará:
+## Requisitos de produção
 
-- Aplicar texturas UV em diferentes objetos da cena
-- Combinar mapas de textura (difuso, normal, roughness, metallic)
-- Criar materiais procedurais
-- Ajustar propriedades físicas dos materiais (metalicidade, rugosidade, subsurface scattering)
+### 1. Planejamento e continuidade
 
-### **Animação e Jogos**
+- Revise o conceito, o storyboard e o papel de cada objeto na narrativa.
+- Planeje a sequência em momentos ou planos, indicando ação, duração aproximada e enquadramento.
+- Mantenha a marca legível nos momentos principais da peça.
+- Organize a cena e mantenha nomes identificáveis para objetos, câmeras, luzes e materiais.
 
-A animação dá vida à cena, transformando elementos estáticos em uma experiência dinâmica e interativa. Nesta avaliação, você aplicará conceitos de:
+### 2. Animação
 
-- **Animação por Keyframes**: Definir pontos-chave de movimento ao longo do tempo
-- **Transformações Animadas**: Animar posição, rotação e escala de objetos
-- **Timeline e Interpolação**: Controlar a velocidade e suavidade dos movimentos
+- Crie uma animação de **15 segundos a 24 fps**, do frame **1 ao 360**.
+- Anime a câmera e pelo menos **dois elementos da cena**, sendo pelo menos um deles a palavra **Ibmec** ou um dos três objetos autorais.
+- Escolha propriedades adequadas à ação, como posição, rotação, escala ou influência de uma constraint. Não é necessário animar todas as propriedades.
+- Use keyframes e revise timing, espaçamento e interpolação no Graph Editor.
+- Evite movimentos involuntários, mudanças bruscas e colisões visuais que prejudiquem a composição.
 
-#### Se a opção for jogo.
+### 3. Iluminação, materiais e texturas
 
-- **Interatividade Básica**: Criar elementos que simulam comportamento de jogos (câmera em primeira pessoa, objetos que se movem em loop, etc.)
-- **Física Simples:** Aplicar física básica para simular gravidade e colisões
+- Configure iluminação que mantenha os elementos legíveis e valorize as superfícies ao longo da sequência.
+- Utilize materiais PBR da AC05 em três objetos e preserve, na palavra **Ibmec**, um material compatível com sua identidade visual.
+- Verifique a aplicação das texturas durante o movimento da câmera e dos objetos; corrija distorções, escalas ou repetições que se tornem visíveis.
+- Use os mapas de cor base, rugosidade e normal corretamente. Mapas de dados devem manter a interpretação de cor apropriada e mapas normais devem passar pelo nó `Normal Map`.
+- Empacote as imagens externas no arquivo `.blend` ou entregue-as junto ao projeto com caminhos relativos funcionais.
 
----
+### 4. Renderização e exportação
 
-## **Descrição da Avaliação:**
+- Utilize **Eevee** ou **Cycles**(se possuir GPU poderosa) no Blender 4.5 LTS.
+- Configure resolução, taxa de quadros e intervalo da animação antes da renderização final.
+- Exporte o vídeo em `.mp4` com codec H.264. Faça testes curtos ou em baixa resolução antes de renderizar toda a sequência.
+- Assista ao vídeo exportado integralmente para verificar imagem, duração, enquadramento e eventuais falhas.
 
-Você criará pelo menos uma sequência animada que dê vida à sua cena, como um personagem/objeto atravessando a ponte, água com movimento, ou uma câmera cinemática que percorre a cena.
+## Requisitos técnicos
 
-### **Cenário**
+1. Duração de 15 segundos, a 24 fps, totalizando 360 frames (frames 1–360).
+2. Animação de câmera e de pelo menos dois elementos da cena, com participação da palavra **Ibmec** ou de um objeto autoral.
+3. Cena com a palavra **Ibmec** e os três objetos autorais da AP1 preservados e reconhecíveis.
+4. Materiais PBR e texturas da AC05 aplicados aos objetos autorais, com ajustes quando necessários à sequência.
+5. Iluminação configurada para apoiar a narrativa e manter a leitura dos elementos.
+6. Renderização da animação completa e exportação do vídeo em `.mp4` (H.264).
+7. Arquivo `.blend` organizado, com recursos externos empacotados ou entregues em caminhos relativos funcionais.
 
-Partindo da cena desenvolvida na AP1, você deverá:
+## Entregáveis
 
-1. **Aprimorar a Iluminação da Cena**:
+1. Arquivo `AP2_NomeSobrenome.blend` com cena, animações, materiais, texturas, iluminação, câmera e configurações de saída.
+2. Vídeo final `AP2_NomeSobrenome.mp4`, com 15 segundos de duração e 24 fps.
+3. Pelo menos uma imagem renderizada da peça (quadro final ou frame representativo).
+4. Storyboard atualizado, se houve mudanças relevantes em relação ao da AP1.
+5. Relatório curto (`.md` ou `.pdf`) contendo:
+   - título, conceito e resumo da sequência;
+   - descrição dos momentos ou planos e das ações animadas;
+   - propriedades animadas e decisões de timing/interpolação;
+   - configuração geral de iluminação e renderização;
+   - descrição dos materiais e texturas reaproveitados ou ajustados da AC05;
+   - desafios encontrados e soluções adotadas;
+   - fontes e licenças de recursos externos utilizados.
 
-      - Configurar um sistema de iluminação que valorize os elementos da cena- Aplicar diferentes tipos de luzes (sol, point lights, área lights)
-      - Ajustar a temperatura de cor e intensidade para criar atmosfera
+## Critérios de avaliação — 10,0 pontos
 
-2. **Aplicar Materiais com Phong e PBR**:
-
-      - **Ponte**: Aplicar textura de madeira ou pedra com propriedades PBR realistas
-      - **Terrenos**: Criar materiais para relva, terra ou pedras
-      - **Água do Lago**: Implementar material realista de água com reflexão, refração e transparência
-      - **Objetos Importados**: Aplicar materiais adequados a cada objeto da cena
-
-3. **Trabalhar com Texturas**:
-
-      - Aplicar texturas UV em pelo menos 3 objetos diferentes
-      - Utilizar mapas de normal, roughness e/ou metallic para adicionar detalhes
-      - Criar pelo menos um material (usando nodes)
-
-4. **Implementar Animação**:
-
-      - Criar pelo menos uma animação usando keyframes (mínimo 5 segundos / 120 frames a 24fps)
-      - Animar/Controlar pelo menos um objeto atravessando a ponte ou interagindo com a cena
-      - Animar a câmera para criar um tour cinemático pela cena
-      - Opcional: Adicionar movimento à água do lago usando shaders animados ou simulação
-
-### **Requisitos Técnicos**
-
-- Utilizar o Cycles ou Eevee como engine de renderização
-- Aplicar pelo menos 5 materiais diferentes com propriedades distintas
-- Incluir pelo menos um material com textura de normal map
-- Demonstrar compreensão dos parâmetros do Principled BSDF (Metallic, Roughness, Specular, etc.)
-- Criar uma animação de no mínimo 5 segundos (120 frames a 24fps)
-- Utilizar pelo menos 3 propriedades animadas (location, rotation, scale, etc.)
-- Renderizar a animação final em formato de vídeo (.mp4 ou .avi) ou sequência de imagens
-
----
-
-## **Recursos e Referências**
-
-### **Modelos de Iluminação**
-
-- [Como iluminar no Blender](https://www.youtube.com/watch?v=L6w7ehv1egQ)
-- [Blender Lighting Tutorial for Beginners](https://www.youtube.com/results?search_query=blender+lighting+tutorial+for+beginners)
-- [Blender Principled BSDF Tutorial](https://www.youtube.com/results?search_query=blender+principled+bsdf+tutorial)
-- [PBR Workflow in Blender](https://www.youtube.com/results?search_query=blender+pbr+workflow)
-
-### Texturas e Materiais
-
-- [Blender Texture Mapping Tutorial](https://www.youtube.com/results?search_query=blender+texture+mapping+tutorial)
-- [Creating Realistic Materials in Blender](https://www.youtube.com/results?search_query=creating+realistic+materials+in+blender)
-- [UV Unwrapping in Blender](https://www.youtube.com/results?search_query=blender+uv+unwrapping+tutorial)
-
-### Animação
-
-- [Blender Animation Tutorial for Beginners](https://www.youtube.com/results?search_query=blender+animation+tutorial+for+beginners)
-- [Keyframe Animation in Blender](https://www.youtube.com/results?search_query=blender+keyframe+animation)
-- [Camera Animation in Blender](https://www.youtube.com/results?search_query=blender+camera+animation+tutorial)
-
-### Sites para Texturas
-
-- [Poly Haven](https://polyhaven.com/) - Texturas PBR gratuitas
-- [Texture Haven](https://texturehaven.com/)
-- [CC0 Textures](https://cc0textures.com/)
-- [Blender Kit](https://www.blenderkit.com/) - Materiais prontos
-
-### Tutoriais Complementares
-
-- [Blender - Principled BSDF Explained](https://www.youtube.com/results?search_query=blender+principled+bsdf+tutorial)
-- [Water Material in Blender](https://www.youtube.com/results?search_query=realistic+water+blender)
-- [PBR Texturing Workflow](https://www.youtube.com/results?search_query=blender+pbr+texturing)
-
-### Animação e Jogos
-
-- Introdução à Animação: `docs/Disciplina/docs/files/animação.md`
-- [Blender Animation Basics](https://www.youtube.com/results?search_query=blender+animation+tutorial+beginner)
-- [Keyframe Animation in Blender](https://www.youtube.com/results?search_query=blender+keyframe+animation)
-- [Camera Animation Tutorial](https://www.youtube.com/results?search_query=blender+camera+animation)
-
----
-
-## Critérios de Correção
-
-### Iluminação
-
-- **Sistema de iluminação adequado**: Uso correto de diferentes tipos de luzes
-- **Atmosfera e composição**: Iluminação cria atmosfera e destaca elementos importantes
-- **Configurações técnicas**: Intensidade, temperatura de cor e sombras bem ajustadas
-
-### Materiais e Shaders
-
-- **Aplicação do Principled BSDF**: Uso correto dos parâmetros (Metallic, Roughness, etc.)
-- **Diversidade de materiais**: Pelo menos 5 materiais diferentes com propriedades distintas
-- **Material de água**: Água com reflexão, refração e transparência realistas
-
-### Texturas
-
-- **UV Unwrapping**: Mapeamento UV correto e sem distorções
-- **Aplicação de texturas**: Texturas bem aplicadas em pelo menos 3 objetos
-- **Mapas adicionais**: Uso de normal maps, roughness maps ou outros
-
-### Animação
-
-- **Implementação de keyframes**: Uso correto de keyframes e timeline
-- **Qualidade da animação**: Movimento suave e natural, sem saltos bruscos
-- **Criatividade**: Animação criativa que adiciona narrativa à cena
-
-### Entrega e Documentação
-
-- Arquivo `.blend` da cena completa
-- Pelo menos 2 renders finais (diferentes ângulos)
-- **Vídeo da animação** renderizado (formato .mp4 ou .avi, mínimo 3 segundos) ou **Cena Interativa** usando UPBGE
-- Breve documento (PDF ou MD) explicando:
-  - As escolhas de materiais e texturas
-  - O conceito da animação criada
-  - Desafios encontrados e soluções aplicadas
-
-## Dicas para o Desenvolvimento
-
-1. **Comece pela iluminação**: Uma boa iluminação pode fazer materiais simples parecerem incríveis
-2. **Não exagere**: Materiais realistas geralmente têm valores sutis, não extremos
-3. **Use referências**: Observe fotos reais para entender como materiais se comportam com luz
-4. **Teste renderizações**: Faça renders de teste frequentemente para ajustar os materiais
-5. **Organize seus nodes**: Um node editor organizado facilita ajustes e correções
-6. **Aproveite materiais procedurais**: Para terrenos e elementos naturais, materiais procedurais podem ser mais eficientes
-7. **Planeje a animação**: Faça um storyboard simples antes de começar a animar
-8. **Use o Graph Editor**: Ajuste as curvas de interpolação para movimentos mais naturais
-9. **Teste a animação**: Reproduza frequentemente para verificar se o movimento está fluido
-10. **Renderize em baixa qualidade primeiro**: Teste a animação em baixa resolução antes do render final
--->
+| Critério | Pontos |
+|---|---:|
+| Continuidade do conceito, storyboard e composição da AP1; legibilidade e identidade da marca | 2,0 |
+| Animação da câmera e dos elementos da cena; timing, interpolação e clareza do movimento | 2,5 |
+| Iluminação e integração dos materiais PBR e texturas da AC04/AC05 | 2,0 |
+| Qualidade visual, composição e comunicação da peça | 1,5 |
+| Renderização, exportação e funcionamento do arquivo `.blend` | 1,0 |
+| Organização, relatório, autoria e identificação das fontes | 1,0 |
+| **Total** | **10,0** |
+
+## Referências
+
+- [AP1 — Conceito e Modelagem da Peça “Ibmec em 15 segundos”](./ap1.md)
+- [AC04 — Modelos de Iluminação](./AC04.md)
+- [AC05 — Materiais PBR e Texturas](./AC05.md)
+- [Introdução à animação](../Disciplina/aula14/Animação.md)
+- [Blender 4.5 LTS — documentação oficial](https://docs.blender.org/manual/en/4.5/)
+
+## Observações
+
+- A AP2 é a finalização da cena desenvolvida nas etapas anteriores, não uma cena independente. Mudanças são permitidas quando servirem à narrativa e preservarem a proposta central.
+- Não é necessário criar uma simulação física, personagem com rig ou cena interativa. Esses recursos podem ser usados se forem pertinentes ao conceito e não comprometerem os requisitos essenciais.
+- Áudio é opcional. Se utilizado, deve ser adequado à peça e ter origem/licença identificada no relatório.
+- Salve cópias de segurança antes de alterações importantes e confirme que o projeto abre corretamente no Blender 4.5 LTS.
