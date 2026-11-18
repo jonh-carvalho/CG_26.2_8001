@@ -2,7 +2,7 @@
 
 **Ferramenta:** Blender **4.5 LTS**
 
-**Data entrega e apresentação:** 18/11/2026 no Lab 212.
+**Data entrega e apresentação:** 18/11/2026 às 18h40min no Lab. 212.
 **Envio:** no repositório GitHub utilizado nas ACs e na AP1
 
 ## Contexto
