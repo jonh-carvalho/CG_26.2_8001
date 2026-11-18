@@ -1,0 +1,1219 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Jonh Carvalho">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/ibmec_icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Anima - CG_26.2_8001</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-planejamento-e-fundamentos-posing-timing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="CG_26.2_8001" class="md-header__button md-logo" aria-label="CG_26.2_8001" data-md-component="logo">
+      
+  <img src="../../../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CG_26.2_8001
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Anima
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="#FAB90A" data-md-color-accent="#193257"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="#193257" data-md-color-accent="#FAB90A"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="all" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jonh-carvalho/CG_26.2_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../aulas/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Disciplina
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Avalia/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Avaliações
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../bibliografia/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Bibliografia
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="CG_26.2_8001" class="md-nav__button md-logo" aria-label="CG_26.2_8001" data-md-component="logo">
+      
+  <img src="../../../../assets/ibmec_logo.png" alt="logo">
+
+    </a>
+    CG_26.2_8001
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jonh-carvalho/CG_26.2_8001" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Disciplina
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Disciplina
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../aulas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aulas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Textos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Textos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/aula10/cor_visao.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cor e Visão
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../docs/aula10/cor_representacao.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cor e Representação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Avaliações
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Avaliações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Avalia/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AC
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            AC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/AC05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AC5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/ap1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AP1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Avalia/ap2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AP2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Anima</h1>
+
+<h2 id="1-planejamento-e-fundamentos-posing-timing">1. Planejamento e Fundamentos (<em>Posing &amp; Timing</em>)<a class="headerlink" href="#1-planejamento-e-fundamentos-posing-timing" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Definição da Ação:</strong> Planeje o movimento antes de inserir quadros-chave (use esboços em papel, gravação de vídeos de referência ou thumbnails rápidos).</li>
+<li><strong>12 Princípios da Animação:</strong> Identifique quais princípios essenciais serão aplicados na cena (<em>Squash &amp; Stretch</em>, <em>Anticipation</em>, <em>Arcs</em>, <em>Timing &amp; Spacing</em>, <em>Overlapping Action</em>).</li>
+<li><strong>Taxa de Quadros (<em>FPS</em>):</strong> Defina a taxa de quadros no painel de saída (geralmente <strong>24 fps</strong> para cinema/animação tradicional ou <strong>30/60 fps</strong> para jogos).</li>
+</ul>
+<h3 id="2-configuracao-do-espaco-de-trabalho-no-blender">2. Configuração do Espaço de Trabalho no Blender<a class="headerlink" href="#2-configuracao-do-espaco-de-trabalho-no-blender" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Organização das Janelas:</strong> Configure a interface com a <strong>3D Viewport</strong>, a <strong>Timeline</strong>, o <strong>Dope Sheet</strong> (para controlar posições dos quadros) e o <strong>Graph Editor</strong> (para ajustar a aceleração das curvas).</li>
+<li><strong>Modo de Seleção:</strong> Se for animar um rig/personagem, trabalhe no <strong>Pose Mode</strong> (<code>Ctrl + Tab</code>). Se for um objeto simples (como uma bola ou câmera), trabalhe no <strong>Object Mode</strong>.</li>
+<li><strong>Autokeying (<em>Opcional</em>):</strong> Decida se usará inserção manual de keyframes (<strong><code>I</code></strong>) ou a gravação automática (<em>Auto Keying</em>).</li>
+</ul>
+<h3 id="3-etapa-de-blocagem-blocking">3. Etapa de Blocagem (<em>Blocking</em>)<a class="headerlink" href="#3-etapa-de-blocagem-blocking" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Poses Chave (<em>Key Poses</em>):</strong> Crie as poses mais importantes do movimento nos quadros principais da linha do tempo.</li>
+<li><strong>Inserção de Keyframes:</strong> Pressione <strong><code>I</code></strong> e insira chaves para <strong>Location, Rotation, Scale</strong> ou <strong>K-Slot / Available</strong> para registrar o estado dos controles.</li>
+<li><strong>Interpolação em <em>Constant</em>:</strong> Mude o tipo de interpolação para <strong>Constant</strong> (<code>T</code> &gt; <em>Constant</em> no Dope Sheet). Isso permite avaliar o <em>timing</em> puro e a silhueta das poses sem que o computador crie suavizações automáticas pré-maturas.</li>
+</ul>
+<h3 id="4-adicao-de-intervalos-breakdowns-in-betweens">4. Adição de Intervalos (<em>Breakdowns &amp; In-Betweens</em>)<a class="headerlink" href="#4-adicao-de-intervalos-breakdowns-in-betweens" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Poses Intermediárias (<em>Breakdowns</em>):</strong> Adicione chaves nos quadros entre as poses principais para definir a trajetória do movimento (se ele faz um arco para cima, para baixo, etc.).</li>
+<li><strong>Definição de Arcos:</strong> Ajuste os controles para garantir que braços, cabeças e objetos sigam arcos suaves em vez de trajetórias em linha reta.</li>
+<li><strong>Deslocamento de Tempos (<em>Staggering / Overlapping</em>):</strong> Desloque keyframes de partes secundárias (como cabelo, roupas ou cauda) em 2 ou 3 quadros após a ação principal para criar continuidade realista.</li>
+</ul>
+<h3 id="5-polimento-no-graph-editor-splining-curves">5. Polimento no <em>Graph Editor</em> (<em>Splining &amp; Curves</em>)<a class="headerlink" href="#5-polimento-no-graph-editor-splining-curves" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Transição para <em>Bezier</em>:</strong> Mude a interpolação das curvas para <strong>Bezier</strong> (<code>T</code> &gt; <em>Bezier</em>) para gerar um movimento contínuo.</li>
+<li><strong>Ajuste de Alças (<em>Handles</em>):</strong> No <strong>Graph Editor</strong>, ajuste as alças das curvas para controlar a aceleração e desaceleração (<em>Ease In / Ease Out</em>):</li>
+<li>Curvas inclinadas = velocidade alta.</li>
+<li>Curvas horizontais/suaves = desaceleração e repouso.</li>
+<li><strong>Limpeza de Ruídos:</strong> Elimine chaves desnecessárias para evitar trepidações ou sobressaltos indesejados nas trajetórias.</li>
+</ul>
+<h3 id="6-validacao-e-pre-visualizacao-playblast">6. Validação e Pré-visualização (<em>Playblast</em>)<a class="headerlink" href="#6-validacao-e-pre-visualizacao-playblast" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Playback em Tempo Real:</strong> Pressione <strong><code>Espaço</code></strong> para assistir à animação em velocidade real.</li>
+<li><strong>Geração de Playblast (<em>Viewport Render</em>):</strong> Vá em <strong>View &gt; Viewport Render Animation</strong> no menu da 3D Viewport para exportar um vídeo leve e verificar o <em>timing</em> sem travamentos de renderização pesada.</li>
+</ul>
+<hr />
+<h2 id="pratica-guiada-animacao-da-bola-saltando-bouncing-ball">Prática Guiada: Animação da Bola Saltando (<em>Bouncing Ball</em>)<a class="headerlink" href="#pratica-guiada-animacao-da-bola-saltando-bouncing-ball" title="Permanent link">&para;</a></h2>
+<p><strong>Objetivo:</strong> Criar a animação de uma bola quicando e avançando, ajustando as curvas de gravidade e a elasticidade do impacto.</p>
+<h4 id="passo-1-preparar-a-cena"><strong>Passo 1: Preparar a Cena</strong><a class="headerlink" href="#passo-1-preparar-a-cena" title="Permanent link">&para;</a></h4>
+<ol>
+<li>No <strong>Object Mode</strong>, adicione a bola: <strong><code>Shift + A</code> &gt; Mesh &gt; UV Sphere</strong>.</li>
+<li>Adicione o chão: <strong><code>Shift + A</code> &gt; Mesh &gt; Plane</strong> e dimensione (<strong><code>S</code> &gt; <code>5</code></strong>).</li>
+<li>Selecione a esfera, suba-a para que fique exatamente sobre a superfície do chão.</li>
+<li>Na linha do tempo (<em>Timeline</em>), ajuste o intervalo de animação para <strong>1 a 40 quadros</strong>.</li>
+</ol>
+<h4 id="passo-2-blocar-a-queda-e-o-quique-eixo-z"><strong>Passo 2: Blocar a Queda e o Quique (Eixo Z)</strong><a class="headerlink" href="#passo-2-blocar-a-queda-e-o-quique-eixo-z" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Quadro 1 (Topo inicial):</strong> Posicione a bola no alto (ex.: <code>Z = 5.0</code>). Pressione <strong><code>I</code> &gt; Location</strong> para criar o keyframe.</li>
+<li><strong>Quadro 10 (Primeiro impacto):</strong> Mova a agulha para o quadro 10, baixe a bola até encostar no chão (<code>Z = 1.0</code>) e pressione <strong><code>I</code> &gt; Location</strong>.</li>
+<li><strong>Quadro 20 (Segundo ápice):</strong> No quadro 20, suba a bola a uma altura menor que a inicial (<code>Z = 3.5</code>) e insira a chave.</li>
+<li><strong>Quadro 28 (Segundo impacto):</strong> Baixe a bola até o chão (<code>Z = 1.0</code>) e marque o keyframe.</li>
+<li><strong>Quadro 35 (Último impulso):</strong> Suba levemente (<code>Z = 1.5</code>) e conclua no <strong>Quadro 40</strong> no chão (<code>Z = 1.0</code>).</li>
+</ol>
+<h4 id="passo-3-ajustar-a-gravidade-no-graph-editor"><strong>Passo 3: Ajustar a Gravidade no <em>Graph Editor</em></strong><a class="headerlink" href="#passo-3-ajustar-a-gravidade-no-graph-editor" title="Permanent link">&para;</a></h4>
+<p>Por padrão, o Blender suaviza todas as entradas e saídas. Vamos ajustar os vetores para dar impacto real ao chão:
+1. Abra a janela do <strong>Graph Editor</strong>.
+2. Selecione apenas o canal <strong>Z Location</strong>.
+3. Selecione as chaves dos quadros de impacto no chão (quadros <strong>10</strong>, <strong>28</strong> e <strong>40</strong>).
+4. Pressione <strong><code>V</code></strong> e escolha <strong>Vector</strong>. As alças mudarão para um formato em "V" bem nítido, fazendo a bola quicar instantaneamente ao tocar o chão sem perder velocidade.
+5. As chaves dos pontos mais altos (<strong>1</strong>, <strong>20</strong> e <strong>35</strong>) devem continuar com alças horizontais suaves para simular a perda de velocidade no topo do arco.</p>
+<h4 id="passo-4-adicionar-deslocamento-horizontal-eixo-x"><strong>Passo 4: Adicionar Deslocamento Horizontal (Eixo X)</strong><a class="headerlink" href="#passo-4-adicionar-deslocamento-horizontal-eixo-x" title="Permanent link">&para;</a></h4>
+<ol>
+<li>No <strong>Quadro 1</strong>, mova a bola para a esquerda (<code>X = -4.0</code>) e salve o keyframe de localização.</li>
+<li>No <strong>Quadro 40</strong>, desloque a bola para a direita (<code>X = 4.0</code>) e insira a chave.</li>
+<li>No <strong>Graph Editor</strong>, selecione a curva <strong>X Location</strong> e mude a interpolação para linear (<strong><code>T</code> &gt; Linear</strong>) para que a velocidade para frente permaneça constante durante os saltos.</li>
+</ol>
+<h4 id="passo-5-aplicar-o-squash-stretch-deformacao-por-impacto"><strong>Passo 5: Aplicar o <em>Squash &amp; Stretch</em> (Deformação por Impacto)</strong><a class="headerlink" href="#passo-5-aplicar-o-squash-stretch-deformacao-por-impacto" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Um quadro antes do impacto (Quadro 9):</strong> Estique a bola na direção da queda (<strong><code>S</code> &gt; <code>Z</code> &gt; <code>1.2</code></strong> e encolha um pouco X e Y). Insira um keyframe em <strong>Scale</strong> (<strong><code>I</code> &gt; Scale</strong>).</li>
+<li><strong>No momento do impacto (Quadro 10):</strong> Amasse a bola contra o chão (<strong><code>S</code> &gt; <code>Z</code> &gt; <code>0.7</code></strong> e alargue X e Y para <strong><code>1.3</code></strong>). Salve o keyframe de <strong>Scale</strong>.</li>
+<li><strong>Dois quadros após o impacto (Quadro 12):</strong> Estique a bola levemente na subida antes de voltar ao tamanho normal (<code>1.0, 1.0, 1.0</code>) no topo do salto.</li>
+</ol>
+<h4 id="passo-6-playback-e-ajustes"><strong>Passo 6: Playback e Ajustes</strong><a class="headerlink" href="#passo-6-playback-e-ajustes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Pressione <strong><code>Espaço</code></strong> para rodar a animação. </li>
+<li>Observe a sensação de peso: se a bola parecer de borracha dura, diminua o <em>Squash</em>; se parecer uma bexiga com água, aumente a deformação.</li>
+</ul>
+<hr />
+<p>Aqui está o guia passo a passo para criar um <strong>rig de bola com <em>Stretch Bones</em></strong> no Blender 4.5. Esse sistema utiliza a restrição <em>Stretch To</em> para calcular automaticamente o achatamento (<em>Squash</em>) e o esticamento (<em>Stretch</em>) com preservação de volume real.</p>
+<hr />
+<h2 id="passo-a-passo-rigging-da-bola-com-stretch-bones">Passo a Passo: Rigging da Bola com <em>Stretch Bones</em><a class="headerlink" href="#passo-a-passo-rigging-da-bola-com-stretch-bones" title="Permanent link">&para;</a></h2>
+<h4 id="passo-1-criar-a-estrutura-de-ossos-armature"><strong>Passo 1: Criar a Estrutura de Ossos (<em>Armature</em>)</strong><a class="headerlink" href="#passo-1-criar-a-estrutura-de-ossos-armature" title="Permanent link">&para;</a></h4>
+<ol>
+<li>No <strong>Object Mode</strong>, adicione o esqueleto: <strong><code>Shift + A</code> &gt; Armature</strong>.</li>
+<li>Na aba <strong>Object Data Properties</strong> (ícone do boneco verde), no painel <strong>Viewport Display</strong>, marque a caixa <strong>In Front</strong> para enxergar os ossos através da esfera.</li>
+<li>Entre no <strong>Edit Mode</strong> (<strong><code>Tab</code></strong>):</li>
+<li><strong>Osso de Deformação (<code>Ball_Deform</code>):</strong> Posicione a base do osso na parte inferior da esfera e a ponta no topo (ele deve atravessar a esfera de baixo para cima).</li>
+<li><strong>Osso de Controle Superior (<code>Stretch_Ctrl</code>):</strong> Selecione a ponta do <code>Ball_Deform</code>, pressione <strong><code>E</code></strong> (<strong>Extrude</strong>) e puxe um pequeno osso para cima. Com ele selecionado, pressione <strong><code>Alt + P</code> &gt; Clear Parent</strong> para deixá-lo solto.</li>
+<li><strong>Osso de Controle Base (<code>Root_Ctrl</code>):</strong> Adicione um osso horizontal no chão logo abaixo da esfera para servir de controle principal de movimento da cena.</li>
+<li><strong>Ajustar a Hierarquia (Parentesco):</strong></li>
+<li>Selecione <code>Ball_Deform</code>, depois <code>Root_Ctrl</code> e pressione <strong><code>Ctrl + P</code> &gt; Keep Offset</strong>.</li>
+<li>Selecione <code>Stretch_Ctrl</code>, depois <code>Root_Ctrl</code> e pressione <strong><code>Ctrl + P</code> &gt; Keep Offset</strong>.</li>
+<li>No painel <strong>Bone Properties</strong>, desmarque a caixa <strong>Deform</strong> dos ossos <code>Root_Ctrl</code> e <code>Stretch_Ctrl</code> (apenas o <code>Ball_Deform</code> deve deformar a malha).</li>
+</ol>
+<h4 id="passo-2-configurar-a-constraint-stretch-to"><strong>Passo 2: Configurar a Constraint <em>Stretch To</em></strong><a class="headerlink" href="#passo-2-configurar-a-constraint-stretch-to" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Mude para o <strong>Pose Mode</strong> (<strong><code>Ctrl + Tab</code></strong>).</li>
+<li>Selecione o osso de deformação <strong><code>Ball_Deform</code></strong>.</li>
+<li>Na barra lateral direita, acesse a aba <strong>Bone Constraint Properties</strong> (ícone de um osso com anéis).</li>
+<li>Clique em <strong>Add Bone Constraint</strong> e selecione <strong>Stretch To</strong>.</li>
+<li>Configure os seguintes parâmetros:</li>
+<li><strong>Target:</strong> Selecione a sua <strong>Armature</strong>.</li>
+<li><strong>Bone:</strong> Escolha o osso <strong><code>Stretch_Ctrl</code></strong>.</li>
+<li><strong>Original Length:</strong> Clique no botão <strong>Reset Original Length</strong> para gravar a altura padrão de repouso.</li>
+<li><strong>Volume:</strong> Mantenha marcada a opção de preservação de volume em <strong><code>XZ</code></strong> ou <strong><code>Maintain Volume</code></strong>.</li>
+</ol>
+<h4 id="passo-3-parentear-a-esfera-ao-esqueleto-skinning"><strong>Passo 3: Parentear a Esfera ao Esqueleto (<em>Skinning</em>)</strong><a class="headerlink" href="#passo-3-parentear-a-esfera-ao-esqueleto-skinning" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Volte ao <strong>Object Mode</strong>.</li>
+<li>Selecione a <strong>Esfera</strong> e, mantendo <strong><code>Shift</code></strong> pressionado, selecione a <strong>Armature</strong>.</li>
+<li>Pressione <strong><code>Ctrl + P</code></strong> e escolha <strong>With Automatic Weights</strong>.</li>
+</ol>
+<h4 id="passo-4-como-utilizar-o-rig-na-pratica"><strong>Passo 4: Como Utilizar o Rig na Prática</strong><a class="headerlink" href="#passo-4-como-utilizar-o-rig-na-pratica" title="Permanent link">&para;</a></h4>
+<p>Entre no <strong>Pose Mode</strong> para testar os controles:
+* <strong>Translação da Cena:</strong> Mova o osso <strong><code>Root_Ctrl</code></strong> (<strong><code>G</code></strong>) para deslocar a bola inteira pela cena.
+* <strong>Elasticidade Automática:</strong> Mova o osso <strong><code>Stretch_Ctrl</code></strong> para baixo para simular o <strong>Squash</strong> (a bola achata no eixo vertical e ganha largura nos lados automaticamente). Puxe-o para cima para simular o <strong>Stretch</strong> (a bola estica e afina as laterais).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright ©️ 2026, Jonh Carvalho
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  <script data-mkdocs-jupyter-mathjax="{&quot;url&quot;: &quot;https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js&quot;, &quot;version&quot;: 4}">
+/* Shared by full pages and Material's instant navigation. */
+(() => {
+  const config = JSON.parse(document.currentScript.dataset.mkdocsJupyterMathjax);
+  if (window.mkdocsJupyterMathJax) return;
+
+  let loading;
+  let queue = Promise.resolve();
+  let previous = [];
+
+  const ready = async () => {
+    if (!loading) {
+      loading = (async () => {
+        let math = window.MathJax;
+        if (!math?.typesetPromise) {
+          const url = new URL(config.url, document.baseURI).href;
+          const existing = Array.from(document.scripts).find(script =>
+            script.src && (script.src === url || script.id === 'MathJax-script' ||
+              (/mathjax/i.test(script.src) &&
+               /\/(?:MathJax|latest|(?:tex|mml)(?:-mml)?-(?:chtml|svg))\.js(?:[?#]|$)/i.test(script.src))));
+          if (existing) {
+            if (!math?.startup?.promise) {
+              await new Promise((resolve, reject) => {
+                existing.addEventListener('load', resolve, { once: true });
+                existing.addEventListener('error', reject, { once: true });
+              });
+            }
+          } else {
+            // Keep site macros, delimiters and startup hooks when supplied.
+            const options = math || {};
+            window.MathJax = {
+              ...options,
+              loader: {
+                ...options.loader,
+                load: Array.from(new Set(['ui/safe', ...(options.loader?.load || [])]))
+              },
+              startup: { typeset: false, ...options.startup },
+              tex: {
+                tags: 'ams',
+                useLabelIds: true,
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                ...options.tex
+              }
+            };
+            await new Promise((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = config.url;
+              script.id = 'MathJax-script';
+              script.async = true;
+              script.onload = resolve;
+              script.onerror = reject;
+              document.head.appendChild(script);
+            });
+          }
+        }
+        math = window.MathJax;
+        await math.startup.promise;
+        return math;
+      })();
+    }
+    const math = await loading;
+    // A site owner can extend the v3 queue again on each navigation.
+    await math.startup.promise;
+    return math;
+  };
+
+  const unrendered = node => {
+    if (node.matches('mjx-container')) return [];
+    if (!node.querySelector('mjx-container')) return [node];
+    // In v3, scanning generated assistive MathML again produces nested output.
+    return Array.from(node.children).flatMap(unrendered);
+  };
+
+  const refresh = () => {
+    // A separate chain also serializes v3, without changing v4's startup promise.
+    queue = queue.then(async () => {
+      const notebooks = Array.from(document.querySelectorAll('.jupyter-wrapper'));
+      if (!notebooks.length && !previous.length) return;
+      if (notebooks.length === previous.length &&
+          notebooks.every((node, index) => node === previous[index])) return;
+      const math = await ready();
+      if (previous.length) {
+        math.typesetClear(previous);
+        math.texReset();
+      }
+      previous = notebooks.filter(node => node.isConnected);
+      const pending = previous.flatMap(unrendered);
+      if (pending.length) await math.typesetPromise(pending);
+    }).catch(error => console.error('mkdocs-jupyter: MathJax rendering failed', error));
+    return queue;
+  };
+
+  window.mkdocsJupyterMathJax = { refresh };
+  const start = () => {
+    if (typeof document$ !== 'undefined') document$.subscribe(refresh);
+    else refresh();
+  };
+  // Theme bundles and user-provided MathJax scripts can follow notebook content.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else start();
+})();
+
+</script>
+</body>
+</html>
